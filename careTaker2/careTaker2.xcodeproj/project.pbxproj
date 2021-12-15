@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18382769C67400D681A1 /* AppDelegate.swift */; };
 		B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183A2769C67400D681A1 /* SceneDelegate.swift */; };
-		B60B183D2769C67400D681A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* ViewController.swift */; };
+		B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* CollectionViewController.swift */; };
 		B60B18422769C67500D681A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60B18412769C67500D681A1 /* Assets.xcassets */; };
 		B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60B18432769C67500D681A1 /* LaunchScreen.storyboard */; };
 		B60B18502769C67600D681A1 /* careTaker2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B184F2769C67600D681A1 /* careTaker2Tests.swift */; };
@@ -20,6 +20,12 @@
 		B60B186E2769C6CB00D681A1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186D2769C6CB00D681A1 /* FirebaseMessaging */; };
 		B60B18712769C6FA00D681A1 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = B60B18702769C6FA00D681A1 /* CodableFirebase */; };
 		B60B18752769C79600D681A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B60B18742769C79600D681A1 /* GoogleService-Info.plist */; };
+		B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18762769C9F000D681A1 /* ContentsViewController.swift */; };
+		B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18782769CA0400D681A1 /* CollectionViewCell.swift */; };
+		B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsView.swift */; };
+		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
+		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
+		B60B18812769CA4D00D681A1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18802769CA4D00D681A1 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +49,7 @@
 		B60B18352769C67400D681A1 /* careTaker2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = careTaker2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60B18382769C67400D681A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B60B183A2769C67400D681A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B60B183C2769C67400D681A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B60B183C2769C67400D681A1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B60B18412769C67500D681A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B60B18442769C67500D681A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B60B18462769C67500D681A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +59,12 @@
 		B60B18592769C67600D681A1 /* careTaker2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITests.swift; sourceTree = "<group>"; };
 		B60B185B2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B60B18742769C79600D681A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B60B18762769C9F000D681A1 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
+		B60B18782769CA0400D681A1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B60B187A2769CA1100D681A1 /* ContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsView.swift; sourceTree = "<group>"; };
+		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
+		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		B60B18802769CA4D00D681A1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +121,17 @@
 			children = (
 				B60B18382769C67400D681A1 /* AppDelegate.swift */,
 				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
-				B60B183C2769C67400D681A1 /* ViewController.swift */,
+				B60B183C2769C67400D681A1 /* CollectionViewController.swift */,
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
 				B60B18742769C79600D681A1 /* GoogleService-Info.plist */,
+				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
+				B60B18782769CA0400D681A1 /* CollectionViewCell.swift */,
+				B60B187A2769CA1100D681A1 /* ContentsView.swift */,
+				B60B187C2769CA3000D681A1 /* ContentsListModel.swift */,
+				B60B187E2769CA3D00D681A1 /* ContentModel.swift */,
+				B60B18802769CA4D00D681A1 /* API.swift */,
 			);
 			path = careTaker2;
 			sourceTree = "<group>";
@@ -276,8 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60B183D2769C67400D681A1 /* ViewController.swift in Sources */,
+				B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */,
+				B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */,
+				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
+				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,
+				B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */,
+				B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */,
+				B60B18812769CA4D00D681A1 /* API.swift in Sources */,
 				B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
