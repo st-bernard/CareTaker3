@@ -28,6 +28,7 @@ class ContentsView {
         listItemlabel.frame = CGRect(x: 200, y: 40, width: 100, height: 30)
         updateButton.frame = CGRect(x: 100, y: 500, width: 300, height: 50)
         updateButton.setTitle("ヤッタヨ！！", for: .normal)
+    
 
     }
 }
