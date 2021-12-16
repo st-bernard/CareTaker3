@@ -26,6 +26,7 @@
 		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
 		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
 		B60B18812769CA4D00D681A1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18802769CA4D00D681A1 /* API.swift */; };
+		FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32152A276B258F00697694 /* CollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
 		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		B60B18802769CA4D00D681A1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FE32152A276B258F00697694 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				B60B18742769C79600D681A1 /* GoogleService-Info.plist */,
 				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
 				B60B18782769CA0400D681A1 /* CollectionViewCell.swift */,
+				FE32152A276B258F00697694 /* CollectionViewHeader.swift */,
 				B60B187A2769CA1100D681A1 /* ContentsView.swift */,
 				B60B187C2769CA3000D681A1 /* ContentsListModel.swift */,
 				B60B187E2769CA3D00D681A1 /* ContentModel.swift */,
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */,
+				FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */,
 				B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */,
 				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
