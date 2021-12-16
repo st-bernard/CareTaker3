@@ -41,22 +41,30 @@ class ContentsListModel {
             let id = self.DBRef.child("users").childByAutoId()
             let data = try? FirebaseEncoder().encode(self.contents)
             id.setValue(data)
-//            UserDefaults.standard.set(id.key, forKey: "careTakerID")
+            UserDefaults.standard.set(id.key, forKey: "careTakerID")
             progress(.finish)
             print("----generate----")
         }
     }
     
     func pullData(careTakerID: String, progress: @escaping (ContentsListModelState) -> Void) {
-        
+        progress(.loading)
+        DBRef.child("users/\(careTakerID)").getData(){ error,snap in
+            guard let arrayofDicts = snap.value as? [[String:Any]] else {
+                progress(.error)
+                print("----cast error----")
+                return
+            }
+            arrayofDicts.forEach {dict in
+                guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
+                    progress(.error)
+                    print("-----Decode error-----")
+                    return
+                }
+                self.contents.append(content)
+            }
+            progress(.finish)
+            print("----pullData----")
+        }
     }
-    
-    func updateInterval() {
-        
-    }
-    
-    func updateLastDate() {
-        
-    }
-    
 }
