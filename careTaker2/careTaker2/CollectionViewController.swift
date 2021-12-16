@@ -1,8 +1,7 @@
 import UIKit
 
 class CollectionViewController: UIViewController {
-
-    let arr = [[1,2,3],[1,2],[1,2,3,4]]
+    let arr = [["かみ","ひげ"],["掃除","紙"]]
     var model: ContentsListModel!
     
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class CollectionViewController: UIViewController {
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width * 3, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .white
         // CVCell classを"Cell"という名前でCVに登録
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         // CVHeader classを"Header"という名前でCVのheaderとして登録
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
@@ -59,8 +58,9 @@ extension CollectionViewController: UICollectionViewDataSource {
     // cellの設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // cellを生成
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell",for: indexPath as IndexPath)
-        cell.backgroundColor = .blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        cell.titleLabel.text = arr[indexPath.section][indexPath.row]
+        cell.backgroundColor = .white
         return cell
     }
     
@@ -75,7 +75,7 @@ extension CollectionViewController: UICollectionViewDataSource {
 extension CollectionViewController:  UICollectionViewDelegateFlowLayout {
     // cellのサイズを設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 55, height: 60)
+        return CGSize(width: 150, height: 150)
     }
     
     // cellの余白
