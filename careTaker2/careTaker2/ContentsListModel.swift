@@ -3,6 +3,7 @@ import Firebase
 import FirebaseDatabase
 import CodableFirebase
 
+
 enum ContentsListModelState {
     case loading
     case finish
@@ -15,15 +16,15 @@ class ContentsListModel {
     var contents = [ContentModel]()
     let DBRef = Database.database().reference()
     
-    init(progress: @escaping (ContentsListModelState) -> Void){
-        if let careTakerID = UserDefaults.standard.string(forKey: "careTakerID") {
-            self.pullData(careTakerID: careTakerID, progress: progress)
-        } else {
-            self.generateNewUser(progress: progress)
+    init(idKey:String = "careTakerID", progress: @escaping (ContentsListModelState) -> Void){
+        guard let id = UserDefaults.standard.string(forKey: idKey) else {
+            self.generateNewUser(idKey: idKey, progress: progress)
+            return
         }
+        self.pullData(id: id, progress: progress)
     }
     
-    func generateNewUser(progress: @escaping (ContentsListModelState) -> Void) {
+    func generateNewUser(idKey: String, progress: @escaping (ContentsListModelState) -> Void) {
         progress(.loading)
         DBRef.child("temp").getData(){ error,snap in
             guard let arrayofDicts = snap.value as? [[String:Any]] else {
@@ -41,15 +42,15 @@ class ContentsListModel {
             let id = self.DBRef.child("users").childByAutoId()
             let data = try? FirebaseEncoder().encode(self.contents)
             id.setValue(data)
-            UserDefaults.standard.set(id.key, forKey: "careTakerID")
-            progress(.finish)
+            UserDefaults.standard.set(id.key, forKey: idKey)
             print("----generate----")
+            progress(.finish)
         }
     }
     
-    func pullData(careTakerID: String, progress: @escaping (ContentsListModelState) -> Void) {
+    func pullData(id: String, progress: @escaping (ContentsListModelState) -> Void) {
         progress(.loading)
-        DBRef.child("users/\(careTakerID)").getData(){ error,snap in
+        DBRef.child("users/\(id)").getData(){ error,snap in
             guard let arrayofDicts = snap.value as? [[String:Any]] else {
                 progress(.error)
                 print("----cast error----")
