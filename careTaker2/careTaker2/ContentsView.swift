@@ -9,7 +9,7 @@ class ContentsView {
     let listItemlabel = UILabel()
     let updateButton = UIButton()
     
-    init(width:CGFloat, intervalDay: String, lastDate: String, name: String){
+    init(width:CGFloat, intervalDay: Int, lastDate: String, name: String){
         intervallabel.frame = CGRect(x: 10, y: 10, width: width, height: 30)
         intervallabel.text = "🕗通知周期🔔"
         intervallabel.textColor = .black
@@ -19,7 +19,7 @@ class ContentsView {
         daylabel.frame = CGRect(x: 120, y: 40, width: 100, height: 30)
         daylabel.text = "日"
         dateSettingTextField.frame = CGRect(x: 10, y: 40, width: 100, height: 30)
-        dateSettingTextField.text = intervalDay
+        dateSettingTextField.text = intervalDay.description
         dateSettingTextField.backgroundColor = .black
         lastdatelabel.frame = CGRect(x: 10, y: 100, width: 100, height: 30)
         lastdatelabel.text = lastDate

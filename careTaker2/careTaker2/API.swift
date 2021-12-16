@@ -1,6 +1,8 @@
 import Firebase
 import FirebaseDatabase
-typealias ResultHandler<T> = (Result<T, Error>) -> Void
+import CodableFirebase
+
+
 
 class API {
     

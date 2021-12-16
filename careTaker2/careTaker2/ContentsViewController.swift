@@ -2,7 +2,7 @@ import UIKit
 
 class ContentsViewController: UIViewController {
     
-    var intervalDay:String = "30"
+    var intervalDay:Int = 30
     var lastDate:String = "2021-12-15"
     var name:String = "hair"
 
