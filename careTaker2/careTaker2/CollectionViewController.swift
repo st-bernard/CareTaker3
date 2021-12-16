@@ -2,6 +2,7 @@ import UIKit
 
 class CollectionViewController: UIViewController {
     let arr = [["かみ","ひげ"],["掃除","紙"]]
+    let categories = ["人間","トイレ"]
     var model: ContentsListModel!
     
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ class CollectionViewController: UIViewController {
         // CVCell classを"Cell"という名前でCVに登録
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         // CVHeader classを"Header"という名前でCVのheaderとして登録
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
+        collectionView.register(CollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header")
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -65,11 +66,14 @@ extension CollectionViewController: UICollectionViewDataSource {
     }
     
     // headerの設定
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        // headerを生成
-        let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath)
-        return collectionViewHeader
-    }
+        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            // headerを生成
+            let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
+            let headerText = categories[indexPath.section]
+            // headerのtitleLabelにtextを追加
+            collectionViewHeader.setUpContents(titleText: headerText)
+            return collectionViewHeader
+        }
 }
 
 extension CollectionViewController:  UICollectionViewDelegateFlowLayout {
@@ -87,6 +91,15 @@ extension CollectionViewController:  UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height:50)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as? CollectionViewHeader{
+//            sectionHeader.titleLabel.text = "Section \(indexPath.section)"
+//            return sectionHeader
+//        }
+//        return UICollectionReusableView()
+//    }
 }
 
 
