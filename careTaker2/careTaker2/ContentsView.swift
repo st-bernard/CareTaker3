@@ -8,6 +8,7 @@ class ContentsView {
     let lastdatelabel = UILabel()
     let listItemlabel = UILabel()
     let updateButton = UIButton()
+    let dismissButton = UIButton()
     
     init(width:CGFloat, intervalDay: Int, lastDate: String, name: String){
         intervallabel.frame = CGRect(x: 10, y: 110, width: width, height: 30)
@@ -40,6 +41,11 @@ class ContentsView {
         updateButton.frame = CGRect(x: 50, y: 520, width: 300, height: 50)
         updateButton.setTitle("ヤッタヨ！！", for: .normal)
         updateButton.backgroundColor = .systemBlue
+        
+        dismissButton.frame = CGRect(x: 330, y: 20, width: 40, height: 40)
+        dismissButton.layer.cornerRadius = 20
+        dismissButton.backgroundColor = .blue
+        dismissButton.setTitle("X", for: .normal)
 
     }
 }

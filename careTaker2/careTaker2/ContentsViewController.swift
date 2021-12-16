@@ -2,10 +2,21 @@ import UIKit
 
 class ContentsViewController: UIViewController {
     
-    var intervalDay:Int = 30
-    var lastDate:String = "2021-12-15"
-    var name:String = "hair"
-
+    var intervalDay:Int
+    var lastDate:String
+    var name:String
+    
+    init(content:ContentModel) {
+        self.intervalDay = content.interval
+        self.lastDate = content.lastDate
+        self.name = content.name
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -18,5 +29,6 @@ class ContentsViewController: UIViewController {
         self.view.addSubview(contentsView.intervallabel)
         self.view.addSubview(contentsView.listItemlabel)
         self.view.addSubview(contentsView.updateButton)
+        self.view.addSubview(contentsView.dismissButton)
     }
 }
