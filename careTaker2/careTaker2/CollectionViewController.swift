@@ -1,8 +1,7 @@
 import UIKit
 
 class CollectionViewController: UIViewController {
-
-    let arr = [[1,2,3],[1,2],[1,2,3,4]]
+    let arr = [["かみ","ひげ"],["トイレ","紙"]]
     var model: ContentsListModel!
     
     override func viewDidLoad() {
