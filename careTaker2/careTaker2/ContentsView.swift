@@ -11,15 +11,17 @@ class ContentsView {
     let dismissButton = UIButton()
     
     init(width:CGFloat, intervalDay: Int, lastDate: String, name: String){
-        intervallabel.frame = CGRect(x: 10, y: 110, width: width, height: 30)
+        intervallabel.frame = CGRect(x: 0, y: 110, width: width, height: 30)
         intervallabel.text = "🕗実施する周期"
         intervallabel.font = UIFont.systemFont(ofSize: 50)
         intervallabel.textColor = .black
+        intervallabel.textAlignment = NSTextAlignment.center
         
-        datelabel.frame = CGRect(x: 50, y: 350, width: width, height: 30)
+        datelabel.frame = CGRect(x: 0, y: 350, width: width, height: 30)
         datelabel.text = "🗓実施した日"
         datelabel.font = UIFont.systemFont(ofSize: 50)
         datelabel.textColor = .black
+        datelabel.textAlignment = NSTextAlignment.center
         
         daylabel.frame = CGRect(x: 200, y: 180, width: 100, height: 50)
         daylabel.text = "日"
@@ -30,13 +32,15 @@ class ContentsView {
         dateSettingTextField.font = UIFont.systemFont(ofSize: 50)
         dateSettingTextField.backgroundColor = .systemCyan
         
-        lastdatelabel.frame = CGRect(x: 60, y: 420, width: width, height: 50)
+        lastdatelabel.frame = CGRect(x: 0, y: 420, width: width, height: 50)
         lastdatelabel.text = lastDate
         lastdatelabel.font = UIFont.systemFont(ofSize: 50)
+        lastdatelabel.textAlignment = NSTextAlignment.center
         
         listItemlabel.text = name
-        listItemlabel.frame = CGRect(x: 150, y: 20, width: 100, height: 50)
+        listItemlabel.frame = CGRect(x: 0, y: 20, width: width, height: 50)
         listItemlabel.font = UIFont.systemFont(ofSize: 50)
+        listItemlabel.textAlignment = NSTextAlignment.center
         
         updateButton.frame = CGRect(x: 50, y: 520, width: 300, height: 50)
         updateButton.setTitle("ヤッタヨ！！", for: .normal)

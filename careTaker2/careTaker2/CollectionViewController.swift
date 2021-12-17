@@ -1,9 +1,11 @@
 import UIKit
 
 class CollectionViewController: UIViewController {
-    let arr = [["かみ","ひげ"],["掃除","紙"]]
-    let categories = ["人間","トイレ"]
     var model: ContentsListModel!
+
+    let arr = [["かみ","ひげ"],["掃除","紙"]]
+    let categoryIndex = [[0,1],[2,3]]
+    let categories = ["人間","トイレ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,8 +15,18 @@ class CollectionViewController: UIViewController {
             case .loading:
                 print("----loading----")
             case .finish:
-                print(self?.model.contents)
+                dump(self?.model.contents)
                 print("----finished----")
+//                let modelTemp = self?.model.contents.map{$0.category}
+//                dump(modelTemp)
+//                let modelCategory:Set = Set(modelTemp!)
+//                dump(modelCategory)
+//                let counter = NSCountedSet(array : modelTemp!)
+//                let counts = modelCategory.map { ($0, counter.count(for: $0)) }
+//                print("count:")
+//                dump(counts[0].1)
+//                let modelName = self?.model.contents.map{$0.name}
+//                dump(modelName)
             case .error:
                 print("----error----")
             }
@@ -39,7 +51,7 @@ extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("######タップした時の関数",#function)
-        let contentView = ContentsViewController()
+        let contentView = ContentsViewController(content: self.model.contents[categoryIndex[indexPath.section][indexPath.row]])
         present(contentView, animated: true)
     }
 }
