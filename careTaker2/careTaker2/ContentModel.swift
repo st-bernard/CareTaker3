@@ -8,14 +8,16 @@ class ContentModel: Codable {
     var category: String
     var interval: Int
     var lastDate: String
-    var index: Int
+    var section: Int
+    var row: Int
     
-    init(name:String, category:String, interval:Int, lastDate:String, index:Int){
+    init(name:String, category:String, interval:Int, lastDate:String, section:Int, row:Int){
         self.name = name
         self.category = category
         self.interval = interval
         self.lastDate = lastDate
-        self.index = index
+        self.section = section
+        self.row = row
     }
     
     func updateInterval(withInt: Int, idKey:String = "careTakerID") {
@@ -23,7 +25,7 @@ class ContentModel: Codable {
         self.interval = withInt
         let DBRef = Database.database().reference()
         let data = try? FirebaseEncoder().encode(self)
-        DBRef.child("users/\(id)/\(index)").setValue(data)
+        DBRef.child("users/\(id)/\(section)/\(row)").setValue(data)
     }
     
     func updateLastDate(withText: String, idKey:String = "careTakerID") {
@@ -31,7 +33,7 @@ class ContentModel: Codable {
         self.lastDate = withText
         let DBRef = Database.database().reference()
         let data = try? FirebaseEncoder().encode(self)
-        DBRef.child("users/\(id)/\(index)").setValue(data)
+        DBRef.child("users/\(id)/\(section)/\(row)").setValue(data)
         
     }
     
