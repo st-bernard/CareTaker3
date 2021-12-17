@@ -2,15 +2,9 @@ import UIKit
 
 class ContentsViewController: UIViewController {
     
-//    var intervalDay:Int
-//    var lastDate:String
     var content:ContentModel
-//    var name:String
     
     init(content:ContentModel) {
-//        self.intervalDay = content.interval
-//        self.lastDate = content.lastDate
-//        self.name = content.name
         self.content = content
         super.init(nibName: nil, bundle: nil)
     }
