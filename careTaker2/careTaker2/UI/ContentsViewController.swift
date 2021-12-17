@@ -28,6 +28,7 @@ class ContentsViewController: UIViewController {
         
         contentsView.updateButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
         contentsView.dateSettingTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
+        contentsView.dismissButton.addTarget(self, action: #selector(didTapDismissButton(_:)), for: .touchUpInside)
         self.view.addSubview(contentsView.dateSettingTextField)
         self.view.addSubview(contentsView.lastdatelabel)
         self.view.addSubview(contentsView.daylabel)
@@ -54,5 +55,9 @@ class ContentsViewController: UIViewController {
               let interval = Int(strInterval)
         else { return }
         self.content.updateInterval(withInt: interval)
+    }
+    
+    @objc func didTapDismissButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: {debugPrint("-----dismiss-----")})
     }
 }
