@@ -3,7 +3,6 @@ import Firebase
 import FirebaseDatabase
 import CodableFirebase
 
-
 enum ContentsListModelState {
     case loading
     case finish
@@ -54,6 +53,7 @@ class ContentsListModel {
     }
     
     func pullData(id: String, progress: @escaping (ContentsListModelState) -> Void) {
+        print(id)
         progress(.loading)
         DBRef.child("users/\(id)").getData(){ error,snap in
             guard let arrayOfArray = snap.value as? [[[String:Any]]] else {
