@@ -7,13 +7,11 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width * 3, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
-        print("----\(#function)----")
         model = ContentsListModel{ [weak self] state in
             switch state {
             case .loading:
                 print("----loading----")
             case .finish:
-                dump(self?.model.contents)
                 print("----finished----")
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
@@ -40,7 +38,6 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("######タップした時の関数",#function)
         let contentView = ContentsViewController(content: model.contents[indexPath.section][indexPath.row])
         present(contentView, animated: true)
     }

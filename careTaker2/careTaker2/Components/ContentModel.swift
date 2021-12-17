@@ -1,4 +1,3 @@
-import UIKit
 import Firebase
 import FirebaseDatabase
 import CodableFirebase
@@ -10,15 +9,6 @@ class ContentModel: Codable {
     var lastDate: String
     var section: Int
     var row: Int
-    
-    init(name:String, category:String, interval:Int, lastDate:String, section:Int, row:Int){
-        self.name = name
-        self.category = category
-        self.interval = interval
-        self.lastDate = lastDate
-        self.section = section
-        self.row = row
-    }
     
     func updateInterval(withInt: Int, idKey:String = "careTakerID") {
         let id = UserDefaults.standard.string(forKey: idKey)!

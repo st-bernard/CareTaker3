@@ -3,7 +3,6 @@ import Firebase
 import FirebaseDatabase
 import CodableFirebase
 
-
 enum ContentsListModelState {
     case loading
     case finish
@@ -17,7 +16,7 @@ class ContentsListModel {
     let DBRef = Database.database().reference()
     
     init(idKey:String = "careTakerID", progress: @escaping (ContentsListModelState) -> Void){
-        UserDefaults.standard.removeObject(forKey: "careTakerID")
+//        UserDefaults.standard.removeObject(forKey: "careTakerID")
         guard let id = UserDefaults.standard.string(forKey: idKey) else {
             self.generateNewUser(idKey: idKey, progress: progress)
             return
@@ -54,6 +53,7 @@ class ContentsListModel {
     }
     
     func pullData(id: String, progress: @escaping (ContentsListModelState) -> Void) {
+        print(id)
         progress(.loading)
         DBRef.child("users/\(id)").getData(){ error,snap in
             guard let arrayOfArray = snap.value as? [[[String:Any]]] else {

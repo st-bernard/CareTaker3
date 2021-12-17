@@ -23,8 +23,8 @@ class careTaker2Tests: XCTestCase {
            case .loading:
                print("----loading----")
            case .finish:
-               XCTAssertEqual(self?.model.contents[0].name, "hair", "デフォルト値で生成される")
-               XCTAssertEqual(self?.model.contents[0].lastDate, "2021-12-01", "デフォルト値で生成される")
+               XCTAssertEqual(self?.model.contents[0][0].name, "hair", "デフォルト値で生成される")
+               XCTAssertEqual(self?.model.contents[0][0].lastDate, "2021年12月01日", "デフォルト値で生成される")
                self?.id = UserDefaults.standard.string(forKey: "testID")
                print("####setup####")
                expectation?.fulfill()
@@ -52,13 +52,13 @@ class careTaker2Tests: XCTestCase {
         }
 
         let expectation: XCTestExpectation? = self.expectation(description: "sample")
-        self.DBRef.child("users/\(id)/0/lastDate").setValue("2021-12-30")
+        self.DBRef.child("users/\(id)/0/0/lastDate").setValue("2021年12月30日")
         model = ContentsListModel(idKey: "testID"){ [weak self] state in
            switch state {
            case .loading:
                print("----loading----")
            case .finish:
-               XCTAssertEqual(self?.model.contents[0].lastDate, "2021-12-30", "変更が反映される")
+               XCTAssertEqual(self?.model.contents[0][0].lastDate, "2021年12月30日", "変更が反映される")
                expectation?.fulfill()
            case .error:
                XCTFail("test失敗")
@@ -74,10 +74,10 @@ class careTaker2Tests: XCTestCase {
             XCTFail("UseDefaultsにIDがなかったら失敗")
             return
         }
-        model.contents[0].updateInterval(withInt: 100, index: 0, idKey:"testID")
-        let interval = model.contents[0].interval
+        model.contents[0][0].updateInterval(withInt: 100, idKey:"testID")
+        let interval = model.contents[0][0].interval
         XCTAssertEqual(interval, 100, "変更が反映されている")
-        self.DBRef.child("users/\(id)/0/interval").getData(completion: { error, data in
+        self.DBRef.child("users/\(id)/0/0/interval").getData(completion: { error, data in
             XCTAssertEqual(data.value as? Int, 100, "変更が反映されている")
             expectation?.fulfill()
         })
@@ -90,11 +90,11 @@ class careTaker2Tests: XCTestCase {
             XCTFail("UseDefaultsにIDがなかったら失敗")
             return
         }
-        model.contents[0].updateLastDate(withText: "2021-11-30", index: 0, idKey: "testID")
-        let lastDate = model.contents[0].lastDate
-        XCTAssertEqual(lastDate, "2021-11-30", "変更が反映されている")
-        self.DBRef.child("users/\(id)/0/lastDate").getData(completion: { error, data in
-            XCTAssertEqual(data.value as? String, "2021-11-30", "変更が反映されている")
+        model.contents[0][0].updateLastDate(withText: "2021年11月30日", idKey: "testID")
+        let lastDate = model.contents[0][0].lastDate
+        XCTAssertEqual(lastDate, "2021年11月30日", "変更が反映されている")
+        self.DBRef.child("users/\(id)/0/0/lastDate").getData(completion: { error, data in
+            XCTAssertEqual(data.value as? String, "2021年11月30日", "変更が反映されている")
             expectation?.fulfill()
         })
         self.waitForExpectations(timeout: 0.5, handler: nil)
