@@ -13,7 +13,7 @@ enum ContentsListModelState {
 typealias ResultHandler<T> = (Result<T, Error>) -> Void
 
 class ContentsListModel {
-    var contents = [ContentModel]()
+    var contents = [[ContentModel]]()
     let DBRef = Database.database().reference()
     
     init(idKey:String = "careTakerID", progress: @escaping (ContentsListModelState) -> Void){
@@ -28,17 +28,21 @@ class ContentsListModel {
     func generateNewUser(idKey: String, progress: @escaping (ContentsListModelState) -> Void) {
         progress(.loading)
         DBRef.child("temp").getData(){ error,snap in
-            guard let arrayofDicts = snap.value as? [[String:Any]] else {
+            guard let arrayOfArray = snap.value as? [[[String:Any]]] else {
                 progress(.error)
                 return
             }
-            arrayofDicts.forEach {dict in
-                guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
-                    progress(.error)
-                    print("-----Decode error-----")
-                    return
+            arrayOfArray.forEach {arrOfDict in
+                var rowArray = [ContentModel]()
+                arrOfDict.forEach {dict in
+                    guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
+                        progress(.error)
+                        print("-----Decode error-----")
+                        return
+                    }
+                    rowArray.append(content)
                 }
-                self.contents.append(content)
+                self.contents.append(rowArray)
             }
             let id = self.DBRef.child("users").childByAutoId()
             let data = try? FirebaseEncoder().encode(self.contents)
@@ -52,18 +56,22 @@ class ContentsListModel {
     func pullData(id: String, progress: @escaping (ContentsListModelState) -> Void) {
         progress(.loading)
         DBRef.child("users/\(id)").getData(){ error,snap in
-            guard let arrayofDicts = snap.value as? [[String:Any]] else {
+            guard let arrayOfArray = snap.value as? [[[String:Any]]] else {
                 progress(.error)
                 print("----cast error----")
                 return
             }
-            arrayofDicts.forEach {dict in
-                guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
-                    progress(.error)
-                    print("-----Decode error-----")
-                    return
+            arrayOfArray.forEach {arrOfDict in
+                var rowArray = [ContentModel]()
+                arrOfDict.forEach {dict in
+                    guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
+                        progress(.error)
+                        print("-----Decode error-----")
+                        return
+                    }
+                    rowArray.append(content)
                 }
-                self.contents.append(content)
+                self.contents.append(rowArray)
             }
             progress(.finish)
             print("----pullData----")
