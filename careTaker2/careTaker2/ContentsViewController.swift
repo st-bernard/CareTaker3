@@ -2,14 +2,16 @@ import UIKit
 
 class ContentsViewController: UIViewController {
     
-    var intervalDay:Int
-    var lastDate:String
-    var name:String
+//    var intervalDay:Int
+//    var lastDate:String
+    var content:ContentModel
+//    var name:String
     
     init(content:ContentModel) {
-        self.intervalDay = content.interval
-        self.lastDate = content.lastDate
-        self.name = content.name
+//        self.intervalDay = content.interval
+//        self.lastDate = content.lastDate
+//        self.name = content.name
+        self.content = content
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -19,9 +21,19 @@ class ContentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let subviews = self.view.subviews
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
         view.backgroundColor = .white
-        let contentsView = ContentsView(width: view.frame.width, intervalDay: intervalDay, lastDate: lastDate, name: name)
+        let contentsView = ContentsView(
+            width: view.frame.width,
+            intervalDay: content.interval,
+            lastDate: content.lastDate,
+            name: content.name)
         
+        contentsView.updateButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
+        contentsView.dateSettingTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
         self.view.addSubview(contentsView.dateSettingTextField)
         self.view.addSubview(contentsView.lastdatelabel)
         self.view.addSubview(contentsView.daylabel)
@@ -30,5 +42,23 @@ class ContentsViewController: UIViewController {
         self.view.addSubview(contentsView.listItemlabel)
         self.view.addSubview(contentsView.updateButton)
         self.view.addSubview(contentsView.dismissButton)
+    }
+    
+    @objc func didTapYattayo(_ sender: UIButton) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+        let today = formatter.string(from: Date())
+        self.content.updateLastDate(withText: today)
+//        print(self.view.subviews)
+//        guard let lastDateLabel = self.view.subviews[1] as? UILabel else { return }
+//        lastDateLabel.text = today
+        viewDidLoad()
+    }
+    
+    @objc func textFieldDidChange(_ sender: UITextField) {
+        guard let strInterval = sender.text,
+              let interval = Int(strInterval)
+        else { return }
+        self.content.updateInterval(withInt: interval)
     }
 }

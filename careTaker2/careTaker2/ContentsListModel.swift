@@ -17,6 +17,7 @@ class ContentsListModel {
     let DBRef = Database.database().reference()
     
     init(idKey:String = "careTakerID", progress: @escaping (ContentsListModelState) -> Void){
+        UserDefaults.standard.removeObject(forKey: "careTakerID")
         guard let id = UserDefaults.standard.string(forKey: idKey) else {
             self.generateNewUser(idKey: idKey, progress: progress)
             return
