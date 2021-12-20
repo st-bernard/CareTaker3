@@ -35,7 +35,6 @@ class ContentsViewController: UIViewController {
         createPickerView()
         
         contentsView.updateButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
-//        contentsView.dateSettingTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingDidEnd)
         contentsView.dismissButton.addTarget(self, action: #selector(didTapDismissButton(_:)), for: .touchUpInside)
         self.view.addSubview(contentsView.dateSettingTextField)
         self.view.addSubview(contentsView.lastdatelabel)
@@ -65,14 +64,6 @@ class ContentsViewController: UIViewController {
         self.content.updateLastDate(withText: today)
         viewDidLoad()
     }
-    
-//    @objc func textFieldDidChange(_ sender: UITextField) {
-//        print("----textField did chaged----")
-//        guard let strInterval = sender.text,
-//              let interval = Int(strInterval)
-//        else { return }
-//        self.content.updateInterval(withInt: interval)
-//    }
     
     @objc func didTapDoneButton() {
         print("----donebutton----")
