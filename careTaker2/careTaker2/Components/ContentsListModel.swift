@@ -21,7 +21,7 @@ class ContentsListModel {
     }
     
     func configuration(progress: @escaping (ContentsListModelState) -> Void) {
-        //UserDefaults.standard.removeObject(forKey: "careTakerID")
+//        UserDefaults.standard.removeObject(forKey: "careTakerID")
         guard let id = UserDefaults.standard.string(forKey: idKey) else {
             self.generateNewUser(idKey: idKey, progress: progress)
             return

@@ -7,6 +7,7 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "項目確認リスト"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditButton(_:)))
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width * 3, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
         model = ContentsListModel()
         model.configuration(){ [weak self] state in
@@ -33,6 +34,11 @@ class CollectionViewController: UIViewController {
         collectionView.dataSource = self
         
         view.addSubview(collectionView)
+    }
+    
+    @objc func didTapEditButton(_ sender: UIBarButtonItem) {
+        let navVC = UINavigationController(rootViewController: SettingViewController(contentsList: model.contents))
+        present(navVC, animated: true)
     }
 }
 
