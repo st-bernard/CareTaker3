@@ -6,6 +6,7 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "項目確認リスト"
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width * 3, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
         model = ContentsListModel{ [weak self] state in
             switch state {
@@ -39,7 +40,8 @@ extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let contentView = ContentsViewController(content: model.contents[indexPath.section][indexPath.row])
-        present(contentView, animated: true)
+        let navVC = UINavigationController(rootViewController: contentView)
+        present(navVC, animated: true)
     }
 }
   
