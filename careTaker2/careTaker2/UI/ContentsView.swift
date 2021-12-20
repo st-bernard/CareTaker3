@@ -48,8 +48,10 @@ class ContentsView {
         
         dismissButton.frame = CGRect(x: 330, y: 20, width: 40, height: 40)
         dismissButton.layer.cornerRadius = 20
-        dismissButton.backgroundColor = .blue
-        dismissButton.setTitle("X", for: .normal)
+//        dismissButton.backgroundColor = .blue
+//        dismissButton.setTitle("X", for: .normal)
+        let dismissImage = UIImage(named: "circle-x-7")
+        dismissButton.setImage(dismissImage, for: .normal)
 
     }
 }
