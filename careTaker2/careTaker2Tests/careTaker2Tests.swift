@@ -18,7 +18,8 @@ class careTaker2Tests: XCTestCase {
     
     override func setUp() {
         let expectation: XCTestExpectation? = self.expectation(description: "sample")
-        model = ContentsListModel(idKey: "testID"){ [weak self] state in
+        model = ContentsListModel(idKey: "testID")
+        model.configuration() { [weak self] state in
            switch state {
            case .loading:
                print("----loading----")
@@ -37,8 +38,12 @@ class careTaker2Tests: XCTestCase {
     }
     
     override func tearDown() {
+        guard let id = self.id else {
+            XCTFail("UseDefaultsにIDがなかったら失敗")
+            return
+        }
         //DBに保存されたデータを消す
-        
+        self.DBRef.child("users/\(id)").removeValue()
         //UserDefaultsのIDを消す
         UserDefaults.standard.removeObject(forKey: "testID")
     }
@@ -53,7 +58,8 @@ class careTaker2Tests: XCTestCase {
 
         let expectation: XCTestExpectation? = self.expectation(description: "sample")
         self.DBRef.child("users/\(id)/0/0/lastDate").setValue("2021年12月30日")
-        model = ContentsListModel(idKey: "testID"){ [weak self] state in
+        model = ContentsListModel(idKey: "testID")
+        model.configuration() { [weak self] state in
            switch state {
            case .loading:
                print("----loading----")
@@ -74,9 +80,8 @@ class careTaker2Tests: XCTestCase {
             XCTFail("UseDefaultsにIDがなかったら失敗")
             return
         }
-        model.contents[0][0].updateInterval(withInt: 100, idKey:"testID")
-        let interval = model.contents[0][0].interval
-        XCTAssertEqual(interval, 100, "変更が反映されている")
+        let updateFirebase = UpdateFirebase(section: 0, row: 0)
+        updateFirebase.updateInterval(withInt: 100, idKey:"testID")
         self.DBRef.child("users/\(id)/0/0/interval").getData(completion: { error, data in
             XCTAssertEqual(data.value as? Int, 100, "変更が反映されている")
             expectation?.fulfill()
@@ -90,9 +95,8 @@ class careTaker2Tests: XCTestCase {
             XCTFail("UseDefaultsにIDがなかったら失敗")
             return
         }
-        model.contents[0][0].updateLastDate(withText: "2021年11月30日", idKey: "testID")
-        let lastDate = model.contents[0][0].lastDate
-        XCTAssertEqual(lastDate, "2021年11月30日", "変更が反映されている")
+        let updateFirebase = UpdateFirebase(section: 0, row: 0)
+        updateFirebase.updateLastDate(withText: "2021年11月30日", idKey: "testID")
         self.DBRef.child("users/\(id)/0/0/lastDate").getData(completion: { error, data in
             XCTAssertEqual(data.value as? String, "2021年11月30日", "変更が反映されている")
             expectation?.fulfill()

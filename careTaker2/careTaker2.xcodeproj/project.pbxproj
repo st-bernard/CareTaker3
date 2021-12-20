@@ -25,6 +25,7 @@
 		B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsView.swift */; };
 		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
 		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
+		B68A371E27701586002D9E20 /* UpdateFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371D27701585002D9E20 /* UpdateFirebase.swift */; };
 		FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32152A276B258F00697694 /* CollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B60B187A2769CA1100D681A1 /* ContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsView.swift; sourceTree = "<group>"; };
 		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
 		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		B68A371D27701585002D9E20 /* UpdateFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebase.swift; sourceTree = "<group>"; };
 		FE32152A276B258F00697694 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 			children = (
 				B60B187C2769CA3000D681A1 /* ContentsListModel.swift */,
 				B60B187E2769CA3D00D681A1 /* ContentModel.swift */,
+				B68A371D27701585002D9E20 /* UpdateFirebase.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */,
 				B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */,
 				B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */,
+				B68A371E27701586002D9E20 /* UpdateFirebase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
