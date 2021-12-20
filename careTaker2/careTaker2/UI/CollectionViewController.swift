@@ -83,7 +83,7 @@ extension CollectionViewController: UICollectionViewDataSource {
         //nowdate - lastdate
         guard let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCalc, to: now).day else {return 0}
         print("elapsed:",elapsedDays)
-        //interval(Float))
+        //interval(Float)
         let convertInterval:Float = Float(interval)
         let convertElapsed:Float = Float(elapsedDays)
         let rateDate = convertElapsed / (convertInterval)
