@@ -8,7 +8,8 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         title = "項目確認リスト"
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width * 3, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
-        model = ContentsListModel{ [weak self] state in
+        model = ContentsListModel()
+        model.configuration(){ [weak self] state in
             switch state {
             case .loading:
                 print("----loading----")
@@ -76,11 +77,11 @@ extension CollectionViewController: UICollectionViewDataSource {
         let now = Date()
         print("nowdate:",now)
         //lastdate
-        let lastDateCirculate = DateUtils.dateFromString(string: lastDate+" 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-        print("lastdate:",lastDateCirculate)
+        let lastDateCalc = DateUtils.dateFromString(string: lastDate+" 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
+        print("lastdate:",lastDateCalc)
         print("interval:",interval)
         //nowdate - lastdate
-        guard let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCirculate, to: now).day else {return 0}
+        guard let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCalc, to: now).day else {return 0}
         print("elapsed:",elapsedDays)
         //interval(Float)
         let convertInterval:Float = Float(interval)

@@ -166,6 +166,7 @@
 				B60B187C2769CA3000D681A1 /* ContentsListModel.swift */,
 				B60B187E2769CA3D00D681A1 /* ContentModel.swift */,
 				B68A371D27701585002D9E20 /* UpdateFirebase.swift */,
+				FE3FE27F27701616006EA2F0 /* DateUtils.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -178,7 +179,6 @@
 				FE32152A276B258F00697694 /* CollectionViewHeader.swift */,
 				B60B187A2769CA1100D681A1 /* ContentsView.swift */,
 				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
-				FE3FE27F27701616006EA2F0 /* DateUtils.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
