@@ -14,9 +14,14 @@ typealias ResultHandler<T> = (Result<T, Error>) -> Void
 class ContentsListModel {
     var contents = [[ContentModel]]()
     let DBRef = Database.database().reference()
+    var idKey: String
     
-    init(idKey:String = "careTakerID", progress: @escaping (ContentsListModelState) -> Void){
-//        UserDefaults.standard.removeObject(forKey: "careTakerID")
+    init(idKey:String = "careTakerID") {
+        self.idKey = idKey
+    }
+    
+    func configuration(progress: @escaping (ContentsListModelState) -> Void) {
+        //UserDefaults.standard.removeObject(forKey: "careTakerID")
         guard let id = UserDefaults.standard.string(forKey: idKey) else {
             self.generateNewUser(idKey: idKey, progress: progress)
             return
