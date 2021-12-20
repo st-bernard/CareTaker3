@@ -64,34 +64,10 @@ extension CollectionViewController: UICollectionViewDataSource {
         // cellを生成
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         cell.titleLabel.text = model.contents[indexPath.section][indexPath.row].name
-        cell.layer.cornerRadius = 10
-        //cell.backgroundColor = .white
-        let RGBV = CGFloat(intervalRateData(lastDate: model.contents[indexPath.section][indexPath.row].lastDate, interval:model.contents[indexPath.section][indexPath.row].interval))
-        cell.backgroundColor = UIColor(red: 255/255, green: RGBV/255, blue: RGBV/255, alpha: 1.0)
+        cell.backgroundColor = .white
         return cell
     }
     
-    private func intervalRateData(lastDate: String, interval: Int) -> Int{
-        //Now date
-        let now = Date()
-        print("nowdate:",now)
-        //lastdate
-        let lastDateCirculate = DateUtils.dateFromString(string: lastDate+" 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-        print("lastdate:",lastDateCirculate)
-        print("interval:",interval)
-        //nowdate - lastdate
-        guard let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCirculate, to: now).day else {return 0}
-        print("elapsed:",elapsedDays)
-        //interval(Float)
-        let convertInterval:Float = Float(interval)
-        let convertElapsed:Float = Float(elapsedDays)
-        let rateDate = convertElapsed / (convertInterval)
-        print("rate:",rateDate)
-
-        let RGBValue:Int = Int(255 * (1 - rateDate))
-        print(RGBValue)
-        return RGBValue
-    }
     // headerの設定
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             // headerを生成
@@ -111,7 +87,7 @@ extension CollectionViewController:  UICollectionViewDelegateFlowLayout {
     
     // cellの余白
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     // headerのサイズ
