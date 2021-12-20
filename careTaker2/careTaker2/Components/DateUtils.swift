@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 class DateUtils {
     class func dateFromString(string: String, format: String) -> Date {
