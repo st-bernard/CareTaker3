@@ -20,6 +20,14 @@ class ContentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = content.name
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "xmark.circle.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapDismissButton(_:))
+        )
+        navigationItem.rightBarButtonItem?.tintColor = .systemGray
         let subviews = self.view.subviews
         for subview in subviews {
             subview.removeFromSuperview()
@@ -35,15 +43,12 @@ class ContentsViewController: UIViewController {
         createPickerView()
         
         contentsView.updateButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
-        contentsView.dismissButton.addTarget(self, action: #selector(didTapDismissButton(_:)), for: .touchUpInside)
         self.view.addSubview(contentsView.dateSettingTextField)
         self.view.addSubview(contentsView.lastdatelabel)
         self.view.addSubview(contentsView.daylabel)
         self.view.addSubview(contentsView.datelabel)
         self.view.addSubview(contentsView.intervallabel)
-        self.view.addSubview(contentsView.listItemlabel)
         self.view.addSubview(contentsView.updateButton)
-        self.view.addSubview(contentsView.dismissButton)
     }
     
     func createPickerView() {

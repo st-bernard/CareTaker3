@@ -37,21 +37,11 @@ class ContentsView {
         lastdatelabel.font = UIFont.systemFont(ofSize: 50)
         lastdatelabel.textAlignment = NSTextAlignment.center
         
-        listItemlabel.text = name
-        listItemlabel.frame = CGRect(x: 0, y: 20, width: width, height: 50)
-        listItemlabel.font = UIFont.systemFont(ofSize: 50)
-        listItemlabel.textAlignment = NSTextAlignment.center
-        
         updateButton.frame = CGRect(x: 50, y: 520, width: 300, height: 50)
         updateButton.setTitle("ヤッタヨ！！", for: .normal)
         updateButton.backgroundColor = .systemBlue
         
         dismissButton.frame = CGRect(x: 330, y: 20, width: 40, height: 40)
         dismissButton.layer.cornerRadius = 20
-//        dismissButton.backgroundColor = .blue
-//        dismissButton.setTitle("X", for: .normal)
-        let dismissImage = UIImage(named: "circle-x-7")
-        dismissButton.setImage(dismissImage, for: .normal)
-
     }
 }
