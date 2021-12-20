@@ -1,5 +1,9 @@
 import UIKit
 
+protocol ReceiverDelegate{
+    func reloadTest()
+}
+
 class ContentsViewController: UIViewController {
     var content:ContentModel
     var pickerItems = [String]()
@@ -7,7 +11,10 @@ class ContentsViewController: UIViewController {
     var contentsView: ContentsView!
     var updateFirebase: UpdateFirebase
     
-    init(content:ContentModel) {
+    var delegate : ReceiverDelegate
+    
+    init(content:ContentModel,delegate:ReceiverDelegate) {
+        self.delegate = delegate
         self.content = content
         self.updateFirebase = UpdateFirebase(section: content.section, row: content.row)
         for i in 1...100 {
@@ -84,6 +91,7 @@ class ContentsViewController: UIViewController {
     }
     
     @objc func didTapDismissButton(_ sender: UIButton) {
+        delegate.reloadTest()
         dismiss(animated: true, completion: {debugPrint("-----dismiss-----")})
     }
 }

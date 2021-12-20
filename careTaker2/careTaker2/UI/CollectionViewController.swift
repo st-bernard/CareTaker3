@@ -4,6 +4,8 @@ class CollectionViewController: UIViewController {
     var model: ContentsListModel!
     var collectionView: UICollectionView!
     
+    var receiver : ContentsViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "項目確認リスト"
@@ -35,7 +37,7 @@ class CollectionViewController: UIViewController {
         
         view.addSubview(collectionView)
     }
-    
+
     @objc func didTapEditButton(_ sender: UIBarButtonItem) {
         let navVC = UINavigationController(rootViewController: SettingViewController(contentsList: model.contents))
         present(navVC, animated: true)
@@ -46,9 +48,18 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let contentView = ContentsViewController(content: model.contents[indexPath.section][indexPath.row])
+        let contentView = ContentsViewController(
+            content: model.contents[indexPath.section][indexPath.row],
+            delegate: self
+        )
         let navVC = UINavigationController(rootViewController: contentView)
         present(navVC, animated: true)
+    }
+}
+
+extension CollectionViewController: ReceiverDelegate{
+    func reloadTest(){
+        self.viewDidLoad()
     }
 }
   
@@ -72,7 +83,6 @@ extension CollectionViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         cell.titleLabel.text = model.contents[indexPath.section][indexPath.row].name
         cell.layer.cornerRadius = 10
-        //cell.backgroundColor = .white
         let RGBV = CGFloat(intervalRateData(lastDate: model.contents[indexPath.section][indexPath.row].lastDate, interval:model.contents[indexPath.section][indexPath.row].interval))
         cell.backgroundColor = UIColor(red: 255/255, green: RGBV/255, blue: RGBV/255, alpha: 1.0)
         return cell
@@ -81,20 +91,14 @@ extension CollectionViewController: UICollectionViewDataSource {
     private func intervalRateData(lastDate: String, interval: Int) -> Int{
         //Now date
         let now = Date()
-        print("nowdate:",now)
         //lastdate
         let lastDateCalc = DateUtils.dateFromString(string: lastDate+" 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-        print("lastdate:",lastDateCalc)
-        print("interval:",interval)
         //nowdate - lastdate
         guard let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCalc, to: now).day else {return 0}
-        print("elapsed:",elapsedDays)
         //interval(Float)
         let convertInterval:Float = Float(interval)
         let convertElapsed:Float = Float(elapsedDays)
         let rateDate = convertElapsed / (convertInterval)
-        print("rate:",rateDate)
-
         let RGBValue:Int = Int(255 * (1 - rateDate))
         print(RGBValue)
         return RGBValue
