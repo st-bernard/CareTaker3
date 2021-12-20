@@ -20,8 +20,9 @@ class CollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.systemGray.cgColor
-        view.layer.borderWidth = 1
+        view.layer.borderWidth = 5
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
     }()
     
@@ -33,7 +34,6 @@ class CollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
 }
 
 // MARK: - UI Setup
@@ -43,10 +43,10 @@ extension CollectionViewCell {
         roundedBackgroundView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            roundedBackgroundView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5),
-            roundedBackgroundView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5),
-            roundedBackgroundView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 5),
-            roundedBackgroundView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -5),
+            roundedBackgroundView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0),
+            roundedBackgroundView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
+            roundedBackgroundView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0),
+            roundedBackgroundView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 0),
             titleLabel.centerXAnchor.constraint(equalTo: roundedBackgroundView.centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: roundedBackgroundView.centerYAnchor)
         ])
