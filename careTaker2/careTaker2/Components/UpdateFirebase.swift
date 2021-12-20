@@ -24,4 +24,10 @@ class UpdateFirebase {
         
     }
     
+    func updateIsActive(isActive: Bool, idKey:String = "careTakerID") {
+        let id = UserDefaults.standard.string(forKey: idKey)!
+        let DBRef = Database.database().reference()
+        DBRef.child("users/\(id)/\(section)/\(row)/isActive").setValue(isActive)
+    }
+    
 }

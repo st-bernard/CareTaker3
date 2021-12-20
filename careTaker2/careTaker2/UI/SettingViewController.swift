@@ -19,16 +19,16 @@ class SettingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "表示設定"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(didTapSaveButton(_:)))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapCancelButton(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "xmark.circle.fill"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapDoneButton(_:)))
+        navigationItem.rightBarButtonItem?.tintColor = .systemGray
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "tableCell")
     }
     
-    @objc func didTapSaveButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
-    }
-    
-    @objc func didTapCancelButton(_ sender: UIBarButtonItem) {
+    @objc func didTapDoneButton(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     
@@ -42,6 +42,7 @@ extension SettingViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         cell.textLabel?.text = categoryNames[indexPath.row]
+        cell.accessoryType = .disclosureIndicator
         
         return cell
     }

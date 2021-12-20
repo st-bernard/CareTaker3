@@ -31,7 +31,24 @@ extension DetailSettingViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailTableCell", for: indexPath)
         cell.textLabel?.text = contentNames[indexPath.row]
-        
+        if contents[indexPath.row].isActive == true {
+            cell.accessoryType = .checkmark
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        let content = contents[indexPath.row]
+        let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+        if cell?.accessoryType == .checkmark {
+            cell?.accessoryType = .none
+            updateFirebase.updateIsActive(isActive: false)
+            content.isActive = false
+        } else {
+            cell?.accessoryType = .checkmark
+            updateFirebase.updateIsActive(isActive: true)
+            content.isActive = true
+        }
     }
 }
