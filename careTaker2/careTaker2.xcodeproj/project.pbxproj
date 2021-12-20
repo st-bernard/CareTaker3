@@ -19,7 +19,6 @@
 		B60B186C2769C6CB00D681A1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186B2769C6CB00D681A1 /* FirebaseDatabase */; };
 		B60B186E2769C6CB00D681A1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186D2769C6CB00D681A1 /* FirebaseMessaging */; };
 		B60B18712769C6FA00D681A1 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = B60B18702769C6FA00D681A1 /* CodableFirebase */; };
-		B60B18752769C79600D681A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B60B18742769C79600D681A1 /* GoogleService-Info.plist */; };
 		B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18762769C9F000D681A1 /* ContentsViewController.swift */; };
 		B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18782769CA0400D681A1 /* CollectionViewCell.swift */; };
 		B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsView.swift */; };
@@ -62,7 +61,6 @@
 		B60B18552769C67600D681A1 /* careTaker2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = careTaker2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60B18592769C67600D681A1 /* careTaker2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITests.swift; sourceTree = "<group>"; };
 		B60B185B2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B60B18742769C79600D681A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B60B18762769C9F000D681A1 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 		B60B18782769CA0400D681A1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B60B187A2769CA1100D681A1 /* ContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsView.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
-				B60B18742769C79600D681A1 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
-				B60B18752769C79600D681A1 /* GoogleService-Info.plist in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

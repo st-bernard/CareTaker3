@@ -1,5 +1,5 @@
 
-struct ContentModel: Codable {
+class ContentModel: Codable {
     var name: String
     var category: String
     var interval: Int
