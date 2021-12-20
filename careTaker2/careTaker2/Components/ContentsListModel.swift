@@ -76,5 +76,5 @@ class ContentsListModel {
             progress(.finish)
             print("----pullData----")
         }
-    }
+    }    
 }

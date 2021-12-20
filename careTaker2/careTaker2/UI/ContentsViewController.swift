@@ -5,9 +5,11 @@ class ContentsViewController: UIViewController {
     var pickerItems = [String]()
     var pickerView = UIPickerView()
     var contentsView: ContentsView!
+    var updateFirebase: UpdateFirebase
     
     init(content:ContentModel) {
         self.content = content
+        self.updateFirebase = UpdateFirebase(section: content.section, row: content.row)
         for i in 1...100 {
             self.pickerItems.append(String(i))
         }
@@ -66,7 +68,8 @@ class ContentsViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         let today = formatter.string(from: Date())
-        self.content.updateLastDate(withText: today)
+        self.updateFirebase.updateLastDate(withText: today)
+        self.content.lastDate = today
         viewDidLoad()
     }
     
@@ -76,7 +79,8 @@ class ContentsViewController: UIViewController {
         guard let strInterval = contentsView.dateSettingTextField.text,
               let interval = Int(strInterval)
         else { return }
-        self.content.updateInterval(withInt: interval)
+        self.updateFirebase.updateInterval(withInt: interval)
+        self.content.interval = interval
     }
     
     @objc func didTapDismissButton(_ sender: UIButton) {
