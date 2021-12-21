@@ -7,7 +7,7 @@ class ContentsView {
     let dateSettingTextField = UITextField()
     let lastdatelabel = UILabel()
     let listItemlabel = UILabel()
-    let updateButton = UIButton()
+    let yattayoButton = YattayoButton()
     let dismissButton = UIButton()
     
     init(width:CGFloat, intervalDay: Int, lastDate: String, name: String){
@@ -37,9 +37,8 @@ class ContentsView {
         lastdatelabel.font = UIFont.systemFont(ofSize: 50)
         lastdatelabel.textAlignment = NSTextAlignment.center
         
-        updateButton.frame = CGRect(x: 50, y: 520, width: 300, height: 50)
-        updateButton.setTitle("ヤッタヨ！！", for: .normal)
-        updateButton.backgroundColor = .systemBlue
+        yattayoButton.frame = CGRect(x: 50, y: 520, width: 300, height: 50)
+        yattayoButton.setTitle("ヤッタヨ！！", for: .normal)
         
         dismissButton.frame = CGRect(x: 330, y: 20, width: 40, height: 40)
         dismissButton.layer.cornerRadius = 20

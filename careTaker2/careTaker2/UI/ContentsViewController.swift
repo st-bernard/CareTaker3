@@ -51,13 +51,13 @@ class ContentsViewController: UIViewController {
         
         createPickerView()
         
-        contentsView.updateButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
+        contentsView.yattayoButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
         self.view.addSubview(contentsView.dateSettingTextField)
         self.view.addSubview(contentsView.lastdatelabel)
         self.view.addSubview(contentsView.daylabel)
         self.view.addSubview(contentsView.datelabel)
         self.view.addSubview(contentsView.intervallabel)
-        self.view.addSubview(contentsView.updateButton)
+        self.view.addSubview(contentsView.yattayoButton)
     }
     
     func createPickerView() {
@@ -71,13 +71,15 @@ class ContentsViewController: UIViewController {
         contentsView.dateSettingTextField.inputAccessoryView = toolbar
     }
     
-    @objc func didTapYattayo(_ sender: UIButton) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
-        let today = formatter.string(from: Date())
-        self.updateFirebase.updateLastDate(withText: today)
-        self.content.lastDate = today
-        viewDidLoad()
+    @objc func didTapYattayo(_ sender: YattayoButton) {
+        sender.animateView(){[weak self] in
+            let formatter = DateFormatter()
+            formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
+            let today = formatter.string(from: Date())
+            self?.updateFirebase.updateLastDate(withText: today)
+            self?.content.lastDate = today
+            self?.viewDidLoad()
+        }
     }
     
     @objc func didTapDoneButton() {
