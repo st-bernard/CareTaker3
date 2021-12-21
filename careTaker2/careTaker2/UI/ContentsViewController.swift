@@ -1,7 +1,7 @@
 import UIKit
 
 protocol ReceiverDelegate{
-    func reloadTest()
+    func reloadView()
 }
 
 class ContentsViewController: UIViewController {
@@ -91,8 +91,8 @@ class ContentsViewController: UIViewController {
     }
     
     @objc func didTapDismissButton(_ sender: UIButton) {
-        delegate.reloadTest()
-        dismiss(animated: true, completion: {debugPrint("-----dismiss-----")})
+        delegate.reloadView()
+        dismiss(animated: true)
     }
 }
 
