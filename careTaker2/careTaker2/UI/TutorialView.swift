@@ -9,14 +9,14 @@ class TutorialView{
         return view
     }()
     // 2
-    let maxDimmedAlpha: CGFloat = 0.5
+    let maxDimmedAlpha: CGFloat = 0.0
     lazy var dimmedView: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.alpha = maxDimmedAlpha
         return view
     }()
-    let defaultHeight: CGFloat = 500
+    let defaultHeight: CGFloat = 600
     // 3. Dynamic container constraint
     var containerViewHeightConstraint: NSLayoutConstraint?
     var containerViewBottomConstraint: NSLayoutConstraint?
@@ -30,13 +30,16 @@ class TutorialView{
         let label = UILabel()
         label.text = "チュートリアル"
         label.textColor = .systemRed
+        label.font = .systemFont(ofSize: 30, weight: UIFont.Weight(rawValue: 10))
         label.textAlignment = .center
+        label.backgroundColor = .systemGray6
         return label
     }()
     let explanation: UILabel = {
         let label = UILabel()
-        label.text = "・赤に近い色ほど期日が迫っています\n・セルをタップすると詳細な情報にアクセスできます"
-        label.textColor = .systemRed
+        label.numberOfLines = 0
+        label.text = "・赤に近い色ほど期日が迫っています"+"\n\n"+"・セルをタップすると詳細な情報に\nアクセスできます"
+        label.textColor = .black
         label.textAlignment = .center
         return label
     }()
