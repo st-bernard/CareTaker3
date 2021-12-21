@@ -20,9 +20,11 @@ class TutorialView{
     
     let tutorialGif: UIImageView = {
         let gif = UIImageView()
+        gif.clipsToBounds = true
+        gif.layer.cornerRadius = 15
         gif.layer.borderWidth = 2
         gif.layer.borderColor = UIColor.systemGray.cgColor
-        gif.loadGif(asset: "Sample")
+        gif.loadGif(asset: "tutorial")
         return gif
     }()
     let title: UILabel = {
@@ -36,7 +38,7 @@ class TutorialView{
     let explanation: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "・赤に近い色ほど期日が迫っています"+"\n\n"+"・セルをタップすると詳細な情報に\nアクセスできます"
+        label.text = "・赤に近い色ほど期日が迫っています"+"\n\n"+"・セルをタップすると情報を"+"\n"+"更新できます"
         label.textColor = .black
         label.textAlignment = .center
         return label
