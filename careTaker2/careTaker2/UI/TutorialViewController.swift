@@ -53,10 +53,20 @@ class TutorialViewController: UIViewController {
             width: self.view.frame.size.width*1.0,
             height: self.view.frame.size.height*0.2
         )
+        TutorialView.dismissbutton.frame = CGRect(
+            x: self.view.frame.size.width * 0.9,
+            y: self.view.frame.size.height * 0.0,
+            width: self.view.frame.size.width * 0.1,
+            height: self.view.frame.size.height * 0.05
+        )
+        TutorialView.dismissbutton.addTarget(self, action: #selector(didTapDismissButton(_ :)), for: .touchUpInside)
         TutorialView.containerView.addSubview(TutorialView.tutorialGif)
         TutorialView.containerView.addSubview(TutorialView.title)
         TutorialView.containerView.addSubview(TutorialView.explanation)
-        
+        TutorialView.containerView.addSubview(TutorialView.dismissbutton)
     }
     
+    @objc func didTapDismissButton(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }

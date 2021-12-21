@@ -8,7 +8,7 @@ class ContentsViewController: UIViewController {
     var content:ContentModel
     var pickerItems = [String]()
     var pickerView = UIPickerView()
-    var contentsView: ContentsView!
+    var contentsViewParts: ContentsViewParts!
     var updateFirebase: UpdateFirebase
     
     var delegate : ReceiverDelegate
@@ -43,7 +43,7 @@ class ContentsViewController: UIViewController {
         }
         
         view.backgroundColor = .white
-        contentsView = ContentsView(
+        contentsViewParts = ContentsViewParts(
             width: view.frame.width,
             intervalDay: content.interval,
             lastDate: content.lastDate
@@ -51,24 +51,24 @@ class ContentsViewController: UIViewController {
         
         createPickerView()
         
-        contentsView.yattayoButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
-        self.view.addSubview(contentsView.dateSettingTextField)
-        self.view.addSubview(contentsView.lastdatelabel)
-        self.view.addSubview(contentsView.daylabel)
-        self.view.addSubview(contentsView.datelabel)
-        self.view.addSubview(contentsView.intervallabel)
-        self.view.addSubview(contentsView.yattayoButton)
+        contentsViewParts.yattayoButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
+        self.view.addSubview(contentsViewParts.dateSettingTextField)
+        self.view.addSubview(contentsViewParts.lastdatelabel)
+        self.view.addSubview(contentsViewParts.daylabel)
+        self.view.addSubview(contentsViewParts.datelabel)
+        self.view.addSubview(contentsViewParts.intervallabel)
+        self.view.addSubview(contentsViewParts.yattayoButton)
     }
     
     func createPickerView() {
         pickerView.delegate = self
-        contentsView.dateSettingTextField.inputView = pickerView
+        contentsViewParts.dateSettingTextField.inputView = pickerView
         
         let toolbar = UIToolbar()
         toolbar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 44)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ContentsViewController.didTapDoneButton))
         toolbar.setItems([doneButton], animated: true)
-        contentsView.dateSettingTextField.inputAccessoryView = toolbar
+        contentsViewParts.dateSettingTextField.inputAccessoryView = toolbar
     }
     
     @objc func didTapYattayo(_ sender: YattayoButton) {
@@ -84,8 +84,8 @@ class ContentsViewController: UIViewController {
     
     @objc func didTapDoneButton() {
         print("----donebutton----")
-        contentsView.dateSettingTextField.endEditing(true)
-        guard let strInterval = contentsView.dateSettingTextField.text,
+        contentsViewParts.dateSettingTextField.endEditing(true)
+        guard let strInterval = contentsViewParts.dateSettingTextField.text,
               let interval = Int(strInterval)
         else { return }
         self.updateFirebase.updateInterval(withInt: interval)
@@ -113,7 +113,7 @@ extension ContentsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("----didselectRow----")
-        contentsView.dateSettingTextField.text = pickerItems[row]
+        contentsViewParts.dateSettingTextField.text = pickerItems[row]
     }
 
 }

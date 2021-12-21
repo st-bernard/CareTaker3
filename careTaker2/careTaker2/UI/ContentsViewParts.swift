@@ -1,6 +1,6 @@
 import UIKit
 
-class ContentsView {
+class ContentsViewParts {
     let intervallabel = CustomLabel()
     let datelabel = CustomLabel()
     let daylabel = CustomLabel()

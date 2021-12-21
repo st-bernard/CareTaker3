@@ -21,7 +21,7 @@
 		B60B18712769C6FA00D681A1 /* CodableFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = B60B18702769C6FA00D681A1 /* CodableFirebase */; };
 		B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18762769C9F000D681A1 /* ContentsViewController.swift */; };
 		B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18782769CA0400D681A1 /* CollectionViewCell.swift */; };
-		B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsView.swift */; };
+		B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */; };
 		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
 		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
 		B62C37C42771AF7700529A21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B62C37C32771AF7700529A21 /* GoogleService-Info.plist */; };
@@ -35,7 +35,6 @@
 		FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */; };
 		FE3FE2892771626D006EA2F0 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE2882771626D006EA2F0 /* TutorialView.swift */; };
 		FE3FE28F277168A1006EA2F0 /* UIImageForGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */; };
-		FE4F895E2771AF4F00F12228 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4F895D2771AF4E00F12228 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,7 @@
 		B60B185B2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B60B18762769C9F000D681A1 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 		B60B18782769CA0400D681A1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		B60B187A2769CA1100D681A1 /* ContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsView.swift; sourceTree = "<group>"; };
+		B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewParts.swift; sourceTree = "<group>"; };
 		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
 		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		B62C37C32771AF7700529A21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../PATH/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -194,7 +193,7 @@
 				B60B18782769CA0400D681A1 /* CollectionViewCell.swift */,
 				B60B183C2769C67400D681A1 /* CollectionViewController.swift */,
 				FE32152A276B258F00697694 /* CollectionViewHeader.swift */,
-				B60B187A2769CA1100D681A1 /* ContentsView.swift */,
+				B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */,
 				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
 				B68A372127705076002D9E20 /* DetailSettingViewController.swift */,
 				B68A371F277044D7002D9E20 /* SettingViewController.swift */,
@@ -357,7 +356,7 @@
 				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
 				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,
-				B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */,
+				B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */,
 				FE3FE2892771626D006EA2F0 /* TutorialView.swift in Sources */,
 				B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */,
 				FE3FE2812770161D006EA2F0 /* DateUtils.swift in Sources */,
