@@ -29,7 +29,6 @@
 		B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A372127705076002D9E20 /* DetailSettingViewController.swift */; };
 		FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32152A276B258F00697694 /* CollectionViewHeader.swift */; };
 		FE3FE2812770161D006EA2F0 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE27F27701616006EA2F0 /* DateUtils.swift */; };
-		FE3FE28327707550006EA2F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE3FE28227707550006EA2F0 /* GoogleService-Info.plist */; };
 		FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */; };
 		FE3FE2892771626D006EA2F0 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE2882771626D006EA2F0 /* TutorialView.swift */; };
 		FE3FE28F277168A1006EA2F0 /* UIImageForGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */; };
@@ -75,7 +74,6 @@
 		B68A372127705076002D9E20 /* DetailSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewController.swift; sourceTree = "<group>"; };
 		FE32152A276B258F00697694 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 		FE3FE27F27701616006EA2F0 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		FE3FE28227707550006EA2F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		FE3FE2882771626D006EA2F0 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageForGif.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
-				FE3FE28227707550006EA2F0 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 			files = (
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
-				FE3FE28327707550006EA2F0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
