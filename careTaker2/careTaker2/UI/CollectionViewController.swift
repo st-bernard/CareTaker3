@@ -36,6 +36,9 @@ class CollectionViewController: UIViewController {
         collectionView.dataSource = self
         
         view.addSubview(collectionView)
+        
+        let VC = TutorialViewController()
+        self.present(VC, animated: true, completion: nil)
     }
 
     @objc func didTapEditButton(_ sender: UIBarButtonItem) {
