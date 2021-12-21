@@ -9,11 +9,8 @@ class TutorialView{
         return view
     }()
     // 2
-    let maxDimmedAlpha: CGFloat = 0.0
     lazy var dimmedView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
-        view.alpha = maxDimmedAlpha
         return view
     }()
     let defaultHeight: CGFloat = 600
@@ -23,16 +20,17 @@ class TutorialView{
     
     let tutorialGif: UIImageView = {
         let gif = UIImageView()
+        gif.layer.borderWidth = 2
+        gif.layer.borderColor = UIColor.systemGray.cgColor
         gif.loadGif(asset: "Sample")
         return gif
     }()
     let title: UILabel = {
         let label = UILabel()
         label.text = "チュートリアル"
-        label.textColor = .systemRed
-        label.font = .systemFont(ofSize: 30, weight: UIFont.Weight(rawValue: 10))
+        label.textColor = .black
+        label.font = .systemFont(ofSize: 20, weight: UIFont.Weight(rawValue: 10))
         label.textAlignment = .center
-        label.backgroundColor = .systemGray6
         return label
     }()
     let explanation: UILabel = {
@@ -43,7 +41,11 @@ class TutorialView{
         label.textAlignment = .center
         return label
     }()
-    
-    init(){
-    }
+    let dismissbutton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .systemGray
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        return button
+    }()
 }
