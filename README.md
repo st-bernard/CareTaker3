@@ -53,7 +53,8 @@
     ・ユーザー目線
         1.　多様な拡張機能の追加
         2.　チュートリアルの作成
+        3.　Button、Design検討
+        
+    ・APPに合うICONの設定
 
-
-![tutorial](https://user-images.githubusercontent.com/90611732/146908711-4fd87111-0dba-4dd4-95e8-b726b1ddd911.gif)
     
