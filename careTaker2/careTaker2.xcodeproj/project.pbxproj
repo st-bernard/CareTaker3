@@ -35,6 +35,7 @@
 		FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */; };
 		FE3FE2892771626D006EA2F0 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE2882771626D006EA2F0 /* TutorialView.swift */; };
 		FE3FE28F277168A1006EA2F0 /* UIImageForGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */; };
+		FE4F895E2771AF4F00F12228 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4F895D2771AF4E00F12228 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		FE3FE2882771626D006EA2F0 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageForGif.swift; sourceTree = "<group>"; };
+		FE4F895D2771AF4E00F12228 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				B62C37C32771AF7700529A21 /* GoogleService-Info.plist */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
+				FE4F895D2771AF4E00F12228 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";

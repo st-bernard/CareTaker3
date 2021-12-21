@@ -42,16 +42,16 @@ class TutorialViewController: UIViewController {
             height: self.view.frame.size.height*0.4
         )
         TutorialView.title.frame = CGRect(
-            x: self.view.frame.size.width*0.3,
+            x: self.view.frame.size.width*0.0,
             y: self.view.frame.size.height*0.0,
-            width: self.view.frame.size.width*0.4,
-            height: self.view.frame.size.height*0.1
+            width: self.view.frame.size.width*1.0,
+            height: self.view.frame.size.height*0.05
         )
         TutorialView.explanation.frame = CGRect(
-            x: self.view.frame.size.width*0.3,
-            y: self.view.frame.size.height*0.8,
-            width: self.view.frame.size.width*0.4,
-            height: self.view.frame.size.height*0.1
+            x: self.view.frame.size.width*0.0,
+            y: self.view.frame.size.height*0.5,
+            width: self.view.frame.size.width*1.0,
+            height: self.view.frame.size.height*0.2
         )
         TutorialView.containerView.addSubview(TutorialView.tutorialGif)
         TutorialView.containerView.addSubview(TutorialView.title)
