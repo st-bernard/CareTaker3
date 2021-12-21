@@ -167,7 +167,6 @@
 				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
 				B60B18382769C67400D681A1 /* AppDelegate.swift */,
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
-				B68A3723277077CE002D9E20 /* GoogleService-Info.plist */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
 			);
@@ -189,14 +188,14 @@
 			isa = PBXGroup;
 			children = (
 				B60B18782769CA0400D681A1 /* CollectionViewCell.swift */,
-				FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */,
-				FE3FE2882771626D006EA2F0 /* TutorialView.swift */,
 				B60B183C2769C67400D681A1 /* CollectionViewController.swift */,
 				FE32152A276B258F00697694 /* CollectionViewHeader.swift */,
 				B60B187A2769CA1100D681A1 /* ContentsView.swift */,
 				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
-				B68A371F277044D7002D9E20 /* SettingViewController.swift */,
 				B68A372127705076002D9E20 /* DetailSettingViewController.swift */,
+				B68A371F277044D7002D9E20 /* SettingViewController.swift */,
+				FE3FE2882771626D006EA2F0 /* TutorialView.swift */,
+				FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */,
 				B68A3727277163DF002D9E20 /* YattayoButton.swift */,
 				B68A374B27719013002D9E20 /* CustomLabel.swift */,
 				FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */,
@@ -320,7 +319,6 @@
 			files = (
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
-				B68A3724277077CE002D9E20 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
