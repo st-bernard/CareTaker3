@@ -46,8 +46,8 @@ class ContentsViewController: UIViewController {
         contentsView = ContentsView(
             width: view.frame.width,
             intervalDay: content.interval,
-            lastDate: content.lastDate,
-            name: content.name)
+            lastDate: content.lastDate
+        )
         
         createPickerView()
         
