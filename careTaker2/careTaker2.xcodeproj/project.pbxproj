@@ -24,10 +24,10 @@
 		B60B187B2769CA1100D681A1 /* ContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsView.swift */; };
 		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
 		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
+		B62C37C42771AF7700529A21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B62C37C32771AF7700529A21 /* GoogleService-Info.plist */; };
 		B68A371E27701586002D9E20 /* UpdateFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371D27701585002D9E20 /* UpdateFirebase.swift */; };
 		B68A3720277044D7002D9E20 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371F277044D7002D9E20 /* SettingViewController.swift */; };
 		B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A372127705076002D9E20 /* DetailSettingViewController.swift */; };
-		B68A3724277077CE002D9E20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B68A3723277077CE002D9E20 /* GoogleService-Info.plist */; };
 		B68A3728277163E0002D9E20 /* YattayoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A3727277163DF002D9E20 /* YattayoButton.swift */; };
 		B68A374C27719013002D9E20 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A374B27719013002D9E20 /* CustomLabel.swift */; };
 		FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32152A276B258F00697694 /* CollectionViewHeader.swift */; };
@@ -72,10 +72,10 @@
 		B60B187A2769CA1100D681A1 /* ContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsView.swift; sourceTree = "<group>"; };
 		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
 		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		B62C37C32771AF7700529A21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../PATH/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B68A371D27701585002D9E20 /* UpdateFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebase.swift; sourceTree = "<group>"; };
 		B68A371F277044D7002D9E20 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B68A372127705076002D9E20 /* DetailSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewController.swift; sourceTree = "<group>"; };
-		B68A3723277077CE002D9E20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../PATH/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B68A3727277163DF002D9E20 /* YattayoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YattayoButton.swift; sourceTree = "<group>"; };
 		B68A374B27719013002D9E20 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		FE32152A276B258F00697694 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
@@ -167,6 +167,7 @@
 				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
 				B60B18382769C67400D681A1 /* AppDelegate.swift */,
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
+				B62C37C32771AF7700529A21 /* GoogleService-Info.plist */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
 			);
@@ -319,6 +320,7 @@
 			files = (
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
+				B62C37C42771AF7700529A21 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

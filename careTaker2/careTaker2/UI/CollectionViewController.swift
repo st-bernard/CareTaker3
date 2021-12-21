@@ -10,7 +10,8 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "項目確認リスト"
+        title = "CareTaker"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "questionmark.circle"), style: .plain, target: self, action: #selector(didTapHelpButton(_:)))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditButton(_:)))
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
         model = ContentsListModel()
@@ -47,12 +48,14 @@ class CollectionViewController: UIViewController {
         collectionView.dataSource = self
         
         view.addSubview(collectionView)
-        
+    
+    }
+    
+    @objc func didTapHelpButton(_ sender: UIBarButtonItem) {
         let VC = TutorialViewController()
         let navVC = UINavigationController(rootViewController: VC)
         navVC.modalPresentationStyle = .formSheet
-        self.present(navVC, animated: true, completion: nil)
-    
+        present(navVC, animated: true, completion: nil)
     }
 
     @objc func didTapEditButton(_ sender: UIBarButtonItem) {
