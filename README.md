@@ -58,5 +58,13 @@
         3.　Button、Design検討
         
     ・APPに合うICONの設定
+    
+    
+    ・拡張機能
+        1.　追加部品の用意
+        2.　チェックの有無で、項目の追加/削除が可能
+
+
+<img width="150" alt="Screen Shot 2021-12-21 at 21 43 47" src="https://user-images.githubusercontent.com/90611732/146931990-de1dc5a7-7d3e-4118-9d88-58672373420b.png">
 
     
