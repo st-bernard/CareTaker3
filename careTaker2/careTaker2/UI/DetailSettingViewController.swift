@@ -18,7 +18,7 @@ class DetailSettingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "詳細表示設定"
+        title = "表示項目選択"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "detailTableCell")
     }
 }
