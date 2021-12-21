@@ -3,6 +3,7 @@ import UIKit
 class CollectionViewController: UIViewController {
     var model: ContentsListModel!
     var collectionView: UICollectionView!
+    var activeModel = [[ContentModel]]()
     
     var receiver : ContentsViewController? = nil
     
@@ -18,6 +19,14 @@ class CollectionViewController: UIViewController {
                 print("----loading----")
             case .finish:
                 print("----finished----")
+                self?.activeModel.removeAll()
+                self?.model.contents.forEach({arrOfContents in
+                    let array = arrOfContents.filter({content in
+                        content.isActive == true
+                    })
+                    guard array.count != 0 else { return }
+                    self?.activeModel.append(array)
+                })
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
@@ -25,6 +34,7 @@ class CollectionViewController: UIViewController {
                 print("----error----")
             }
         }
+        
         // UICollectionViewを生成、書式設定
         collectionView.backgroundColor = .white
         // CVCell classを"Cell"という名前でCVに登録
@@ -39,7 +49,8 @@ class CollectionViewController: UIViewController {
     }
 
     @objc func didTapEditButton(_ sender: UIBarButtonItem) {
-        let navVC = UINavigationController(rootViewController: SettingViewController(contentsList: model.contents))
+        let settingVC = SettingViewController(contentsList: model.contents, delegate: self)
+        let navVC = UINavigationController(rootViewController: settingVC)
         present(navVC, animated: true)
     }
 }
@@ -49,7 +60,7 @@ extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let contentView = ContentsViewController(
-            content: model.contents[indexPath.section][indexPath.row],
+            content: activeModel[indexPath.section][indexPath.row],
             delegate: self
         )
         let navVC = UINavigationController(rootViewController: contentView)
@@ -58,7 +69,7 @@ extension CollectionViewController: UICollectionViewDelegate {
 }
 
 extension CollectionViewController: ReceiverDelegate{
-    func reloadTest(){
+    func reloadView(){
         self.viewDidLoad()
     }
 }
@@ -67,23 +78,27 @@ extension CollectionViewController: ReceiverDelegate{
 extension CollectionViewController: UICollectionViewDataSource {
     // 各section内におけるcellの数を返す
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard model.contents.count != 0
-        else{ return 0}
-        return model.contents[section].count
+        guard activeModel.count != 0 else{ return 0}
+        return activeModel[section].count
     }
     
     // sectionの数
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return model.contents.count
+        return activeModel.count
     }
     
     // cellの設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // cellを生成
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        cell.titleLabel.text = model.contents[indexPath.section][indexPath.row].name
+        cell.titleLabel.text = activeModel[indexPath.section][indexPath.row].name
         cell.layer.cornerRadius = 10
-        let RGBV = CGFloat(intervalRateData(lastDate: model.contents[indexPath.section][indexPath.row].lastDate, interval:model.contents[indexPath.section][indexPath.row].interval))
+        let RGBV = CGFloat(
+            intervalRateData(
+                lastDate: activeModel[indexPath.section][indexPath.row].lastDate,
+                interval: activeModel[indexPath.section][indexPath.row].interval
+            )
+        )
         cell.backgroundColor = UIColor(red: 255/255, green: RGBV/255, blue: RGBV/255, alpha: 1.0)
         return cell
     }
@@ -100,14 +115,13 @@ extension CollectionViewController: UICollectionViewDataSource {
         let convertElapsed:Float = Float(elapsedDays)
         let rateDate = convertElapsed / (convertInterval)
         let RGBValue:Int = Int(255 * (1 - rateDate))
-        print(RGBValue)
         return RGBValue
     }
     // headerの設定
         func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             // headerを生成
             let collectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! CollectionViewHeader
-            let headerText = model.contents[indexPath.section][indexPath.row].category
+            let headerText = activeModel[indexPath.section][indexPath.row].category
             // headerのtitleLabelにtextを追加
             collectionViewHeader.setUpContents(titleText: headerText)
             return collectionViewHeader

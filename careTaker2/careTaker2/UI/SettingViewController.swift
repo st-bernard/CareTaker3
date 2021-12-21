@@ -3,9 +3,11 @@ import UIKit
 class SettingViewController: UITableViewController {
     var contentsList: [[ContentModel]]
     var categoryNames: [String]
+    var delegate: ReceiverDelegate
     
-    init(contentsList: [[ContentModel]]) {
+    init(contentsList: [[ContentModel]], delegate: ReceiverDelegate) {
         self.contentsList = contentsList
+        self.delegate = delegate
         self.categoryNames = contentsList.map({section in
             return section[0].category
         })
@@ -29,6 +31,7 @@ class SettingViewController: UITableViewController {
     }
     
     @objc func didTapDoneButton(_ sender: UIBarButtonItem) {
+        delegate.reloadView()
         dismiss(animated: true)
     }
     
