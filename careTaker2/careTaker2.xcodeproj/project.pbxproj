@@ -28,6 +28,8 @@
 		B68A3720277044D7002D9E20 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371F277044D7002D9E20 /* SettingViewController.swift */; };
 		B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A372127705076002D9E20 /* DetailSettingViewController.swift */; };
 		B68A3724277077CE002D9E20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B68A3723277077CE002D9E20 /* GoogleService-Info.plist */; };
+		B68A3728277163E0002D9E20 /* YattayoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A3727277163DF002D9E20 /* YattayoButton.swift */; };
+		B68A374C27719013002D9E20 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A374B27719013002D9E20 /* CustomLabel.swift */; };
 		FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE32152A276B258F00697694 /* CollectionViewHeader.swift */; };
 		FE3FE2812770161D006EA2F0 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE27F27701616006EA2F0 /* DateUtils.swift */; };
 		FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */; };
@@ -74,6 +76,8 @@
 		B68A371F277044D7002D9E20 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B68A372127705076002D9E20 /* DetailSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewController.swift; sourceTree = "<group>"; };
 		B68A3723277077CE002D9E20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../PATH/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B68A3727277163DF002D9E20 /* YattayoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YattayoButton.swift; sourceTree = "<group>"; };
+		B68A374B27719013002D9E20 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		FE32152A276B258F00697694 /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 		FE3FE27F27701616006EA2F0 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
 				B68A371F277044D7002D9E20 /* SettingViewController.swift */,
 				B68A372127705076002D9E20 /* DetailSettingViewController.swift */,
+				B68A3727277163DF002D9E20 /* YattayoButton.swift */,
+				B68A374B27719013002D9E20 /* CustomLabel.swift */,
 				FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */,
 			);
 			path = UI;
@@ -341,8 +347,10 @@
 			files = (
 				FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */,
 				B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */,
+				B68A374C27719013002D9E20 /* CustomLabel.swift in Sources */,
 				FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */,
 				B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */,
+				B68A3728277163E0002D9E20 /* YattayoButton.swift in Sources */,
 				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
 				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,

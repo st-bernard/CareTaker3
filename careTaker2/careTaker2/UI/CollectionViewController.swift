@@ -9,9 +9,10 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "項目確認リスト"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditButton(_:)))
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width * 3, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
         model = ContentsListModel()
         model.configuration(){ [weak self] state in
             switch state {
@@ -95,7 +96,6 @@ extension CollectionViewController: UICollectionViewDataSource {
         // cellを生成
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         cell.titleLabel.text = activeModel[indexPath.section][indexPath.row].name
-        cell.layer.cornerRadius = 10
         let RGBV = CGFloat(
             intervalRateData(
                 lastDate: activeModel[indexPath.section][indexPath.row].lastDate,
@@ -134,7 +134,7 @@ extension CollectionViewController: UICollectionViewDataSource {
 extension CollectionViewController:  UICollectionViewDelegateFlowLayout {
     // cellのサイズを設定
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        return CGSize(width: 160, height: 50)
     }
     
     // cellの余白
