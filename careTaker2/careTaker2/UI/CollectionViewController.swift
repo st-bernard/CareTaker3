@@ -48,7 +48,10 @@ class CollectionViewController: UIViewController {
         view.addSubview(collectionView)
         
         let VC = TutorialViewController()
-        self.present(VC, animated: true, completion: nil)
+        let navVC = UINavigationController(rootViewController: VC)
+        navVC.modalPresentationStyle = .formSheet
+        self.present(navVC, animated: true, completion: nil)
+    
     }
 
     @objc func didTapEditButton(_ sender: UIBarButtonItem) {
