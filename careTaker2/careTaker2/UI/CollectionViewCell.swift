@@ -2,9 +2,11 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 5
+        self.layer.borderColor = UIColor.systemGray.cgColor
     }
     
     required init?(coder: NSCoder) {
@@ -15,41 +17,20 @@ class CollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
-    // MARK: - Properties
-    lazy var roundedBackgroundView: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 10
-        view.layer.borderColor = UIColor.systemGray.cgColor
-        view.layer.borderWidth = 5
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 25)
+        label.frame = CGRect(x: 5, y: 0, width: self.contentView.frame.width - 10, height: self.contentView.frame.height)
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 25, weight: UIFont.Weight(rawValue: 1))
         label.textColor = .black
         label.adjustsFontSizeToFitWidth = true
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 }
 
-// MARK: - UI Setup
 extension CollectionViewCell {
     private func setupUI() {
-        self.contentView.addSubview(roundedBackgroundView)
-        roundedBackgroundView.addSubview(titleLabel)
-        
-        NSLayoutConstraint.activate([
-            roundedBackgroundView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0),
-            roundedBackgroundView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0),
-            roundedBackgroundView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0),
-            roundedBackgroundView.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: 0),
-            titleLabel.centerXAnchor.constraint(equalTo: roundedBackgroundView.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: roundedBackgroundView.centerYAnchor)
-        ])
-        
+        self.addSubview(titleLabel)
+
     }
 }
