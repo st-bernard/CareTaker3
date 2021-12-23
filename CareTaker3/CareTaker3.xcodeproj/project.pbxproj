@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872FB991277452AE007F90B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 872FB990277452AE007F90B5 /* GoogleService-Info.plist */; };
 		B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18382769C67400D681A1 /* AppDelegate.swift */; };
 		B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183A2769C67400D681A1 /* SceneDelegate.swift */; };
 		B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* CollectionViewController.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		872FB990277452AE007F90B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B60B18352769C67400D681A1 /* CareTaker3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareTaker3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60B18382769C67400D681A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B60B183A2769C67400D681A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				FE63AE84276C6B350054F9C1 /* Application */,
 				FE63AE85276C6C260054F9C1 /* Components */,
 				FE63AE86276C6C660054F9C1 /* UI */,
+				872FB990277452AE007F90B5 /* GoogleService-Info.plist */,
 			);
 			path = CareTaker3;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872FB991277452AE007F90B5 /* GoogleService-Info.plist in Resources */,
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
 			);
@@ -529,7 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = M6HUWMF54V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -541,7 +545,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dig.toypoodle.jamnavigator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dig.toypoodle.caretaker3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -556,7 +560,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = M6HUWMF54V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -568,7 +572,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 3.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dig.toypoodle.jamnavigator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dig.toypoodle.caretaker3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -583,7 +587,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = M6HUWMF54V;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
@@ -603,7 +607,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = M6HUWMF54V;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
@@ -622,7 +626,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = M6HUWMF54V;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2UITests";
@@ -640,7 +644,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = M6HUWMF54V;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2UITests";
