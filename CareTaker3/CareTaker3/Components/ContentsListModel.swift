@@ -18,6 +18,7 @@ class ContentsListModel {
     
     init(idKey:String = "careTakerID") {
         self.idKey = idKey
+
     }
     
     func configuration(progress: @escaping (ContentsListModelState) -> Void) {
