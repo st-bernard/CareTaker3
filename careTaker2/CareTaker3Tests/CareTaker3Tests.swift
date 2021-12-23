@@ -6,11 +6,11 @@
 //
 
 import XCTest
-@testable import careTaker2
+@testable import CareTaker3
 import Firebase
 import FirebaseDatabase
 
-class careTaker2Tests: XCTestCase {
+class CareTaker3Tests: XCTestCase {
     var DBRef:DatabaseReference = Database.database().reference()
     var id:String?
     var model:ContentsListModel!

@@ -12,9 +12,9 @@
 		B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* CollectionViewController.swift */; };
 		B60B18422769C67500D681A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60B18412769C67500D681A1 /* Assets.xcassets */; };
 		B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60B18432769C67500D681A1 /* LaunchScreen.storyboard */; };
-		B60B18502769C67600D681A1 /* careTaker2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B184F2769C67600D681A1 /* careTaker2Tests.swift */; };
-		B60B185A2769C67600D681A1 /* careTaker2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18592769C67600D681A1 /* careTaker2UITests.swift */; };
-		B60B185C2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B185B2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift */; };
+		B60B18502769C67600D681A1 /* CareTaker3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B184F2769C67600D681A1 /* CareTaker3Tests.swift */; };
+		B60B185A2769C67600D681A1 /* CareTaker3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18592769C67600D681A1 /* CareTaker3UITests.swift */; };
+		B60B185C2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B185B2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift */; };
 		B60B186A2769C6CB00D681A1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B60B18692769C6CB00D681A1 /* FirebaseAnalytics */; };
 		B60B186C2769C6CB00D681A1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186B2769C6CB00D681A1 /* FirebaseDatabase */; };
 		B60B186E2769C6CB00D681A1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186D2769C6CB00D681A1 /* FirebaseMessaging */; };
@@ -24,7 +24,6 @@
 		B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */; };
 		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
 		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
-		B62C37C42771AF7700529A21 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B62C37C32771AF7700529A21 /* GoogleService-Info.plist */; };
 		B68A371E27701586002D9E20 /* UpdateFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371D27701585002D9E20 /* UpdateFirebase.swift */; };
 		B68A3720277044D7002D9E20 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371F277044D7002D9E20 /* SettingViewController.swift */; };
 		B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A372127705076002D9E20 /* DetailSettingViewController.swift */; };
@@ -63,16 +62,15 @@
 		B60B18442769C67500D681A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B60B18462769C67500D681A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60B184B2769C67600D681A1 /* CareTaker3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareTaker3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60B184F2769C67600D681A1 /* careTaker2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2Tests.swift; sourceTree = "<group>"; };
+		B60B184F2769C67600D681A1 /* CareTaker3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3Tests.swift; sourceTree = "<group>"; };
 		B60B18552769C67600D681A1 /* CareTaker3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareTaker3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60B18592769C67600D681A1 /* careTaker2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITests.swift; sourceTree = "<group>"; };
-		B60B185B2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = careTaker2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B60B18592769C67600D681A1 /* CareTaker3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITests.swift; sourceTree = "<group>"; };
+		B60B185B2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B60B18762769C9F000D681A1 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 		B60B18782769CA0400D681A1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewParts.swift; sourceTree = "<group>"; };
 		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
 		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
-		B62C37C32771AF7700529A21 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../PATH/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B68A371D27701585002D9E20 /* UpdateFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebase.swift; sourceTree = "<group>"; };
 		B68A371F277044D7002D9E20 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B68A372127705076002D9E20 /* DetailSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		FE3FE2882771626D006EA2F0 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageForGif.swift; sourceTree = "<group>"; };
-		FE4F895D2771AF4E00F12228 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +115,9 @@
 		B60B182C2769C67400D681A1 = {
 			isa = PBXGroup;
 			children = (
-				B60B18372769C67400D681A1 /* careTaker2 */,
-				B60B184E2769C67600D681A1 /* careTaker2Tests */,
-				B60B18582769C67600D681A1 /* careTaker2UITests */,
+				B60B18372769C67400D681A1 /* CareTaker3 */,
+				B60B184E2769C67600D681A1 /* CareTaker3Tests */,
+				B60B18582769C67600D681A1 /* CareTaker3UITests */,
 				B60B18362769C67400D681A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,31 +132,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B60B18372769C67400D681A1 /* careTaker2 */ = {
+		B60B18372769C67400D681A1 /* CareTaker3 */ = {
 			isa = PBXGroup;
 			children = (
 				FE63AE84276C6B350054F9C1 /* Application */,
 				FE63AE85276C6C260054F9C1 /* Components */,
 				FE63AE86276C6C660054F9C1 /* UI */,
 			);
-			path = careTaker2;
+			path = CareTaker3;
 			sourceTree = "<group>";
 		};
-		B60B184E2769C67600D681A1 /* careTaker2Tests */ = {
+		B60B184E2769C67600D681A1 /* CareTaker3Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B60B184F2769C67600D681A1 /* careTaker2Tests.swift */,
+				B60B184F2769C67600D681A1 /* CareTaker3Tests.swift */,
 			);
-			path = careTaker2Tests;
+			path = CareTaker3Tests;
 			sourceTree = "<group>";
 		};
-		B60B18582769C67600D681A1 /* careTaker2UITests */ = {
+		B60B18582769C67600D681A1 /* CareTaker3UITests */ = {
 			isa = PBXGroup;
 			children = (
-				B60B18592769C67600D681A1 /* careTaker2UITests.swift */,
-				B60B185B2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift */,
+				B60B18592769C67600D681A1 /* CareTaker3UITests.swift */,
+				B60B185B2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift */,
 			);
-			path = careTaker2UITests;
+			path = CareTaker3UITests;
 			sourceTree = "<group>";
 		};
 		FE63AE84276C6B350054F9C1 /* Application */ = {
@@ -168,10 +165,8 @@
 				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
 				B60B18382769C67400D681A1 /* AppDelegate.swift */,
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
-				B62C37C32771AF7700529A21 /* GoogleService-Info.plist */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
-				FE4F895D2771AF4E00F12228 /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -322,7 +317,6 @@
 			files = (
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
-				B62C37C42771AF7700529A21 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60B18502769C67600D681A1 /* careTaker2Tests.swift in Sources */,
+				B60B18502769C67600D681A1 /* CareTaker3Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B60B185C2769C67600D681A1 /* careTaker2UITestsLaunchTests.swift in Sources */,
-				B60B185A2769C67600D681A1 /* careTaker2UITests.swift in Sources */,
+				B60B185C2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift in Sources */,
+				B60B185A2769C67600D681A1 /* CareTaker3UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -518,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -537,7 +531,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = careTaker2/Application/Info.plist;
+				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -564,7 +558,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = careTaker2/Application/Info.plist;
+				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -589,8 +583,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -608,8 +603,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -626,6 +622,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2UITests";
@@ -643,6 +640,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2UITests";
