@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		872FB991277452AE007F90B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 872FB990277452AE007F90B5 /* GoogleService-Info.plist */; };
 		872FB99327755E55007F90B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FB99227755E55007F90B5 /* Storyboard.storyboard */; };
+		872FB99527758D67007F90B5 /* MyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99427758D67007F90B5 /* MyHeader.swift */; };
+		872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99627758E98007F90B5 /* MyMeterCell.swift */; };
+		8774B4912775909C0034B779 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774B4902775909C0034B779 /* MainViewController.swift */; };
 		B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18382769C67400D681A1 /* AppDelegate.swift */; };
 		B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183A2769C67400D681A1 /* SceneDelegate.swift */; };
 		B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* CollectionViewController.swift */; };
@@ -58,6 +61,9 @@
 /* Begin PBXFileReference section */
 		872FB990277452AE007F90B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		872FB99227755E55007F90B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		872FB99427758D67007F90B5 /* MyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeader.swift; sourceTree = "<group>"; };
+		872FB99627758E98007F90B5 /* MyMeterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeterCell.swift; sourceTree = "<group>"; };
+		8774B4902775909C0034B779 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B60B18352769C67400D681A1 /* CareTaker3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareTaker3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60B18382769C67400D681A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B60B183A2769C67400D681A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +209,9 @@
 				B68A3727277163DF002D9E20 /* YattayoButton.swift */,
 				B68A374B27719013002D9E20 /* CustomLabel.swift */,
 				FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */,
+				872FB99427758D67007F90B5 /* MyHeader.swift */,
+				872FB99627758E98007F90B5 /* MyMeterCell.swift */,
+				8774B4902775909C0034B779 /* MainViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -349,7 +358,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8774B4912775909C0034B779 /* MainViewController.swift in Sources */,
 				FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */,
+				872FB99527758D67007F90B5 /* MyHeader.swift in Sources */,
 				B60B18792769CA0400D681A1 /* CollectionViewCell.swift in Sources */,
 				B68A374C27719013002D9E20 /* CustomLabel.swift in Sources */,
 				FE32152B276B258F00697694 /* CollectionViewHeader.swift in Sources */,
@@ -359,6 +370,7 @@
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
 				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,
 				B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */,
+				872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */,
 				FE3FE2892771626D006EA2F0 /* TutorialView.swift in Sources */,
 				B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */,
 				FE3FE2812770161D006EA2F0 /* DateUtils.swift in Sources */,
