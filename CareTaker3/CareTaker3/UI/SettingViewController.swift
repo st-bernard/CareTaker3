@@ -1,22 +1,22 @@
 import UIKit
 
 class SettingViewController: UITableViewController {
-    var contentsList: [[ContentModel]]
-    var categoryNames: [String]
-    var delegate: ReceiverDelegate
+    var contentsList = [[ContentModel]]()
+    var categoryNames = [String]()
+    var delegate: ReceiverDelegate? = nil
     
-    init(contentsList: [[ContentModel]], delegate: ReceiverDelegate) {
-        self.contentsList = contentsList
-        self.delegate = delegate
-        self.categoryNames = contentsList.map({section in
-            return section[0].category
-        })
-        super.init(nibName: nil, bundle: nil)
-    }
+//    init(contentsList: [[ContentModel]], delegate: ReceiverDelegate) {
+//        self.contentsList = contentsList
+//        self.delegate = delegate
+//        self.categoryNames = contentsList.map({section in
+//            return section[0].category
+//        })
+//        super.init(nibName: nil, bundle: nil)
+//    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class SettingViewController: UITableViewController {
     }
     
     @objc func didTapDoneButton(_ sender: UIBarButtonItem) {
-        delegate.reloadView()
+        delegate?.reloadView()
         dismiss(animated: true)
     }
     

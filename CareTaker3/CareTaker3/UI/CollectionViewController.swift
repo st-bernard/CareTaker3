@@ -59,9 +59,9 @@ class CollectionViewController: UIViewController {
     }
 
     @objc func didTapEditButton(_ sender: UIBarButtonItem) {
-        let settingVC = SettingViewController(contentsList: model.contents, delegate: self)
-        let navVC = UINavigationController(rootViewController: settingVC)
-        present(navVC, animated: true)
+////        let settingVC = SettingViewController(contentsList: model.contents, delegate: self)
+//        let navVC = UINavigationController(rootViewController: settingVC)
+//        present(navVC, animated: true)
     }
 }
 
@@ -117,7 +117,7 @@ extension CollectionViewController: UICollectionViewDataSource {
         let now = Date()
         //lastdate
         let lastDateCalc = DateUtils.dateFromString(string: lastDate+" 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-        //nowdate - lastdate
+        //nowdate - lastdateƒ
         guard let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCalc, to: now).day else {return 0}
         //interval(Float)
         let convertInterval:Float = Float(interval)
