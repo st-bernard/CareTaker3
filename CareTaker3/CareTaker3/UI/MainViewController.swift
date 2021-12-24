@@ -65,4 +65,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
+    @IBAction func didTapTutorial(_ sender: Any) {
+        
+    }
+    
 }

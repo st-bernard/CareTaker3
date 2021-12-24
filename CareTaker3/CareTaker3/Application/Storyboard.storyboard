@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,7 +96,15 @@
                             <constraint firstItem="01Q-vW-s16" firstAttribute="top" secondItem="Nhd-Sq-l5G" secondAttribute="top" id="pei-c8-m8G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2D2-1x-r3H"/>
+                    <navigationItem key="navigationItem" id="2D2-1x-r3H">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="questionmark.circle" catalog="system" id="UNk-dL-7A7">
+                            <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="didTapTutorial:" destination="ELe-xS-EEe" id="AUZ-f9-5xo"/>
+                                <segue destination="uEu-xS-cNR" kind="presentation" id="3Pt-lG-mgl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myCollectionView" destination="01Q-vW-s16" id="EdU-PV-kQD"/>
                     </connections>
@@ -103,6 +112,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHn-Lz-gcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="-214.28571428571428"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="KLi-8D-8oF">
+            <objects>
+                <viewController id="uEu-xS-cNR" customClass="TutorialViewController" customModule="CareTaker3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FhS-2P-b4M">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iRK-Ec-RxQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xmf-P8-JFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="529"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ehg-qQ-6Ko">
@@ -123,4 +147,10 @@
             <point key="canvasLocation" x="95.652173913043484" y="-214.28571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
