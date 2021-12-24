@@ -18,8 +18,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="toypoodle" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-nu-PPa">
                                 <rect key="frame" x="44" y="204" width="350" height="436"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team toypoodle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-Cj-cxv">
-                                <rect key="frame" x="104.5" y="623" width="205" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team toypoodle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-Cj-cxv">
+                                <rect key="frame" x="0.0" y="623" width="414" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                             <constraint firstItem="3aJ-Cj-cxv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="579" id="1VS-cQ-abW"/>
                             <constraint firstItem="FkI-nu-PPa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4MN-Mk-bDZ"/>
                             <constraint firstItem="3aJ-Cj-cxv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JCP-1Y-bt3"/>
-                            <constraint firstItem="3aJ-Cj-cxv" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.495169" id="fDc-Ar-hPv"/>
+                            <constraint firstItem="3aJ-Cj-cxv" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.495169" constant="209" id="fDc-Ar-hPv"/>
                             <constraint firstItem="FkI-nu-PPa" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.845411" id="nkH-a4-Nxn"/>
                             <constraint firstItem="FkI-nu-PPa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="pUR-cN-Hid"/>
                             <constraint firstItem="FkI-nu-PPa" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.486607" id="pdh-cq-sEk"/>
