@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="01Q-vW-s16">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" red="0.07647390463917525" green="0.07647390463917525" blue="0.07647390463917525" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kcs-fP-Fpx">
                                     <size key="itemSize" width="187" height="133"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view tag="99101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d33-Nm-SCS" customClass="MyMeterView" customModule="CareTaker3" customModuleProvider="target">
+                                                <view tag="99101" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="d33-Nm-SCS" customClass="MyMeterView" customModule="CareTaker3" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="187" height="133"/>
                                                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 </view>
@@ -71,7 +71,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LY0-8a-7Wv"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="01Q-vW-s16" firstAttribute="leading" secondItem="LY0-8a-7Wv" secondAttribute="leading" id="1ni-oS-6GO"/>
                             <constraint firstItem="01Q-vW-s16" firstAttribute="bottom" secondItem="LY0-8a-7Wv" secondAttribute="bottom" id="b7N-xL-Dmr"/>
@@ -93,7 +93,7 @@
                                     <segue destination="9mU-76-GPf" kind="show" identifier="segueMainToDetail" id="2iV-Ej-xIx"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" title="dummy" id="iE1-s8-6qh">
+                            <barButtonItem enabled="NO" id="iE1-s8-6qh">
                                 <connections>
                                     <segue destination="Nbi-pQ-j8e" kind="show" identifier="segueMainToContents" id="cOY-4y-oRy"/>
                                 </connections>
@@ -146,7 +146,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="iRK-Ec-RxQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xmf-P8-JFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

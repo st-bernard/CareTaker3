@@ -2,6 +2,7 @@ import UIKit
 
 class SettingViewController: UITableViewController {
     var contentsList = Dictionary<Int, Array<ContentModel>>()
+    var activeModelSortedKeys = Array<Int>()
     var categoryNames = [String]()
     
 //    init(contentsList: [[ContentModel]], delegate: ReceiverDelegate) {
@@ -19,7 +20,11 @@ class SettingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "表示設定"
+        
+        activeModelSortedKeys = contentsList.keys.map{ Int($0) }
+        activeModelSortedKeys.sort()
+        
+        title = "Your Choice"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark.circle.fill"),
             style: .plain,
@@ -50,7 +55,9 @@ extension SettingViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailSettingVC = DetailSettingViewController(contents: contentsList[indexPath.row])
-//        self.navigationController?.pushViewController(detailSettingVC, animated: true)
+        let categoryName = categoryNames[indexPath.row]
+        let contents = contentsList.values.flatMap{ $0 }.filter{ $0.category == categoryName }
+        let detailSettingVC = DetailSettingViewController(contents: contents)
+        self.navigationController?.pushViewController(detailSettingVC, animated: true)
     }
 }

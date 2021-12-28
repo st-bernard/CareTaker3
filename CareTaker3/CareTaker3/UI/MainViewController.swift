@@ -105,8 +105,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // セグエで移動直前にコールする(ReactのPropsみたいな）
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueMainToDetail", let vc = segue.destination as? SettingViewController {
-            vc.contentsList = activeModel
-            
+            vc.contentsList = Dictionary(grouping: self.model.contents.flatMap{ $0 }, by: { $0.section })
+
             let cn = vc.contentsList.values.map{ $0 as! [ContentModel] }.flatMap{ $0 }.map{ $0.category }
             vc.categoryNames = Array(Set(cn))
         }
