@@ -2,10 +2,9 @@ import UIKit
 
 class CollectionViewController: UIViewController {
     var model: ContentsListModel!
+    
     var collectionView: UICollectionView!
     var activeModel = [[ContentModel]]()
-    
-    var receiver : ContentsViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,20 +68,20 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController: UICollectionViewDelegate {
     // セル選択時の処理
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let contentView = ContentsViewController(
-            content: activeModel[indexPath.section][indexPath.row],
-            delegate: self
-        )
-        let navVC = UINavigationController(rootViewController: contentView)
-        present(navVC, animated: true)
+//        let contentView = ContentsViewController(
+//            content: activeModel[indexPath.section][indexPath.row],
+//            delegate: self
+//        )
+//        let navVC = UINavigationController(rootViewController: contentView)
+//        present(navVC, animated: true)
     }
 }
 
-extension CollectionViewController: ReceiverDelegate{
-    func reloadView(){
-        self.viewDidLoad()
-    }
-}
+//extension CollectionViewController: ReceiverDelegate{
+//    func reloadView(){
+//        self.viewDidLoad()
+//    }
+//}
   
 //　UICVDataSourceを追加
 extension CollectionViewController: UICollectionViewDataSource {

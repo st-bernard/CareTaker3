@@ -1,9 +1,9 @@
 import UIKit
 
 class SettingViewController: UITableViewController {
-    var contentsList = [[ContentModel]]()
+    var contentsList = Dictionary<Int, Array<ContentModel>>()
+    var activeModelSortedKeys = Array<Int>()
     var categoryNames = [String]()
-    var delegate: ReceiverDelegate? = nil
     
 //    init(contentsList: [[ContentModel]], delegate: ReceiverDelegate) {
 //        self.contentsList = contentsList
@@ -20,7 +20,11 @@ class SettingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "表示設定"
+        
+        activeModelSortedKeys = contentsList.keys.map{ Int($0) }
+        activeModelSortedKeys.sort()
+        
+        title = "Your Choice"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark.circle.fill"),
             style: .plain,
@@ -31,7 +35,7 @@ class SettingViewController: UITableViewController {
     }
     
     @objc func didTapDoneButton(_ sender: UIBarButtonItem) {
-        delegate?.reloadView()
+        // delegate?.reloadView() 子供から親Viewのメソッドを読んで更新を期待した処理
         dismiss(animated: true)
     }
     
@@ -51,7 +55,9 @@ extension SettingViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailSettingVC = DetailSettingViewController(contents: contentsList[indexPath.row])
+        let categoryName = categoryNames[indexPath.row]
+        let contents = contentsList.values.flatMap{ $0 }.filter{ $0.category == categoryName }
+        let detailSettingVC = DetailSettingViewController(contents: contents)
         self.navigationController?.pushViewController(detailSettingVC, animated: true)
     }
 }
