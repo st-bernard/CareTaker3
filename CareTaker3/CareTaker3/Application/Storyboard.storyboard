@@ -36,7 +36,7 @@
                                             <subviews>
                                                 <view tag="99101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d33-Nm-SCS" customClass="MyMeterView" customModule="CareTaker3" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="187" height="133"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -193,6 +193,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <action selector="intervalEditingDidEnd:" destination="Nbi-pQ-j8e" eventType="editingDidEnd" id="tQe-8c-tcP"/>
+                                </connections>
                             </textField>
                             <datePicker contentMode="right" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Last Updated" datePickerMode="date" style="inline" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZK-xD-49w">
                                 <rect key="frame" x="43" y="207" width="351" height="308"/>
@@ -275,6 +278,9 @@
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

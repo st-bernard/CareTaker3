@@ -47,9 +47,61 @@ class MyMeterCell : UICollectionViewCell {
                 MyMeterView.LabelItem(text: "10", angleDeg: 100, offset: CGPoint(x: -2, y: 4)),
                 MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
             ]
+            case 14:
+                return [
+                    MyMeterView.LabelItem(text: "14", angleDeg: 182, offset: .zero),
+                    //MyMeterView.LabelItem(text: "12", angleDeg: 60+17.14*6, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "10", angleDeg: 60+17.14*5, offset: CGPoint(x: 1, y: 3)),
+                    //MyMeterView.LabelItem(text: "8", angleDeg: 60+17.14*4, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "6", angleDeg: 60+17.14*3, offset: CGPoint(x: 1, y: 3)),
+                    //MyMeterView.LabelItem(text: "4", angleDeg: 60+17.14*2, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "2", angleDeg: 60+17.14*1, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60+17.14*0, offset: CGPoint(x: -1, y: 6))
+                ]
             case 10: return [
                 MyMeterView.LabelItem(text: "10", angleDeg: 182, offset: .zero),
                 MyMeterView.LabelItem(text: "5", angleDeg: 120, offset: CGPoint(x: 1, y: 4)),
+                MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
+            ]
+            case 9: return [
+                MyMeterView.LabelItem(text: "9", angleDeg: 182, offset: CGPoint(x: 0, y: 1)),
+                MyMeterView.LabelItem(text: "6", angleDeg: 140, offset: CGPoint(x: 0, y: 3)),
+                MyMeterView.LabelItem(text: "3", angleDeg: 100, offset: CGPoint(x: -2, y: 4)),
+                MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
+            ]
+            case 8:
+                return [
+                    MyMeterView.LabelItem(text: "8", angleDeg: 182, offset: .zero),
+                    MyMeterView.LabelItem(text: "4", angleDeg: 120, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 6))
+                ]
+            case 7:
+                return [
+                    MyMeterView.LabelItem(text: "7", angleDeg: 182, offset: .zero),
+                    MyMeterView.LabelItem(text: "6", angleDeg: 60+17.14*6, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "5", angleDeg: 60+17.14*5, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "4", angleDeg: 60+17.14*4, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "3", angleDeg: 60+17.14*3, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "2", angleDeg: 60+17.14*2, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "1", angleDeg: 60+17.14*1, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60+17.14*0, offset: CGPoint(x: -1, y: 6))
+                ]
+            case 6: return [
+                MyMeterView.LabelItem(text: "6", angleDeg: 182, offset: CGPoint(x: 0, y: 1)),
+                MyMeterView.LabelItem(text: "4", angleDeg: 140, offset: CGPoint(x: 0, y: 3)),
+                MyMeterView.LabelItem(text: "2", angleDeg: 100, offset: CGPoint(x: -2, y: 4)),
+                MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
+            ]
+            case 4:
+                return [
+                    MyMeterView.LabelItem(text: "4", angleDeg: 182, offset: .zero),
+                    MyMeterView.LabelItem(text: "2", angleDeg: 120, offset: CGPoint(x: 1, y: 3)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 6))
+                ]
+            case 3: return [
+                MyMeterView.LabelItem(text: "3", angleDeg: 182, offset: CGPoint(x: 0, y: 1)),
+                MyMeterView.LabelItem(text: "2", angleDeg: 140, offset: CGPoint(x: 0, y: 3)),
+                MyMeterView.LabelItem(text: "1", angleDeg: 100, offset: CGPoint(x: -2, y: 4)),
                 MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
             ]
             case 2:

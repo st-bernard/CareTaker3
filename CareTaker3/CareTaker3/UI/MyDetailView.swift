@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import simd
 
 class MyDetailView : UIViewController, UITextFieldDelegate {
     
@@ -25,6 +26,7 @@ class MyDetailView : UIViewController, UITextFieldDelegate {
         guard let content = content else {
             fatalError("実行前に contentインスタンスを紐づけてください")
         }
+        title = content.name
         intervalTextField.text = String(content.interval)
         datePicker.date = DateUtils.dateFromString(string: content.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
     }
@@ -46,6 +48,41 @@ class MyDetailView : UIViewController, UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func intervalEditingDidEnd(_ sender: Any) {
+
+        let content = content!
+        if let val = Int(intervalTextField.text ?? "x") {
+            if val != content.interval {
+                if val <= 0 || val > 366 {
+                    alert(caption: "WARNING", message: "指定した値は Intervalとして使えません", button1: "Cancel"){
+                        () in
+                        DispatchQueue.main.async {
+                            self.intervalTextField.text = "\(content.interval)"
+                        }
+                    }
+                } else {
+                    let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+                    updateFirebase.updateInterval(withInt: val)
+                }
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let content = content else {
+            return
+        }
+        if let val = Int(intervalTextField.text ?? "x") {
+            if val != content.interval {
+                if val > 0 || val <= 366 {
+                    let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+                    updateFirebase.updateInterval(withInt: val)
+                } else {
+                    print("intervalに \(intervalTextField.text ?? "nil") を入力してたが 無視した")
+                }
+            }
+        }
+    }
     
     @objc func dismissKeyboard() {
         self.view.endEditing(true)

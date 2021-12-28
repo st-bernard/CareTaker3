@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         if kind == UICollectionView.elementKindSectionHeader {
             let headerText = activeModel[activeModelSortedKeys[indexPath.section]]?[0].category ?? "n/a"
-            collectionViewHeader.setTitle(str: "\(headerText) [\(indexPath.section)(\(activeModelSortedKeys[indexPath.section]))]")
+            collectionViewHeader.setTitle(str: "\(headerText)")
             return collectionViewHeader
         }
         return UICollectionReusableView()
