@@ -9,10 +9,10 @@ import UIKit
 
 class MyMeterCell : UICollectionViewCell {
     func setValue(model: ContentModel) {
-        let label1 = contentView.viewWithTag(77001) as! UILabel
-        label1.text = model.name
-        
-        let label2 = contentView.viewWithTag(77002) as! UILabel
-        label2.text = model.lastDate
+//        let label1 = contentView.viewWithTag(77001) as! UILabel
+//        label1.text = model.name
+//        
+//        let label2 = contentView.viewWithTag(77002) as! UILabel
+//        label2.text = model.lastDate
     }
 }
