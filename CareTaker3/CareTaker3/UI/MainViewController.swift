@@ -10,14 +10,16 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var model: ContentsListModel!
     var activeModel = [[ContentModel]]()
-    var mySections = ["身の回り", "冷蔵庫"]
-    var myMinomawari = ["髪","鼻毛","髭"]
-    var myReizouko = ["牛乳","卵","なっとう","鹿肉"]
     
     override func viewDidLoad() {
+        
+        // Cell Size
+        flowLayout.estimatedItemSize = CGSize(width: myCollectionView.frame.width / 2.2, height:myCollectionView.frame.width / 4)
+        
         //        TODO: [1]
         myCollectionView.delegate = self
         myCollectionView.dataSource = self

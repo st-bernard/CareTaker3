@@ -9,6 +9,6 @@ import UIKit
 
 class MyMeterView : UIView {
     override func draw(_ rect: CGRect) {
-        UIImage(named: "Meter")?.draw(at: CGPoint(x: 0, y: 0))
+        UIImage(named: "Meter")?.draw(in: CGRect(origin: .zero, size: CGSize(width: self.frame.size.width, height: self.frame.size.height)))
     }
 }
