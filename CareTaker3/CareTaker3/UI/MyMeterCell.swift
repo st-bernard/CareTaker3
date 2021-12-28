@@ -9,27 +9,27 @@ import UIKit
 
 class MyMeterCell : UICollectionViewCell {
     
+    var displayModel: ContentModel? = nil
+    
     // セルの値を決める
     func setValue(model: ContentModel) {
         
-        guard let meter = contentView as? MyMeterView else {
+        guard let meter = contentView.viewWithTag(99101) as? MyMeterView else {
             fatalError("ContentViewが MyMeterViewオブジェクトを期待した設計")
         }
+        displayModel = model
+        meter.lastDate = model.lastDate
         let now = Date()
-        let lastDateCalc = DateUtils.dateFromString(string: model.lastDate+" 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
+        let lastDateCalc = DateUtils.dateFromString(string: model.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
         let elapsedDays = Calendar.current.dateComponents([.day], from: lastDateCalc, to: now).day ?? 999
         var percent = CGFloat(elapsedDays) / CGFloat(model.interval)
         percent = max(0, percent)
-        let adeg = max(-5, 180.0 - percent * 120.0)
+        let adeg = max(-5, 185.0 - percent * 125.0)
         meter.angleDeg = adeg
-        meter.title = "\(model.name)"
+        
+        meter.title = model.name
         meter.labels = makeLabels(interval: model.interval)
-
-//        let label1 = contentView.viewWithTag(77001) as! UILabel
-//        label1.text = model.name
-//
-//        let label2 = contentView.viewWithTag(77002) as! UILabel
-//        label2.text = model.lastDate
+        meter.setNeedsDisplay() // meter再描画要求（<--重要）
     }
     
     func makeLabels(interval: Int) -> [MyMeterView.LabelItem] {
@@ -58,7 +58,16 @@ class MyMeterCell : UICollectionViewCell {
                     MyMeterView.LabelItem(text: "1", angleDeg: 120, offset: CGPoint(x: 1, y: 3)),
                     MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 6))
                 ]
-            default: return []
+            case 1:
+                return [
+                    MyMeterView.LabelItem(text: "1", angleDeg: 182, offset: .zero),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 6))
+                ]
+            default:
+                return [
+                    MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: .zero),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 6))
+                ]
         }
     }
 

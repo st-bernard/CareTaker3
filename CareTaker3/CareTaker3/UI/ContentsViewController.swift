@@ -1,34 +1,35 @@
 import UIKit
 
-protocol ReceiverDelegate{
-    func reloadView()
-}
+//protocol ReceiverDelegate{
+//    func reloadView()
+//}
 
 class ContentsViewController: UIViewController {
-    var content:ContentModel
-    var pickerItems = [String]()
+    var content: ContentModel?
+    var pickerItems = (1...100).map{ String($0) }
+
     var pickerView = UIPickerView()
-    var contentsViewParts: ContentsViewParts!
-    var updateFirebase: UpdateFirebase
+    var contentsViewParts: ContentsViewParts?
+    var updateFirebase: UpdateFirebase?
     
-    var delegate : ReceiverDelegate
     
-    init(content:ContentModel,delegate:ReceiverDelegate) {
-        self.delegate = delegate
-        self.content = content
-        self.updateFirebase = UpdateFirebase(section: content.section, row: content.row)
-        for i in 1...100 {
-            self.pickerItems.append(String(i))
-        }
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+//    init(content:ContentModel,delegate:ReceiverDelegate) {
+                //        self.delegate = delegate
+//        self.content = content
+//        self.updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+//        for i in 1...100 {
+//            self.pickerItems.append(String(i))
+//        }
+//        super.init(nibName: nil, bundle: nil)
+//    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let content = content else { fatalError() }
+
+        updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+
         title = content.name
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "xmark.circle.fill"),
@@ -50,6 +51,7 @@ class ContentsViewController: UIViewController {
         )
         
         createPickerView()
+        let contentsViewParts = contentsViewParts!
         
         contentsViewParts.yattayoButton.addTarget(self, action: #selector(didTapYattayo(_:)), for: .touchUpInside)
         self.view.addSubview(contentsViewParts.dateSettingTextField)
@@ -62,6 +64,7 @@ class ContentsViewController: UIViewController {
     
     func createPickerView() {
         pickerView.delegate = self
+        guard let contentsViewParts = contentsViewParts else { fatalError() }
         contentsViewParts.dateSettingTextField.inputView = pickerView
         
         let toolbar = UIToolbar()
@@ -72,28 +75,29 @@ class ContentsViewController: UIViewController {
     }
     
     @objc func didTapYattayo(_ sender: YattayoButton) {
-        sender.animateView(){[weak self] in
+        sender.animateView(){
+            [weak self] in
             let formatter = DateFormatter()
             formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
             let today = formatter.string(from: Date())
-            self?.updateFirebase.updateLastDate(withText: today)
-            self?.content.lastDate = today
+            self?.updateFirebase?.updateLastDate(withText: today)
+            self?.content?.lastDate = today
             self?.viewDidLoad()
         }
     }
     
     @objc func didTapDoneButton() {
         print("----donebutton----")
-        contentsViewParts.dateSettingTextField.endEditing(true)
-        guard let strInterval = contentsViewParts.dateSettingTextField.text,
+        contentsViewParts?.dateSettingTextField.endEditing(true)
+        guard let strInterval = contentsViewParts?.dateSettingTextField.text,
               let interval = Int(strInterval)
         else { return }
-        self.updateFirebase.updateInterval(withInt: interval)
-        self.content.interval = interval
+        updateFirebase?.updateInterval(withInt: interval)
+        content?.interval = interval
     }
     
     @objc func didTapDismissButton(_ sender: UIButton) {
-        delegate.reloadView()
+        // delegate?.reloadView() 以前のアプリでは、親Viewの再描画を期待していた
         dismiss(animated: true)
     }
 }
@@ -113,7 +117,7 @@ extension ContentsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("----didselectRow----")
-        contentsViewParts.dateSettingTextField.text = pickerItems[row]
+        contentsViewParts?.dateSettingTextField.text = pickerItems[row]
     }
 
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		022A3C73277AA4CD007FCE57 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022A3C72277AA4CD007FCE57 /* GoogleService-Info.plist */; };
 		022A3C75277AA545007FCE57 /* MyMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C74277AA545007FCE57 /* MyMeterView.swift */; };
+		022A3C77277AE815007FCE57 /* MyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C76277AE815007FCE57 /* MyDetailView.swift */; };
 		872FB99327755E55007F90B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FB99227755E55007F90B5 /* Storyboard.storyboard */; };
 		872FB99527758D67007F90B5 /* MyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99427758D67007F90B5 /* MyHeader.swift */; };
 		872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99627758E98007F90B5 /* MyMeterCell.swift */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		022A3C72277AA4CD007FCE57 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		022A3C74277AA545007FCE57 /* MyMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeterView.swift; sourceTree = "<group>"; };
+		022A3C76277AE815007FCE57 /* MyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailView.swift; sourceTree = "<group>"; };
 		872FB99227755E55007F90B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		872FB99427758D67007F90B5 /* MyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeader.swift; sourceTree = "<group>"; };
 		872FB99627758E98007F90B5 /* MyMeterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeterCell.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				872FB99627758E98007F90B5 /* MyMeterCell.swift */,
 				8774B4902775909C0034B779 /* MainViewController.swift */,
 				022A3C74277AA545007FCE57 /* MyMeterView.swift */,
+				022A3C76277AE815007FCE57 /* MyDetailView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				022A3C75277AA545007FCE57 /* MyMeterView.swift in Sources */,
+				022A3C77277AE815007FCE57 /* MyDetailView.swift in Sources */,
 				8774B4912775909C0034B779 /* MainViewController.swift in Sources */,
 				FE3FE28527715E14006EA2F0 /* TutorialViewController.swift in Sources */,
 				872FB99527758D67007F90B5 /* MyHeader.swift in Sources */,

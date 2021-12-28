@@ -1,9 +1,8 @@
 import UIKit
 
 class SettingViewController: UITableViewController {
-    var contentsList = [[ContentModel]]()
+    var contentsList = Dictionary<Int, Array<ContentModel>>()
     var categoryNames = [String]()
-    var delegate: ReceiverDelegate? = nil
     
 //    init(contentsList: [[ContentModel]], delegate: ReceiverDelegate) {
 //        self.contentsList = contentsList
@@ -31,7 +30,7 @@ class SettingViewController: UITableViewController {
     }
     
     @objc func didTapDoneButton(_ sender: UIBarButtonItem) {
-        delegate?.reloadView()
+        // delegate?.reloadView() 子供から親Viewのメソッドを読んで更新を期待した処理
         dismiss(animated: true)
     }
     
@@ -51,7 +50,7 @@ extension SettingViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailSettingVC = DetailSettingViewController(contents: contentsList[indexPath.row])
-        self.navigationController?.pushViewController(detailSettingVC, animated: true)
+//        let detailSettingVC = DetailSettingViewController(contents: contentsList[indexPath.row])
+//        self.navigationController?.pushViewController(detailSettingVC, animated: true)
     }
 }

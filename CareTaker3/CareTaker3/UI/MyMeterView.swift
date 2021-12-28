@@ -15,6 +15,7 @@ class MyMeterView : UIView {
         var offset: CGPoint
     }
     
+    var lastDate: String = ""
     var angleDeg: CGFloat = 45
     var labels = Array<LabelItem>()
     var title: String = "Hoge"
@@ -62,7 +63,7 @@ class MyMeterView : UIView {
             at: CGPoint(x: 3, y: 3),
             withAttributes: [
                 NSAttributedString.Key.foregroundColor : UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1),
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12),
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 9),
             ]
         )
     }
