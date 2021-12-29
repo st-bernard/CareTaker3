@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>YahooPoiApplicationId</key>
+	<string>xxxxxxxxxxxxxxxxxx</string>
+	<key>PoiPattern</key>
+	<string>https://map.yahooapis.jp/search/local/V1/localSearch?appid=@SECRET@&amp;query=@KEYWORD@&amp;lat=@LAT@&amp;lon=@LON@&amp;dist=@Rkm@</string>
+</dict>
+</plist>

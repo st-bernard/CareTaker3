@@ -11,6 +11,7 @@
 		022A3C75277AA545007FCE57 /* MyMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C74277AA545007FCE57 /* MyMeterView.swift */; };
 		022A3C77277AE815007FCE57 /* MyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C76277AE815007FCE57 /* MyDetailView.swift */; };
 		022A3C79277B471F007FCE57 /* ViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C78277B471F007FCE57 /* ViewController+alert.swift */; };
+		02BEA304277BE9DD0090386C /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA303277BE9DD0090386C /* Private.plist */; };
 		872FB99327755E55007F90B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FB99227755E55007F90B5 /* Storyboard.storyboard */; };
 		872FB99527758D67007F90B5 /* MyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99427758D67007F90B5 /* MyHeader.swift */; };
 		872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99627758E98007F90B5 /* MyMeterCell.swift */; };
@@ -66,6 +67,7 @@
 		022A3C74277AA545007FCE57 /* MyMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeterView.swift; sourceTree = "<group>"; };
 		022A3C76277AE815007FCE57 /* MyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailView.swift; sourceTree = "<group>"; };
 		022A3C78277B471F007FCE57 /* ViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+alert.swift"; sourceTree = "<group>"; };
+		02BEA303277BE9DD0090386C /* Private.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
 		872FB99227755E55007F90B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		872FB99427758D67007F90B5 /* MyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeader.swift; sourceTree = "<group>"; };
 		872FB99627758E98007F90B5 /* MyMeterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeterCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				B60B18372769C67400D681A1 /* CareTaker3 */,
 				022A3C72277AA4CD007FCE57 /* GoogleService-Info.plist */,
+				02BEA303277BE9DD0090386C /* Private.plist */,
 				B60B184E2769C67600D681A1 /* CareTaker3Tests */,
 				B60B18582769C67600D681A1 /* CareTaker3UITests */,
 				B60B18362769C67400D681A1 /* Products */,
@@ -341,6 +344,7 @@
 			files = (
 				872FB99327755E55007F90B5 /* Storyboard.storyboard in Resources */,
 				022A3C73277AA4CD007FCE57 /* GoogleService-Info.plist in Resources */,
+				02BEA304277BE9DD0090386C /* Private.plist in Resources */,
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
 			);
