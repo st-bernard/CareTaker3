@@ -43,11 +43,27 @@ extension DetailSettingViewController {
         if cell?.accessoryType == .checkmark {
             cell?.accessoryType = .none
             updateFirebase.updateIsActive(isActive: false)
-            contents[indexPath.row] = ContentModel(name: contents[indexPath.row].name, category: contents[indexPath.row].category, interval: contents[indexPath.row].interval, lastDate: contents[indexPath.row].lastDate, section: contents[indexPath.row].section, row: contents[indexPath.row].row, isActive: false)
+            contents[indexPath.row] = ContentModel(
+                name: contents[indexPath.row].name,
+                category: contents[indexPath.row].category,
+                interval: contents[indexPath.row].interval,
+                lastDate: contents[indexPath.row].lastDate,
+                section: contents[indexPath.row].section,
+                row: contents[indexPath.row].row,
+                isActive: false
+            )
         } else {
             cell?.accessoryType = .checkmark
             updateFirebase.updateIsActive(isActive: true)
-            contents[indexPath.row] = ContentModel(name: contents[indexPath.row].name, category: contents[indexPath.row].category, interval: contents[indexPath.row].interval, lastDate: contents[indexPath.row].lastDate, section: contents[indexPath.row].section, row: contents[indexPath.row].row, isActive: true)
+            contents[indexPath.row] = ContentModel(
+                name: contents[indexPath.row].name,
+                category: contents[indexPath.row].category,
+                interval: contents[indexPath.row].interval,
+                lastDate: contents[indexPath.row].lastDate,
+                section: contents[indexPath.row].section,
+                row: contents[indexPath.row].row,
+                isActive: true
+            )
         }
     }
 }

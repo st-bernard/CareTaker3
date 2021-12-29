@@ -11,12 +11,34 @@ class MyMeterCell : UICollectionViewCell {
     
     var displayModel: ContentModel? = nil
     
+    func checkLocationInputted(model: ContentModel) -> Bool {
+        if PoiClientYahoo.makeKeyword(sectionName: model.category, itemName: model.name) == nil {
+            return true // Home onlyは、地図登録しなくて良い
+        }
+        if model.isHome == nil {
+            return false
+        }
+        if model.isHome == true {
+            return true
+        }
+        if model.locationName == nil {
+            return false
+        }
+        return true
+    }
+    
     // セルの値を決める
     func setValue(model: ContentModel) {
         
         guard let meter = contentView.viewWithTag(99101) as? MyMeterView else {
             fatalError("ContentViewが MyMeterViewオブジェクトを期待した設計")
         }
+
+        if let noLocMark = contentView.viewWithTag(99102) {
+            noLocMark.isHidden = checkLocationInputted(model: model)
+        }
+
+        
         displayModel = model
         meter.lastDate = model.lastDate
         let now = Date()
