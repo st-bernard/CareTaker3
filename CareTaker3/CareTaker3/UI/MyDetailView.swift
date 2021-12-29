@@ -93,6 +93,24 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
                             self.labelLocationName.text = "※地図上のポイントを選択してください"
                         } else {
                             self.labelLocationName.text = content.locationName
+                            var tarAnnotations = Array<MKAnnotation>()
+                            for annotation in self.mapView.annotations {
+                                if annotation.title == content.locationName {
+                                    tarAnnotations.append(annotation)
+                                }
+                            }
+                            if tarAnnotations.count > 0 {
+                                self.mapView.selectedAnnotations.append(contentsOf: tarAnnotations)
+
+                                // 選択されているときは、マップの中央にする
+                                let tarAnnotation = tarAnnotations[0]
+                                let centerLon = tarAnnotation.coordinate.longitude
+                                let centerLat = tarAnnotation.coordinate.latitude
+                                let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                                let centerLocation = CLLocationCoordinate2DMake(centerLat, centerLon)
+                                let region = MKCoordinateRegion(center: centerLocation, span: span)
+                                self.mapView.region = region
+                            }
                         }
                     }
                 }
