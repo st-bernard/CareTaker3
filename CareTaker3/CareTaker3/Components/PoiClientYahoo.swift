@@ -45,7 +45,7 @@ class PoiClientYahoo {
         guard let property = configurations as? [String : Any] else {
             fatalError("Private.plistがロードできませんでした")
         }
-
+        
         // https://map.yahooapis.jp/search/local/V1/localSearch
         //      ?appid=@SECRET@
         //      &query=@KEYWORD@
@@ -73,7 +73,7 @@ class PoiClientYahoo {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.timeoutInterval = 10.0    // set timeout in second(s)
-
+        
         URLSession
             .shared                                                 // シングルトン
             .dataTask(with: urlRequest) {                           // URLSessionDataTaskオブジェクト。Httpクライアントの非同期処理
@@ -92,5 +92,23 @@ class PoiClientYahoo {
                 callback(true, json)
             }
             .resume()
+    }
+    
+    class func makeKeyword(sectionName: String, itemName: String) -> String? {
+        switch "\(sectionName)：\(itemName)" {
+            case "トイレ：掃除":  return "ホームセンター"
+            case "トイレ：トイレットペーパー": return "ドラッグストア"
+            case "キッチン：シンク": return "ドラッグストア"
+            case "キッチン：コンロ": return "ドラッグストア"
+            case "キッチン：レンジフード": return "ホームセンター"
+            case "キッチン：キッチンペーパー": return "ホームセンター"
+            case "キッチン：ラップ": return "ホームセンター"
+            case "寝室：布団干し": return nil
+            case "寝室：シーツ選択": return nil
+            case "身だしなみ：髪の毛": return "美容室"
+            case "身だしなみ：ひげ": return nil
+            case "身だしなみ：つめ": return "ネイルサロン"
+            default: return nil
+        }
     }
 }

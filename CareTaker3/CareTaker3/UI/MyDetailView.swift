@@ -6,13 +6,18 @@
 //
 
 import UIKit
-import simd
+import MapKit
 
-class MyDetailView : UIViewController, UITextFieldDelegate {
+class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var intervalTextField: UITextField!
-    
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var homeImage: UIImageView!
+    @IBOutlet weak var homeMapSwitch: UISwitch!
+    @IBOutlet weak var labelHomeMap: UILabel!
+    @IBOutlet weak var labelLocationName: UILabel!
+
     var content: ContentModel?
     
     override func viewDidLoad() {
@@ -29,15 +34,92 @@ class MyDetailView : UIViewController, UITextFieldDelegate {
         title = content.name
         intervalTextField.text = String(content.interval)
         datePicker.date = DateUtils.dateFromString(string: content.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
+        
+        // 地図のズームを調整する
+        mapView.delegate = self
+        let centerLon = 139.7474472
+        let centerLat = 35.6458841
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let centerLocation = CLLocationCoordinate2DMake(centerLat, centerLon)
+        let region = MKCoordinateRegion(center: centerLocation, span: span)
+        mapView.region = region
+
+        // 地図の拠点を収集する
+        let poi = PoiClientYahoo()
+        if let keyword = PoiClientYahoo.makeKeyword(sectionName: content.category, itemName: content.name) {
+            poi.getPoiList(lon: centerLon, lat: centerLat, Rkm: 1.5, keyword: keyword) {
+                success, items in
+                
+                guard success,
+                      let items = items,
+                let features = items.Feature else {
+                    self.alert(caption: "ERROR", message: "施設検索サービスが利用できませんでした。後からやり直してください", button1: "OK")
+                    return
+                }
+                DispatchQueue.main.async {
+                    for item in features {
+                        guard let lonlatstr = item.Geometry?.Coordinates else {
+                            print("座標が入っていない施設情報はスキップ \(String(describing: item.Name))")
+                            continue
+                        }
+                        let lonlatarray = lonlatstr.split(separator: ",")
+                        guard
+                            let lon = CLLocationDegrees(lonlatarray[0]),
+                            let lat = CLLocationDegrees(lonlatarray[1])
+                        else {
+                            print("座標が入っていない施設情報はスキップ \(String(describing: item.Name))")
+                            continue
+                        }
+                        
+                        let pin = MKPointAnnotation()
+                        pin.title = item.Name
+                        pin.subtitle = item.Property?.Address ?? ""
+                        pin.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                        self.mapView.addAnnotation(pin)
+                    }
+                    self.mapView.setNeedsDisplay()
+                    self.mapView.isHidden = false
+                    self.homeImage.isHidden = true
+                    self.homeMapSwitch.setOn(true, animated: true)
+                    self.labelLocationName.isHidden = false
+                }
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.homeImage.isHidden = false
+                self.mapView.isHidden = true
+                self.homeMapSwitch.setOn(false, animated: true)
+                self.homeMapSwitch.isEnabled = false
+                self.labelHomeMap.text = "Home only"
+                self.labelLocationName.isHidden = true
+            }
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+
+        guard let annotation = view.annotation else { return }
+
+        labelLocationName.text = annotation.title ?? "(no name)"
+    }
+    
+    @IBAction func didHomeMapSwitchValueChanged(_ sender: Any) {
+        if homeMapSwitch.isOn {
+            self.homeImage.isHidden = true
+            self.mapView.isHidden = false
+        } else {
+            self.homeImage.isHidden = false
+            self.mapView.isHidden = true
+        }
     }
     
     
     @IBAction func didTapDoneButton(_ sender: Any) {
-
+        
         let content = content!
-
-//        let d = DateUtils.dateFromString(string: content.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-//        let d2 = Calendar.current.date(byAdding: .day, value: -1, to: d)!
+        
+        //        let d = DateUtils.dateFromString(string: content.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
+        //        let d2 = Calendar.current.date(byAdding: .day, value: -1, to: d)!
         let d2 = Date()
         
         let formatter = DateFormatter()
@@ -49,7 +131,7 @@ class MyDetailView : UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func intervalEditingDidEnd(_ sender: Any) {
-
+        
         let content = content!
         if let val = Int(intervalTextField.text ?? "x") {
             if val != content.interval {
@@ -87,14 +169,14 @@ class MyDetailView : UIViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         self.view.endEditing(true)
     }
-
+    
     // MacのキーボードでEnter押した時に、キーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
     
     @IBAction func datePrimaryActionTriggered(_ sender: Any) {
-
+        
         // 強制的に元の日付にもどして、編集を無力化する
         let content = content!
         datePicker.date = DateUtils.dateFromString(string: content.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")

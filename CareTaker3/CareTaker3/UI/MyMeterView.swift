@@ -22,7 +22,6 @@ class MyMeterView : UIView {
     
     override func draw(_ rect: CGRect) {
 
-        let Pi = 3.141592
         let W = self.frame.size.width
         let H = self.frame.size.height
         let O = CGPoint(x: W / 2, y: W * 0.442) // 針の根本の座標
@@ -36,8 +35,8 @@ class MyMeterView : UIView {
         // ラベル描画
         for label in labels {
             let r0 = Rlabel + (Rx * abs(cos(label.angleDeg)))
-            let x = cos(label.angleDeg * Pi / 180.0) * r0 + O.x + label.offset.x
-            let y = -sin(label.angleDeg * Pi / 180.0) * r0 + O.y + label.offset.y
+            let x = cos(label.angleDeg * Double.pi / 180.0) * r0 + O.x + label.offset.x
+            let y = -sin(label.angleDeg * Double.pi / 180.0) * r0 + O.y + label.offset.y
             label.text.draw(
                 at: CGPoint(x: x, y: y),
                 withAttributes: [
@@ -51,7 +50,7 @@ class MyMeterView : UIView {
         // メーターの針を描画
         let line = UIBezierPath();
         line.move(to: O);
-        let zrad = angleDeg * Pi / 180.0
+        let zrad = angleDeg * Double.pi / 180.0
         let r = R + (Rx * abs(cos(zrad)))
         line.addLine(to: CGPoint(x: cos(zrad) * r + O.x, y: -sin(zrad) * r + O.y));
         UIColor.red.setStroke()
