@@ -32,14 +32,20 @@ class ContentsListModel {
     
     func generateNewUser(idKey: String, progress: @escaping (ContentsListModelState) -> Void) {
         progress(.loading)
-        DBRef.child("temp").getData(){ error,snap in
+        DBRef.child("temp").getData() {
+            error,snap in
+            
             guard let arrayOfArray = snap.value as? [[[String:Any]]] else {
                 progress(.error)
                 return
             }
-            arrayOfArray.forEach {arrOfDict in
+            arrayOfArray.forEach {
+                arrOfDict in
+                
                 var rowArray = [ContentModel]()
-                arrOfDict.forEach {dict in
+                arrOfDict.forEach {
+                    dict in
+                    
                     guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
                         progress(.error)
                         print("-----Decode error-----")
@@ -61,15 +67,17 @@ class ContentsListModel {
     func pullData(id: String, progress: @escaping (ContentsListModelState) -> Void) {
         print(id)
         progress(.loading)
-        DBRef.child("users/\(id)").getData(){ error,snap in
+        DBRef.child("users/\(id)").getData() {
+            error, snap in
+            
             guard let arrayOfArray = snap.value as? [[[String:Any]]] else {
                 progress(.error)
                 print("----cast error----")
                 return
             }
-            arrayOfArray.forEach {arrOfDict in
+            for arrOfDict in arrayOfArray {
                 var rowArray = [ContentModel]()
-                arrOfDict.forEach {dict in
+                for dict in arrOfDict {
                     guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
                         progress(.error)
                         print("-----Decode error-----")

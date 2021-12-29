@@ -43,7 +43,7 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
         let centerLocation = CLLocationCoordinate2DMake(centerLat, centerLon)
         let region = MKCoordinateRegion(center: centerLocation, span: span)
         mapView.region = region
-
+        
         // 地図の拠点を収集する
         let poi = PoiClientYahoo()
         if let keyword = PoiClientYahoo.makeKeyword(sectionName: content.category, itemName: content.name) {
@@ -78,10 +78,23 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
                         self.mapView.addAnnotation(pin)
                     }
                     self.mapView.setNeedsDisplay()
-                    self.mapView.isHidden = false
-                    self.homeImage.isHidden = true
-                    self.homeMapSwitch.setOn(true, animated: true)
-                    self.labelLocationName.isHidden = false
+
+                    if content.isHome == true {
+                        self.homeMapSwitch.setOn(false, animated: false)
+                        self.homeImage.isHidden = false
+                        self.mapView.isHidden = true
+                        self.labelLocationName.isHidden = true
+                    } else {
+                        self.mapView.isHidden = false
+                        self.homeImage.isHidden = true
+                        self.homeMapSwitch.setOn(true, animated: true)
+                        self.labelLocationName.isHidden = false
+                        if content.locationName == nil {
+                            self.labelLocationName.text = "※地図上のポイントを選択してください"
+                        } else {
+                            self.labelLocationName.text = content.locationName
+                        }
+                    }
                 }
             }
         } else {
@@ -98,18 +111,37 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
 
-        guard let annotation = view.annotation else { return }
-
-        labelLocationName.text = annotation.title ?? "(no name)"
+        guard let annotation = view.annotation, let content = content else { return }
+        let title = (annotation.title ?? "(no name)") ?? "(no name)"
+        labelLocationName.text = title
+        let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+        updateFirebase.updateLocation(
+            isHome: homeMapSwitch.isOn ? false : true,
+            locationName: title,
+            lon: annotation.coordinate.longitude,
+            lat: annotation.coordinate.latitude
+        )
     }
     
     @IBAction func didHomeMapSwitchValueChanged(_ sender: Any) {
+
+        let content = content!
+        let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
         if homeMapSwitch.isOn {
             self.homeImage.isHidden = true
             self.mapView.isHidden = false
+            self.labelLocationName.isHidden = false
+            updateFirebase.updateLocation(isHome: false)
+            if content.locationName == nil {
+                self.labelLocationName.text = "※地図上のポイントを選択してください"
+            } else {
+                self.labelLocationName.text = content.locationName
+            }
         } else {
             self.homeImage.isHidden = false
             self.mapView.isHidden = true
+            self.labelLocationName.isHidden = true
+            updateFirebase.updateLocation(isHome: true)
         }
     }
     
@@ -117,14 +149,9 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
     @IBAction func didTapDoneButton(_ sender: Any) {
         
         let content = content!
-        
-        //        let d = DateUtils.dateFromString(string: content.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-        //        let d2 = Calendar.current.date(byAdding: .day, value: -1, to: d)!
-        let d2 = Date()
-        
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
-        let today = formatter.string(from: d2)
+        let today = formatter.string(from: Date())
         let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
         updateFirebase.updateLastDate(withText:today)
         self.navigationController?.popViewController(animated: true)
