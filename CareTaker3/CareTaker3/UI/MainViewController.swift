@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var model: ContentsListModel!
     var activeModel = Dictionary<Int, Array<ContentModel>>()
     var activeModelSortedKeys = Array<Int>()
-    
+    let firebaseRepository = FirebaseContentRepository()
     override func viewDidLoad() {
 
         // Cell Size
@@ -27,42 +27,32 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        reloadFirebaseData()
-    }
-    
-    private func reloadFirebaseData() {
-        
+//        reloadFirebaseData()
         let indexSet = NSMutableIndexSet()
         for i in 0..<myCollectionView.numberOfSections {
             indexSet.add(i)
         }
-        model = ContentsListModel()
-        model.configuration(){
-            [weak self] state in
-            switch state {
-                case .loading:
-                    print("----loading----")
-                case .finish:
-                    print("----finished----")
-                    if let me = self {
-                        let dat = me.model.contents.flatMap{ $0 }.filter{ $0.isActive }
-                        me.activeModel = Dictionary(grouping: dat, by: { $0.section })
-                        for key in me.activeModel.keys {
-                            me.activeModel[key]?.sort(by: {
-                                (item0, item1) in
-                                return item0.row < item1.row
-                            })
-                        }
-                        me.activeModelSortedKeys = me.activeModel.keys.map{ Int($0) }
-                        me.activeModelSortedKeys.sort()
-                        me.myCollectionView.reloadData()
-                    }
+        firebaseRepository.reloadFirebaseData{
+            success,newModel in
+            if success {
+                self.model = newModel
+                let dat = self.model.contents.flatMap{ $0 }.filter{ $0.isActive }
+                self.activeModel = Dictionary(grouping: dat, by: { $0.section })
+                for key in self.activeModel.keys {
+                    self.activeModel[key]?.sort(by: {
+                        (item0, item1) in
+                        return item0.row < item1.row
+                    })
+                }
+                self.activeModelSortedKeys = self.activeModel.keys.map{ Int($0) }
+                self.activeModelSortedKeys.sort()
+                self.myCollectionView.reloadData()
 
-                case .error:
-                    print("----error----")
             }
         }
     }
+    
+    
     
     //    TODO: [2] セクションの数を教えてあげる
     func numberOfSections(in collectionView: UICollectionView) -> Int {
