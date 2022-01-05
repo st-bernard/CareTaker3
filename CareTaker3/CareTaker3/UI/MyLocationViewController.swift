@@ -8,11 +8,12 @@
 import UIKit
 import MapKit
 
-class MyLocationViewController : UIViewController{
+class MyLocationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     var model: ContentsListModel!
     let firebaseRepository = FirebaseContentRepository()
     let dueSpanDays = 7
     var locationList = Array<ContentModel> ()
+    var uniqueShopList = Array<ShopItem>()
     
     @IBOutlet weak var locationMap: MKMapView!
     @IBOutlet weak var locationTable: UITableView!
@@ -26,6 +27,7 @@ class MyLocationViewController : UIViewController{
     }
     
     override func viewDidLoad() {
+        //        locationTable.delegate = self
         firebaseRepository.reloadFirebaseData{
             success,newModel in
             if success {
@@ -33,7 +35,40 @@ class MyLocationViewController : UIViewController{
                 self.resetLocationList()
             }
         }
+        
+        
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return uniqueShopList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = locationTable.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
+        let shop = uniqueShopList[indexPath.row]
+        cell.textLabel?.text = shop.locationName ?? "noname"
+        cell.detailTextLabel?.text = "髪の毛とか出す"
+        cell.imageView?.image = UIImage(named: "annotation\(indexPath.row+1)")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let shop = uniqueShopList[indexPath.row]
+        let annotation =  locationMap.annotations
+            .filter{
+                ($0.title ?? "") == (shop.locationName ?? "")
+            }.first
+        if let annotation = annotation{
+            locationMap.selectedAnnotations = [annotation]
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let centerLocation = CLLocationCoordinate2DMake(annotation.coordinate.latitude, annotation.coordinate.longitude)
+            let region = MKCoordinateRegion(center: centerLocation, span: span)
+            locationMap.region = region
+            
+        }
+        
+    }
+    
     
     struct ShopItem:Hashable {
         var locationName:String?
@@ -80,7 +115,7 @@ class MyLocationViewController : UIViewController{
         }.filter{
             $0.locationName != nil && $0.locationLon != nil && $0.locationLat != nil
         }
-        let uniqueShopList = Array(Set( shopList ) )
+        uniqueShopList = Array(Set( shopList ) )
         if uniqueShopList.count > 0 {
             for item in uniqueShopList {
                 print("uniqueShop =\(item.locationName!) \(item.locationLon!)")
@@ -108,8 +143,11 @@ class MyLocationViewController : UIViewController{
             let centerLocation = CLLocationCoordinate2DMake(centerLat, centerLon)
             let region = MKCoordinateRegion(center: centerLocation, span: span)
             locationMap.region = region
+            
         }
+        locationTable.reloadData()
     }
+    
     
     
 }
