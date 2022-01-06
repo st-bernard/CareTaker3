@@ -13,6 +13,7 @@
 		022A3C79277B471F007FCE57 /* ViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C78277B471F007FCE57 /* ViewController+alert.swift */; };
 		02444C90277BEC1100EF5A72 /* PoiClientYahoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C8F277BEC1100EF5A72 /* PoiClientYahoo.swift */; };
 		02444C92277BED5600EF5A72 /* YahooPoiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */; };
+		025277662786C5E000A3EFAC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 025277652786C5E000A3EFAC /* Settings.bundle */; };
 		02BEA304277BE9DD0090386C /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA303277BE9DD0090386C /* Private.plist */; };
 		2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8927852CF700170226 /* MyLocationViewController.swift */; };
 		2AE11E8C27852F1900170226 /* FirebaseContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */; };
@@ -75,6 +76,7 @@
 		02444C8F277BEC1100EF5A72 /* PoiClientYahoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiClientYahoo.swift; sourceTree = "<group>"; };
 		02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooPoiClientTests.swift; sourceTree = "<group>"; };
 		02444C93277C066600EF5A72 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		025277652786C5E000A3EFAC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		02BEA303277BE9DD0090386C /* Private.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
 		2AE11E8927852CF700170226 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContentRepository.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		B60B182C2769C67400D681A1 = {
 			isa = PBXGroup;
 			children = (
+				025277652786C5E000A3EFAC /* Settings.bundle */,
 				B60B18372769C67400D681A1 /* CareTaker3 */,
 				022A3C72277AA4CD007FCE57 /* GoogleService-Info.plist */,
 				02BEA303277BE9DD0090386C /* Private.plist */,
@@ -364,6 +367,7 @@
 				022A3C73277AA4CD007FCE57 /* GoogleService-Info.plist in Resources */,
 				02BEA304277BE9DD0090386C /* Private.plist in Resources */,
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
+				025277662786C5E000A3EFAC /* Settings.bundle in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,6 +27,12 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         
+        // 設定から通知の間隔をもらう
+        dueSpanDays = UserDefaults.standard.integer(forKey: "DueInterval")
+        if dueSpanDays < 1 || dueSpanDays > 30 {
+            dueSpanDays = 7
+        }
+        
         // Sliderの初期値
         daysSlider.value = Float(dueSpanDays) / maxDueSpanDays
         dueLabel.text = "向こう\(dueSpanDays)日間以内のアクション一覧"
@@ -57,6 +63,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         let newDays = max(1, Int(sender.value * maxDueSpanDays))
         if newDays != dueSpanDays {
             dueSpanDays = newDays
+            UserDefaults.standard.set(dueSpanDays, forKey: "DueInterval")
             dueLabel.text = "向こう\(dueSpanDays)日間以内のアクション一覧"
             resetLocationList()
         }
@@ -126,7 +133,6 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
             let lastDate = DateUtils.dateFromString(string: $0.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
             guard let nextDue = Calendar.current.date(byAdding: .day, value: $0.interval, to: lastDate) else {fatalError()}
             return nextDue < due
-            
         }
         locationList = list
 
@@ -141,7 +147,6 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
 
         let newShopList = Array(Set( shopList ) )
         if newShopList.count == uniqueShopList.count && newShopList.allSatisfy({ uniqueShopList.contains($0) }){
-            print( "地図更新不要" )
             return // 何も変更されていない
         }
         uniqueShopList = newShopList
@@ -184,9 +189,17 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         tsp.delegate = self
         uniqueShopList = tsp.solve(data: uniqueShopList) as! [ShopItem]
         locationTable.reloadData()
-        
-        print("店の数 = \(uniqueShopList.count)")
+
+        reRouteTimer?.invalidate()
+        reRouteTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) {
+            _ in
+            DispatchQueue.main.async {
+                self.redrawRouteLines()
+            }
+        }
     }
+    
+    var reRouteTimer: Timer? = nil
     
     func redrawRouteLines() {
         //uniqueShopListの各ノード間をルート探索しルートの線を描画
