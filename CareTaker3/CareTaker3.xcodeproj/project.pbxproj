@@ -20,6 +20,7 @@
 		872FB99527758D67007F90B5 /* MyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99427758D67007F90B5 /* MyHeader.swift */; };
 		872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99627758E98007F90B5 /* MyMeterCell.swift */; };
 		8774B4912775909C0034B779 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774B4902775909C0034B779 /* MainViewController.swift */; };
+		87B2E21427858249008F9001 /* Tono in Frameworks */ = {isa = PBXBuildFile; productRef = 87B2E21327858249008F9001 /* Tono */; };
 		B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18382769C67400D681A1 /* AppDelegate.swift */; };
 		B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183A2769C67400D681A1 /* SceneDelegate.swift */; };
 		B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* CollectionViewController.swift */; };
@@ -119,6 +120,7 @@
 				B60B186C2769C6CB00D681A1 /* FirebaseDatabase in Frameworks */,
 				B60B18712769C6FA00D681A1 /* CodableFirebase in Frameworks */,
 				B60B186A2769C6CB00D681A1 /* FirebaseAnalytics in Frameworks */,
+				87B2E21427858249008F9001 /* Tono in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +265,7 @@
 				B60B186B2769C6CB00D681A1 /* FirebaseDatabase */,
 				B60B186D2769C6CB00D681A1 /* FirebaseMessaging */,
 				B60B18702769C6FA00D681A1 /* CodableFirebase */,
+				87B2E21327858249008F9001 /* Tono */,
 			);
 			productName = careTaker2;
 			productReference = B60B18352769C67400D681A1 /* CareTaker3.app */;
@@ -339,6 +342,7 @@
 			packageReferences = (
 				B60B18682769C6CB00D681A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				B60B186F2769C6FA00D681A1 /* XCRemoteSwiftPackageReference "CodableFirebase" */,
+				87B2E21227858249008F9001 /* XCRemoteSwiftPackageReference "TonoSwift" */,
 			);
 			productRefGroup = B60B18362769C67400D681A1 /* Products */;
 			projectDirPath = "";
@@ -750,6 +754,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		87B2E21227858249008F9001 /* XCRemoteSwiftPackageReference "TonoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mtonosaki/TonoSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		B60B18682769C6CB00D681A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -769,6 +781,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		87B2E21327858249008F9001 /* Tono */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87B2E21227858249008F9001 /* XCRemoteSwiftPackageReference "TonoSwift" */;
+			productName = Tono;
+		};
 		B60B18692769C6CB00D681A1 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B60B18682769C6CB00D681A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

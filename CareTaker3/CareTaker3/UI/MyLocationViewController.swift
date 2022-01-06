@@ -7,8 +7,11 @@
 
 import UIKit
 import MapKit
+import Tono
 
-class MyLocationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
+class MyLocationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TspResolverDelegate{
+
+    
     var model: ContentsListModel!
     let firebaseRepository = FirebaseContentRepository()
     let dueSpanDays = 7
@@ -70,7 +73,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     }
     
     
-    struct ShopItem:Hashable {
+    struct ShopItem:Hashable, TspNode {
         var locationName:String?
         var locationLon:Double?
         var locationLat:Double?
@@ -145,9 +148,29 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
             locationMap.region = region
             
         }
+        //uniqueShopListの順番を巡回セールスマン法で最短順にする
+        //二点間距離計算関数をつくる
+        
+        //TSPresolverで最短経路
+        let tsp = TspResolverLoop()
+        tsp.delegate = self
+        uniqueShopList = tsp.solve(data: uniqueShopList) as! [ShopItem]
         locationTable.reloadData()
     }
+    func getTspCost(from: TspNode, to: TspNode, stage: TspCaluclationStage) -> Double {
+        guard let shop0 = from as? ShopItem else { fatalError() }
+        guard let shop1 = to as? ShopItem else { fatalError() }
+        let cost = getDistance(shop0: shop0, shop1: shop1)
+        return cost
+    }
     
+    func getDistance(shop0: ShopItem,shop1: ShopItem) -> Double{
+        guard shop0.locationLat != nil && shop0.locationLon != nil && shop1.locationLat != nil && shop1.locationLon != nil else{
+            fatalError("shop0/1 should have Lon and Lat")
+        }
+        let meter = GeoEu.getDistanceGrateCircle(lon0: shop0.locationLon!, lat0: shop0.locationLat!, lon1: shop1.locationLon!, lat1: shop1.locationLat!)
+        return meter * 1.37 //直線距離を道路距離に変換する概算係数
+    }
     
     
 }
