@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
           "branch": "master",
-          "revision": "5bba5242e2b332d3f487b743e093e49e5746432d",
+          "revision": "d5635c1569f33298619af5379b4c702384ec9e45",
           "version": null
         }
       },
@@ -116,6 +116,15 @@
           "branch": null,
           "revision": "7e2c5f3cbbeea68e004915e3a8961e20bd11d824",
           "version": "1.18.0"
+        }
+      },
+      {
+        "package": "Tono",
+        "repositoryURL": "https://github.com/mtonosaki/TonoSwift.git",
+        "state": {
+          "branch": "main",
+          "revision": "ab51eb6a255cb0690c031754ac0de5bf0103d420",
+          "version": null
         }
       }
     ]
