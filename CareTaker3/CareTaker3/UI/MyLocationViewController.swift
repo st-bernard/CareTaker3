@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import Tono
 
-class MyLocationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TspResolverDelegate{
+class MyLocationViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, TspResolverDelegate, MKMapViewDelegate{
 
     
     var model: ContentsListModel!
@@ -21,6 +21,10 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var locationMap: MKMapView!
     @IBOutlet weak var locationTable: UITableView!
     @IBOutlet weak var dueLabel: UILabel!
+    @IBAction func clickTestButton(_ sender: Any) {
+
+        
+    }
     
     
     
@@ -30,6 +34,12 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewDidLoad() {
+        //MapViewのカスタマイズ
+        locationMap.delegate = self
+        locationMap.showsUserLocation = true
+        locationMap.userTrackingMode = .followWithHeading
+        
+        
         //        locationTable.delegate = self
         firebaseRepository.reloadFirebaseData{
             success,newModel in
@@ -107,9 +117,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
             
         }
         locationList = list
-        for item in locationList {
-            print("targetItem =\(item.name) \(item.lastDate)")
-        }
+
         // Locationリストから店舗の場所を取得して地図に貼る（店舗が同じだったら重複を削除）
         let shopList = locationList.filter{
             $0.isHome == false
@@ -121,7 +129,6 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         uniqueShopList = Array(Set( shopList ) )
         if uniqueShopList.count > 0 {
             for item in uniqueShopList {
-                print("uniqueShop =\(item.locationName!) \(item.locationLon!)")
                 let pin = MKPointAnnotation()
                 pin.title = item.locationName ?? "noname"
                 pin.subtitle = item.address ?? "noname"
@@ -152,11 +159,62 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         //二点間距離計算関数をつくる
         
         //TSPresolverで最短経路
-        let tsp = TspResolverLoop()
+        //TODO: 現在地起点の時はLoop、現在地起点無しの時はShuffle
+        let tsp = TspResolverShuffle()
         tsp.delegate = self
         uniqueShopList = tsp.solve(data: uniqueShopList) as! [ShopItem]
         locationTable.reloadData()
+        
+        //uniqueShopListの各ノード間をルート探索しルートの線を描画
+        for nodeIndex in 1..<uniqueShopList.count {
+            let nodeFrom = uniqueShopList[nodeIndex-1]
+            let nodeTo = uniqueShopList[nodeIndex]
+            
+            print("junban =\(nodeFrom.locationName!) \(nodeTo.locationName!)")
+            
+            let sourcePlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: nodeFrom.locationLat!, longitude: nodeFrom.locationLon!))
+            let destinationPlaceMark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: nodeTo.locationLat!, longitude: nodeTo.locationLon!))
+            let directionRequest = MKDirections.Request()
+            
+            directionRequest.transportType = .walking
+            
+            directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+            
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate {
+                (response, error) in
+                guard let directionResponse = response else {
+                    if let error = error {
+                        debugPrint("calculation error of directions \(error.localizedDescription)")
+                    }
+                    return
+                }
+                // ルートを追加
+                let route = directionResponse.routes[0]
+                //self.locationMap.route = route
+                self.locationMap.addOverlay(route.polyline, level: .aboveRoads)
+            }
+        }
+        
+        
+        
     }
+    
+//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//        let renderer = MKPolygonRenderer(overlay: overlay)
+//        renderer.strokeColor = .systemBlue
+//        renderer.lineWidth = 4.0
+//        return renderer
+//    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = .systemBlue
+        renderer.lineWidth = 4.0
+        return renderer
+    }
+    
     func getTspCost(from: TspNode, to: TspNode, stage: TspCaluclationStage) -> Double {
         guard let shop0 = from as? ShopItem else { fatalError() }
         guard let shop1 = to as? ShopItem else { fatalError() }
