@@ -77,8 +77,9 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         let cell = locationTable.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
         let shop = uniqueShopList[indexPath.row]
         cell.textLabel?.text = shop.locationName ?? "noname"
-        cell.detailTextLabel?.text = "髪の毛とか出す"
         cell.imageView?.image = UIImage(named: "annotation\(indexPath.row+1)")
+        let itemNames = findItems(byShopName: shop.locationName ?? "")
+        cell.detailTextLabel?.text = itemNames.joined(separator: ", ")
         return cell
     }
     
@@ -118,6 +119,10 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    // 店の名前を指定したら、その店に用事があるItemの名前を一覧する
+    private func findItems(byShopName: String) -> [String] {
+        return locationList.filter{ ($0.locationName ?? "") == byShopName }.compactMap{ $0.name }
+    }
     
     // ロケーションの順番最適化と、Map表示
     private func resetLocationList (){
