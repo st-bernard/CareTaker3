@@ -18,16 +18,15 @@ class ContentsListModel {
     
     init(idKey:String = "careTakerID") {
         self.idKey = idKey
-
     }
     
     func configuration(progress: @escaping (ContentsListModelState) -> Void) {
-//        UserDefaults.standard.removeObject(forKey: "careTakerID")
+
         guard let id = UserDefaults.standard.string(forKey: idKey) else {
             self.generateNewUser(idKey: idKey, progress: progress)
             return
         }
-        self.pullData(id: id, progress: progress)
+        self.pullData(userId: id, progress: progress)
     }
     
     func generateNewUser(idKey: String, progress: @escaping (ContentsListModelState) -> Void) {
@@ -39,9 +38,7 @@ class ContentsListModel {
                 progress(.error)
                 return
             }
-            arrayOfArray.forEach {
-                arrOfDict in
-                
+            for arrOfDict in arrayOfArray {
                 var rowArray = [ContentModel]()
                 arrOfDict.forEach {
                     dict in
@@ -64,10 +61,10 @@ class ContentsListModel {
         }
     }
     
-    func pullData(id: String, progress: @escaping (ContentsListModelState) -> Void) {
-        print(id)
+    func pullData(userId: String, progress: @escaping (ContentsListModelState) -> Void) {
+        print("--- pull from firebase, user id=\(userId)")
         progress(.loading)
-        DBRef.child("users/\(id)").getData() {
+        DBRef.child("users/\(userId)").getData() {
             error, snap in
             
             guard let arrayOfArray = snap.value as? [[[String:Any]]] else {
@@ -77,11 +74,17 @@ class ContentsListModel {
             }
             for arrOfDict in arrayOfArray {
                 var rowArray = [ContentModel]()
+
                 for dict in arrOfDict {
-                    guard let content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
+                    guard var content = try? FirebaseDecoder().decode(ContentModel.self, from: dict) else {
                         progress(.error)
                         print("-----Decode error-----")
                         return
+                    }
+                    if content.id == nil {
+                        content.id = UUID().uuidString
+                        let updater = FirebaseContentRepository.Updater(section: content.section, row: content.row)
+                        updater.updateId(itemId: content.id!)
                     }
                     rowArray.append(content)
                 }

@@ -10,7 +10,7 @@ class ContentsViewController: UIViewController {
 
     var pickerView = UIPickerView()
     var contentsViewParts: ContentsViewParts?
-    var updateFirebase: UpdateFirebase?
+    var updateFirebase: FirebaseContentRepository.Updater?
     
     
 //    init(content:ContentModel,delegate:ReceiverDelegate) {
@@ -28,7 +28,7 @@ class ContentsViewController: UIViewController {
         
         guard let content = content else { fatalError() }
 
-        updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+        updateFirebase = FirebaseContentRepository.Updater(section: content.section, row: content.row)
 
         title = content.name
         navigationItem.rightBarButtonItem = UIBarButtonItem(

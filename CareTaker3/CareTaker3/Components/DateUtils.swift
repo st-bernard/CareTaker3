@@ -1,6 +1,11 @@
 import Foundation
 
 class DateUtils {
+    
+    class func makeString(_ date: DateComponents) -> String {
+        return "\(date.year ?? 0)/\(date.month ?? 0)/\(date.day ?? 0) \(date.hour ?? 0):\(String(format: "%02d", date.minute ?? 0)):\(String(format: "%02d", date.second ?? 0))"
+    }
+    
     class func dateFromString(string: String, format: String) -> Date {
         let formatter: DateFormatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)
