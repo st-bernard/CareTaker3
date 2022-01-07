@@ -47,12 +47,28 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.activeModelSortedKeys = self.activeModel.keys.map{ Int($0) }
                 self.activeModelSortedKeys.sort()
                 self.myCollectionView.reloadData()
-
+                
+                self.registerPushNotification()
             }
         }
     }
     
-    
+    // self.modelにあるデータに対して、PUSH通知を登録する
+    func registerPushNotification() {
+        let activeItems = model.contents.flatMap{ $0 }.compactMap{ $0 }.filter{ $0.isActive }
+        for item in activeItems {
+            let lastDate = DateUtils.dateFromString(string: item.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
+            guard let nextDueDate = Calendar.current.date(byAdding: .day, value: item.interval, to: lastDate) else {fatalError()}
+            var nextDueDateTime = DateComponents()
+            nextDueDateTime.year = DateUtils.getDateTimePart(nextDueDate, part: .year4)
+            nextDueDateTime.month = DateUtils.getDateTimePart(nextDueDate, part: .month)
+            nextDueDateTime.day = DateUtils.getDateTimePart(nextDueDate, part: .day)
+            nextDueDateTime.hour = 17
+            nextDueDateTime.minute = 45
+            nextDueDateTime.second = 0
+            pushLocal(title: "CareTakerからのお知らせ", body: "「\(item.name)」の期限です。", at: nextDueDateTime)
+        }
+    }
     
     //    TODO: [2] セクションの数を教えてあげる
     func numberOfSections(in collectionView: UICollectionView) -> Int {

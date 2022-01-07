@@ -13,6 +13,8 @@
 		022A3C79277B471F007FCE57 /* ViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022A3C78277B471F007FCE57 /* ViewController+alert.swift */; };
 		02444C90277BEC1100EF5A72 /* PoiClientYahoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C8F277BEC1100EF5A72 /* PoiClientYahoo.swift */; };
 		02444C92277BED5600EF5A72 /* YahooPoiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */; };
+		025277662786C5E000A3EFAC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 025277652786C5E000A3EFAC /* Settings.bundle */; };
+		025277682786D13D00A3EFAC /* ViewController+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025277672786D13D00A3EFAC /* ViewController+Notification.swift */; };
 		02BEA304277BE9DD0090386C /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA303277BE9DD0090386C /* Private.plist */; };
 		2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8927852CF700170226 /* MyLocationViewController.swift */; };
 		2AE11E8C27852F1900170226 /* FirebaseContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */; };
@@ -75,6 +77,9 @@
 		02444C8F277BEC1100EF5A72 /* PoiClientYahoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiClientYahoo.swift; sourceTree = "<group>"; };
 		02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooPoiClientTests.swift; sourceTree = "<group>"; };
 		02444C93277C066600EF5A72 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		025277652786C5E000A3EFAC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		025277672786D13D00A3EFAC /* ViewController+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Notification.swift"; sourceTree = "<group>"; };
+		025277692786D1E200A3EFAC /* CareTaker3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CareTaker3.entitlements; sourceTree = "<group>"; };
 		02BEA303277BE9DD0090386C /* Private.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
 		2AE11E8927852CF700170226 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContentRepository.swift; sourceTree = "<group>"; };
@@ -141,9 +146,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02C08C172787C0630072B99C /* old */ = {
+			isa = PBXGroup;
+			children = (
+				B60B18782769CA0400D681A1 /* CollectionViewCell.swift */,
+				B60B183C2769C67400D681A1 /* CollectionViewController.swift */,
+				FE32152A276B258F00697694 /* CollectionViewHeader.swift */,
+				B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */,
+				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
+				B68A372127705076002D9E20 /* DetailSettingViewController.swift */,
+				B68A371F277044D7002D9E20 /* SettingViewController.swift */,
+				FE3FE2882771626D006EA2F0 /* TutorialView.swift */,
+				FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */,
+				B68A3727277163DF002D9E20 /* YattayoButton.swift */,
+				B68A374B27719013002D9E20 /* CustomLabel.swift */,
+				FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */,
+			);
+			name = old;
+			sourceTree = "<group>";
+		};
 		B60B182C2769C67400D681A1 = {
 			isa = PBXGroup;
 			children = (
+				025277652786C5E000A3EFAC /* Settings.bundle */,
 				B60B18372769C67400D681A1 /* CareTaker3 */,
 				022A3C72277AA4CD007FCE57 /* GoogleService-Info.plist */,
 				02BEA303277BE9DD0090386C /* Private.plist */,
@@ -166,6 +191,7 @@
 		B60B18372769C67400D681A1 /* CareTaker3 */ = {
 			isa = PBXGroup;
 			children = (
+				025277692786D1E200A3EFAC /* CareTaker3.entitlements */,
 				FE63AE84276C6B350054F9C1 /* Application */,
 				FE63AE85276C6C260054F9C1 /* Components */,
 				FE63AE86276C6C660054F9C1 /* UI */,
@@ -195,8 +221,8 @@
 		FE63AE84276C6B350054F9C1 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
 				B60B18382769C67400D681A1 /* AppDelegate.swift */,
+				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				872FB99227755E55007F90B5 /* Storyboard.storyboard */,
@@ -221,25 +247,15 @@
 		FE63AE86276C6C660054F9C1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B60B18782769CA0400D681A1 /* CollectionViewCell.swift */,
-				B60B183C2769C67400D681A1 /* CollectionViewController.swift */,
-				FE32152A276B258F00697694 /* CollectionViewHeader.swift */,
-				B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */,
-				B60B18762769C9F000D681A1 /* ContentsViewController.swift */,
-				B68A372127705076002D9E20 /* DetailSettingViewController.swift */,
-				B68A371F277044D7002D9E20 /* SettingViewController.swift */,
-				FE3FE2882771626D006EA2F0 /* TutorialView.swift */,
-				FE3FE28427715E14006EA2F0 /* TutorialViewController.swift */,
-				B68A3727277163DF002D9E20 /* YattayoButton.swift */,
-				B68A374B27719013002D9E20 /* CustomLabel.swift */,
-				FE3FE28E277168A1006EA2F0 /* UIImageForGif.swift */,
+				02C08C172787C0630072B99C /* old */,
 				872FB99427758D67007F90B5 /* MyHeader.swift */,
 				872FB99627758E98007F90B5 /* MyMeterCell.swift */,
 				8774B4902775909C0034B779 /* MainViewController.swift */,
 				022A3C74277AA545007FCE57 /* MyMeterView.swift */,
 				022A3C76277AE815007FCE57 /* MyDetailView.swift */,
-				022A3C78277B471F007FCE57 /* ViewController+alert.swift */,
 				2AE11E8927852CF700170226 /* MyLocationViewController.swift */,
+				022A3C78277B471F007FCE57 /* ViewController+alert.swift */,
+				025277672786D13D00A3EFAC /* ViewController+Notification.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -364,6 +380,7 @@
 				022A3C73277AA4CD007FCE57 /* GoogleService-Info.plist in Resources */,
 				02BEA304277BE9DD0090386C /* Private.plist in Resources */,
 				B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */,
+				025277662786C5E000A3EFAC /* Settings.bundle in Resources */,
 				B60B18422769C67500D681A1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +421,7 @@
 				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
 				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,
+				025277682786D13D00A3EFAC /* ViewController+Notification.swift in Sources */,
 				B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */,
 				872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */,
 				022A3C79277B471F007FCE57 /* ViewController+alert.swift in Sources */,
@@ -585,9 +603,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CareTaker3/CareTaker3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -595,6 +614,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,9 +633,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CareTaker3/CareTaker3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -623,6 +644,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

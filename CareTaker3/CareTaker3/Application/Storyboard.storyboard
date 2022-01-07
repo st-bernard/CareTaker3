@@ -159,7 +159,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="向こう7日間以内のアクション一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wry-Ie-Nz1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="向こう-日間以内のアクション一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wry-Ie-Nz1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -216,14 +216,9 @@
                         <viewLayoutGuide key="safeArea" id="GXy-hO-HNP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="yh5-9j-d6Q">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="8Hh-d6-vDN">
-                            <connections>
-                                <action selector="clickTestButton:" destination="mIv-vG-lMf" id="mKV-gI-2Ww"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="yh5-9j-d6Q"/>
                     <connections>
+                        <outlet property="daysSlider" destination="bry-5r-aMY" id="vOG-hM-4sn"/>
                         <outlet property="dueLabel" destination="Wry-Ie-Nz1" id="B9h-Zj-iAM"/>
                         <outlet property="locationMap" destination="cFZ-JT-oLT" id="d7j-Fc-Pdo"/>
                         <outlet property="locationTable" destination="jOa-qp-RvK" id="d6h-S0-3xZ"/>
