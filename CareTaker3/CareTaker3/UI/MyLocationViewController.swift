@@ -35,7 +35,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         
         // Sliderの初期値
         daysSlider.value = Float(dueSpanDays) / maxDueSpanDays
-        dueLabel.text = "向こう\(dueSpanDays)日間以内のアクション一覧"
+        dueLabel.text = "期限 \(dueSpanDays)日前のアクション一覧"
 
         //MapViewのカスタマイズ
         locationMap.delegate = self
@@ -64,7 +64,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         if newDays != dueSpanDays {
             dueSpanDays = newDays
             UserDefaults.standard.set(dueSpanDays, forKey: "DueInterval")
-            dueLabel.text = "向こう\(dueSpanDays)日間以内のアクション一覧"
+            dueLabel.text = "期限 \(dueSpanDays)日前のアクション一覧"
             resetLocationList()
         }
     }

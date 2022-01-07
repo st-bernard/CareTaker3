@@ -224,8 +224,8 @@
 				B60B18382769C67400D681A1 /* AppDelegate.swift */,
 				B60B183A2769C67400D681A1 /* SceneDelegate.swift */,
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
-				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				872FB99227755E55007F90B5 /* Storyboard.storyboard */,
+				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
 				B60B18462769C67500D681A1 /* Info.plist */,
 			);
 			path = Application;
