@@ -420,11 +420,11 @@
             </objects>
             <point key="canvasLocation" x="3720.289855072464" y="515.625"/>
         </scene>
-        <!--meter-->
+        <!--Meter-->
         <scene sceneID="Ehg-qQ-6Ko">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ENo-Ye-YaP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="meter" image="speedometer" catalog="system" id="AwM-eC-A6d"/>
+                    <tabBarItem key="tabBarItem" title="Meter" image="speedometer" catalog="system" id="AwM-eC-A6d"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ps5-g0-4cv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
