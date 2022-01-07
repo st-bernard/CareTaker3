@@ -60,9 +60,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let lastDate = DateUtils.dateFromString(string: item.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
             guard let nextDueDate = Calendar.current.date(byAdding: .day, value: item.interval, to: lastDate) else {fatalError()}
             var nextDueDateTime = DateComponents()
-            nextDueDateTime.year = getDateTimePart(nextDueDate, part: .year4)
-            nextDueDateTime.month = getDateTimePart(nextDueDate, part: .month)
-            nextDueDateTime.day = getDateTimePart(nextDueDate, part: .day)
+            nextDueDateTime.year = DateUtils.getDateTimePart(nextDueDate, part: .year4)
+            nextDueDateTime.month = DateUtils.getDateTimePart(nextDueDate, part: .month)
+            nextDueDateTime.day = DateUtils.getDateTimePart(nextDueDate, part: .day)
             nextDueDateTime.hour = 17
             nextDueDateTime.minute = 45
             nextDueDateTime.second = 0
