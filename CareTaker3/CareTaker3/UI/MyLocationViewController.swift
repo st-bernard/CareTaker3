@@ -135,8 +135,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         }.filter{
             $0.isActive
         }.filter{
-            let lastDate = DateUtils.dateFromString(string: $0.lastDate + " 00:00:00 +00:00", format: "yyyy年MM月dd日 HH:mm:ss Z")
-            guard let nextDue = Calendar.current.date(byAdding: .day, value: $0.interval, to: lastDate) else {fatalError()}
+            guard let nextDue = $0.getNextDue() else { fatalError() }
             return nextDue < due
         }
         locationList = list

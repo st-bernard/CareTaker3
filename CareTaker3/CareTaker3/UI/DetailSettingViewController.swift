@@ -39,10 +39,10 @@ extension DetailSettingViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
-        let updateFirebase = UpdateFirebase(section: contents[indexPath.row].section, row: contents[indexPath.row].row)
+        let updater = FirebaseContentRepository.Updater(section: contents[indexPath.row].section, row: contents[indexPath.row].row)
         if cell?.accessoryType == .checkmark {
             cell?.accessoryType = .none
-            updateFirebase.updateIsActive(isActive: false)
+            updater.updateIsActive(isActive: false)
             contents[indexPath.row] = ContentModel(
                 name: contents[indexPath.row].name,
                 category: contents[indexPath.row].category,
@@ -54,7 +54,7 @@ extension DetailSettingViewController {
             )
         } else {
             cell?.accessoryType = .checkmark
-            updateFirebase.updateIsActive(isActive: true)
+            updater.updateIsActive(isActive: true)
             contents[indexPath.row] = ContentModel(
                 name: contents[indexPath.row].name,
                 category: contents[indexPath.row].category,

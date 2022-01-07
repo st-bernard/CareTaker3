@@ -132,8 +132,8 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
         guard let annotation = view.annotation, let content = content else { return }
         let title = (annotation.title ?? "(no name)") ?? "(no name)"
         labelLocationName.text = title
-        let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
-        updateFirebase.updateLocation(
+        let updater = FirebaseContentRepository.Updater(section: content.section, row: content.row)
+        updater.updateLocation(
             isHome: homeMapSwitch.isOn ? false : true,
             locationName: title,
             lon: annotation.coordinate.longitude,
@@ -144,12 +144,12 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
     @IBAction func didHomeMapSwitchValueChanged(_ sender: Any) {
 
         let content = content!
-        let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
+        let updater = FirebaseContentRepository.Updater(section: content.section, row: content.row)
         if homeMapSwitch.isOn {
             self.homeImage.isHidden = true
             self.mapView.isHidden = false
             self.labelLocationName.isHidden = false
-            updateFirebase.updateLocation(isHome: false)
+            updater.updateLocation(isHome: false)
             if content.locationName == nil {
                 self.labelLocationName.text = "※地図上のポイントを選択してください"
             } else {
@@ -159,7 +159,7 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
             self.homeImage.isHidden = false
             self.mapView.isHidden = true
             self.labelLocationName.isHidden = true
-            updateFirebase.updateLocation(isHome: true)
+            updater.updateLocation(isHome: true)
         }
     }
     
@@ -170,9 +170,25 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         let today = formatter.string(from: Date())
-        let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
-        updateFirebase.updateLastDate(withText:today)
+        let updater = FirebaseContentRepository.Updater(section: content.section, row: content.row)
+        updater.updateLastDate(withText:today)
         self.navigationController?.popViewController(animated: true)
+
+        // 新しい日時に通知を変更
+        var newContent = content
+        newContent.lastDate = today
+        PushNotification.registerLocalPush(item: newContent)
+    }
+    
+    private func updateInterval(newIntervalDays: Int) {
+        guard let content = content else {
+            return
+        }
+        let updater = FirebaseContentRepository.Updater(section: content.section, row: content.row)
+        updater.updateInterval(withInt: newIntervalDays)
+        var newContent = content    // copy struct instance
+        newContent.interval = newIntervalDays
+        PushNotification.registerLocalPush(item: newContent)
     }
     
     @IBAction func intervalEditingDidEnd(_ sender: Any) {
@@ -188,8 +204,7 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
                         }
                     }
                 } else {
-                    let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
-                    updateFirebase.updateInterval(withInt: val)
+                    updateInterval(newIntervalDays: val)
                 }
             }
         }
@@ -202,8 +217,7 @@ class MyDetailView : UIViewController, UITextFieldDelegate, MKMapViewDelegate {
         if let val = Int(intervalTextField.text ?? "x") {
             if val != content.interval {
                 if val > 0 || val <= 366 {
-                    let updateFirebase = UpdateFirebase(section: content.section, row: content.row)
-                    updateFirebase.updateInterval(withInt: val)
+                    updateInterval(newIntervalDays: val)
                 } else {
                     print("intervalに \(intervalTextField.text ?? "nil") を入力してたが 無視した")
                 }

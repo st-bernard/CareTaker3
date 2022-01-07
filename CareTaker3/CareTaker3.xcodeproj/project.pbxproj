@@ -14,7 +14,7 @@
 		02444C90277BEC1100EF5A72 /* PoiClientYahoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C8F277BEC1100EF5A72 /* PoiClientYahoo.swift */; };
 		02444C92277BED5600EF5A72 /* YahooPoiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */; };
 		025277662786C5E000A3EFAC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 025277652786C5E000A3EFAC /* Settings.bundle */; };
-		025277682786D13D00A3EFAC /* ViewController+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025277672786D13D00A3EFAC /* ViewController+Notification.swift */; };
+		025277682786D13D00A3EFAC /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025277672786D13D00A3EFAC /* PushNotification.swift */; };
 		02BEA304277BE9DD0090386C /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA303277BE9DD0090386C /* Private.plist */; };
 		2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8927852CF700170226 /* MyLocationViewController.swift */; };
 		2AE11E8C27852F1900170226 /* FirebaseContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */; };
@@ -40,7 +40,6 @@
 		B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */; };
 		B60B187D2769CA3000D681A1 /* ContentsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187C2769CA3000D681A1 /* ContentsListModel.swift */; };
 		B60B187F2769CA3D00D681A1 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B187E2769CA3D00D681A1 /* ContentModel.swift */; };
-		B68A371E27701586002D9E20 /* UpdateFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371D27701585002D9E20 /* UpdateFirebase.swift */; };
 		B68A3720277044D7002D9E20 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A371F277044D7002D9E20 /* SettingViewController.swift */; };
 		B68A372227705076002D9E20 /* DetailSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A372127705076002D9E20 /* DetailSettingViewController.swift */; };
 		B68A3728277163E0002D9E20 /* YattayoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68A3727277163DF002D9E20 /* YattayoButton.swift */; };
@@ -78,7 +77,7 @@
 		02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YahooPoiClientTests.swift; sourceTree = "<group>"; };
 		02444C93277C066600EF5A72 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		025277652786C5E000A3EFAC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		025277672786D13D00A3EFAC /* ViewController+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Notification.swift"; sourceTree = "<group>"; };
+		025277672786D13D00A3EFAC /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		025277692786D1E200A3EFAC /* CareTaker3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CareTaker3.entitlements; sourceTree = "<group>"; };
 		02BEA303277BE9DD0090386C /* Private.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
 		2AE11E8927852CF700170226 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 		B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewParts.swift; sourceTree = "<group>"; };
 		B60B187C2769CA3000D681A1 /* ContentsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsListModel.swift; sourceTree = "<group>"; };
 		B60B187E2769CA3D00D681A1 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
-		B68A371D27701585002D9E20 /* UpdateFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFirebase.swift; sourceTree = "<group>"; };
 		B68A371F277044D7002D9E20 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B68A372127705076002D9E20 /* DetailSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewController.swift; sourceTree = "<group>"; };
 		B68A3727277163DF002D9E20 /* YattayoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YattayoButton.swift; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 			children = (
 				B60B187C2769CA3000D681A1 /* ContentsListModel.swift */,
 				B60B187E2769CA3D00D681A1 /* ContentModel.swift */,
-				B68A371D27701585002D9E20 /* UpdateFirebase.swift */,
 				FE3FE27F27701616006EA2F0 /* DateUtils.swift */,
 				02444C8F277BEC1100EF5A72 /* PoiClientYahoo.swift */,
 				2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */,
@@ -255,7 +252,7 @@
 				022A3C76277AE815007FCE57 /* MyDetailView.swift */,
 				2AE11E8927852CF700170226 /* MyLocationViewController.swift */,
 				022A3C78277B471F007FCE57 /* ViewController+alert.swift */,
-				025277672786D13D00A3EFAC /* ViewController+Notification.swift */,
+				025277672786D13D00A3EFAC /* PushNotification.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -421,7 +418,7 @@
 				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
 				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,
-				025277682786D13D00A3EFAC /* ViewController+Notification.swift in Sources */,
+				025277682786D13D00A3EFAC /* PushNotification.swift in Sources */,
 				B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */,
 				872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */,
 				022A3C79277B471F007FCE57 /* ViewController+alert.swift in Sources */,
@@ -432,7 +429,6 @@
 				FE3FE28F277168A1006EA2F0 /* UIImageForGif.swift in Sources */,
 				B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */,
 				2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */,
-				B68A371E27701586002D9E20 /* UpdateFirebase.swift in Sources */,
 				B68A3720277044D7002D9E20 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
