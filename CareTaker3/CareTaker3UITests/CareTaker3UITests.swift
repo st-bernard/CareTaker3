@@ -36,11 +36,13 @@ class CareTaker3UITests: XCTestCase {
         XCTAssertEqual("1", app.switches["switchHomeMap"].value as? String, "Mapモードであること")
         XCTAssertEqual("ＳｕｎｇｏｏｓｅＴＯＫＹＯ", app.staticTexts["labelLocationName"].label, "店名が前提通りであること")
 
+#if false
         let calendarBadgeClockElement = app.scrollViews.otherElements.containing(.image, identifier:"calendar.badge.clock").element
         calendarBadgeClockElement.swipeUp()
         screenShot("2.1.スワイプUp")
         calendarBadgeClockElement.swipeDown()
         screenShot("2.2.スワイプDown")
+#endif
         app.navigationBars["髪の毛"].buttons["CareTaker3"].tap()
         screenShot("2.3.メイン画面に戻った")
 
@@ -103,6 +105,40 @@ class CareTaker3UITests: XCTestCase {
         screenShot("ケーヨーデーツ三田店 クリック")
         //---
         app.tabBars["Tab Bar"].buttons["Meter"].tap()
+    }
+    
+    func test_SenarioNo3() {
+        
+        let app = XCUIApplication()
+        let table = app.windows.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .table).element
+        let caretaker3Button = app.navigationBars["Your Choice"].buttons["CareTaker3"]
+        let editButton = app.navigationBars["CareTaker3"].buttons["Edit"]
+        editButton.tap()
+        table/*@START_MENU_TOKEN@*/.press(forDuration: 1.1);/*[[".tap()",".press(forDuration: 1.1);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        screenShot("Edit画面に遷移")
+
+        let tablesQuery = app.tables
+        let kitchenRow = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["キッチン"]/*[[".cells.staticTexts[\"キッチン\"]",".staticTexts[\"キッチン\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        kitchenRow.tap()
+        table/*@START_MENU_TOKEN@*/.press(forDuration: 0.7);/*[[".tap()",".press(forDuration: 0.7);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        screenShot("キッチンを選択")
+
+        let conroRow = tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["コンロ"]/*[[".cells.staticTexts[\"コンロ\"]",".staticTexts[\"コンロ\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        conroRow.tap()
+        screenShot("コンロをOFF→ONに変更")
+
+        let yourChoiceButton = app.navigationBars["表示項目選択"].buttons["Your Choice"]
+        yourChoiceButton.tap()
+        caretaker3Button.tap()
+        screenShot("コンロが追加されている")
+        editButton.tap()
+        table/*@START_MENU_TOKEN@*/.press(forDuration: 0.6);/*[[".tap()",".press(forDuration: 0.6);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        kitchenRow.tap()
+        conroRow.tap()
+        screenShot("コンロをON→OFFに変更")
+        yourChoiceButton.tap()
+        caretaker3Button.tap()
+        screenShot("コンロが削除されている")
     }
 
     func testLaunchPerformance() throws {
