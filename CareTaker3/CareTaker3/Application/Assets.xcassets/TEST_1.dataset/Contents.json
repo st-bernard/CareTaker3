@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "TEST_1.mov",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
