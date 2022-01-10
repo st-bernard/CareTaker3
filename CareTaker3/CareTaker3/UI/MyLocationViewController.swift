@@ -206,6 +206,10 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     var reRouteTimer: Timer? = nil
     
     func redrawRouteLines() {
+        
+        if uniqueShopList.count < 1 {
+            return
+        }
         //uniqueShopListの各ノード間をルート探索しルートの線を描画
         for nodeIndex in 1..<uniqueShopList.count {
             let nodeFrom = uniqueShopList[nodeIndex-1]

@@ -10,7 +10,7 @@ import XCTest
 import Firebase
 import FirebaseDatabase
 
-class CareTaker3Tests: XCTestCase {
+class FirebaseContentRepositoryTests: XCTestCase {
     var DBRef:DatabaseReference = Database.database().reference()
     var id:String?
     var model:ContentsListModel!
@@ -24,7 +24,7 @@ class CareTaker3Tests: XCTestCase {
            case .loading:
                print("----loading----")
            case .finish:
-               // XCTAssertEqual(self?.model.contents[0][0].name, "hair", "デフォルト値で生成される")
+               XCTAssertEqual(self?.model.contents[0][0].name, "hair", "デフォルト値で生成される")
                XCTAssertEqual(self?.model.contents[0][0].lastDate, "2021年12月01日", "デフォルト値で生成される")
                self?.id = UserDefaults.standard.string(forKey: "testID")
                print("####setup####")
@@ -80,7 +80,7 @@ class CareTaker3Tests: XCTestCase {
             XCTFail("UseDefaultsにIDがなかったら失敗")
             return
         }
-        let updateFirebase = UpdateFirebase(section: 0, row: 0)
+        let updateFirebase = FirebaseContentRepository.Updater(section: 0, row: 0)
         updateFirebase.updateInterval(withInt: 100, idKey:"testID")
         self.DBRef.child("users/\(id)/0/0/interval").getData(completion: { error, data in
             XCTAssertEqual(data.value as? Int, 100, "変更が反映されている")
@@ -95,7 +95,7 @@ class CareTaker3Tests: XCTestCase {
             XCTFail("UseDefaultsにIDがなかったら失敗")
             return
         }
-        let updateFirebase = UpdateFirebase(section: 0, row: 0)
+        let updateFirebase = FirebaseContentRepository.Updater(section: 0, row: 0)
         updateFirebase.updateLastDate(withText: "2021年11月30日", idKey: "testID")
         self.DBRef.child("users/\(id)/0/0/lastDate").getData(completion: { error, data in
             XCTAssertEqual(data.value as? String, "2021年11月30日", "変更が反映されている")
