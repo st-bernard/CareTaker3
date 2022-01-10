@@ -206,6 +206,10 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     var reRouteTimer: Timer? = nil
     
     func redrawRouteLines() {
+        
+        if uniqueShopList.count < 1 {
+            return
+        }
         //uniqueShopListの各ノード間をルート探索しルートの線を描画
         for nodeIndex in 1..<uniqueShopList.count {
             let nodeFrom = uniqueShopList[nodeIndex-1]
@@ -235,6 +239,10 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
                 self.locationMap.addOverlay(route.polyline, level: .aboveRoads)
             }
         }
+    }
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        daysSlider.isEnabled = true
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {

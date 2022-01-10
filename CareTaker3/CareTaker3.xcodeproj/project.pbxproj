@@ -15,7 +15,10 @@
 		02444C92277BED5600EF5A72 /* YahooPoiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */; };
 		025277662786C5E000A3EFAC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 025277652786C5E000A3EFAC /* Settings.bundle */; };
 		025277682786D13D00A3EFAC /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025277672786D13D00A3EFAC /* PushNotification.swift */; };
+		02A7DFF8278BD071007C0EF0 /* CareTaker3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7DFF7278BD071007C0EF0 /* CareTaker3UITests.swift */; };
+		02A7DFFA278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7DFF9278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift */; };
 		02BEA304277BE9DD0090386C /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA303277BE9DD0090386C /* Private.plist */; };
+		02D758A2278BBE38008DB3F6 /* DateTimeUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D758A1278BBE38008DB3F6 /* DateTimeUtilsTest.swift */; };
 		2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8927852CF700170226 /* MyLocationViewController.swift */; };
 		2AE11E8C27852F1900170226 /* FirebaseContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */; };
 		872FB99327755E55007F90B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FB99227755E55007F90B5 /* Storyboard.storyboard */; };
@@ -29,9 +32,7 @@
 		B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B183C2769C67400D681A1 /* CollectionViewController.swift */; };
 		B60B18422769C67500D681A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60B18412769C67500D681A1 /* Assets.xcassets */; };
 		B60B18452769C67500D681A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60B18432769C67500D681A1 /* LaunchScreen.storyboard */; };
-		B60B18502769C67600D681A1 /* CareTaker3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B184F2769C67600D681A1 /* CareTaker3Tests.swift */; };
-		B60B185A2769C67600D681A1 /* CareTaker3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18592769C67600D681A1 /* CareTaker3UITests.swift */; };
-		B60B185C2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B185B2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift */; };
+		B60B18502769C67600D681A1 /* FirebaseContentRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B184F2769C67600D681A1 /* FirebaseContentRepositoryTests.swift */; };
 		B60B186A2769C6CB00D681A1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B60B18692769C6CB00D681A1 /* FirebaseAnalytics */; };
 		B60B186C2769C6CB00D681A1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186B2769C6CB00D681A1 /* FirebaseDatabase */; };
 		B60B186E2769C6CB00D681A1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B60B186D2769C6CB00D681A1 /* FirebaseMessaging */; };
@@ -53,14 +54,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B60B184C2769C67600D681A1 /* PBXContainerItemProxy */ = {
+		02A7DFFB278BD071007C0EF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B60B182D2769C67400D681A1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B60B18342769C67400D681A1;
-			remoteInfo = careTaker2;
+			remoteInfo = CareTaker3;
 		};
-		B60B18562769C67600D681A1 /* PBXContainerItemProxy */ = {
+		B60B184C2769C67600D681A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B60B182D2769C67400D681A1 /* Project object */;
 			proxyType = 1;
@@ -80,7 +81,11 @@
 		025277652786C5E000A3EFAC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		025277672786D13D00A3EFAC /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		025277692786D1E200A3EFAC /* CareTaker3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CareTaker3.entitlements; sourceTree = "<group>"; };
+		02A7DFF5278BD071007C0EF0 /* CareTaker3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareTaker3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A7DFF7278BD071007C0EF0 /* CareTaker3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITests.swift; sourceTree = "<group>"; };
+		02A7DFF9278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		02BEA303277BE9DD0090386C /* Private.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
+		02D758A1278BBE38008DB3F6 /* DateTimeUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtilsTest.swift; sourceTree = "<group>"; };
 		2AE11E8927852CF700170226 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContentRepository.swift; sourceTree = "<group>"; };
 		872FB99227755E55007F90B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
@@ -96,10 +101,7 @@
 		B60B18442769C67500D681A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B60B18462769C67500D681A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B60B184B2769C67600D681A1 /* CareTaker3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareTaker3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60B184F2769C67600D681A1 /* CareTaker3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3Tests.swift; sourceTree = "<group>"; };
-		B60B18552769C67600D681A1 /* CareTaker3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareTaker3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60B18592769C67600D681A1 /* CareTaker3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITests.swift; sourceTree = "<group>"; };
-		B60B185B2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B60B184F2769C67600D681A1 /* FirebaseContentRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContentRepositoryTests.swift; sourceTree = "<group>"; };
 		B60B18762769C9F000D681A1 /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
 		B60B18782769CA0400D681A1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		B60B187A2769CA1100D681A1 /* ContentsViewParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewParts.swift; sourceTree = "<group>"; };
@@ -117,6 +119,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		02A7DFF2278BD071007C0EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B60B18322769C67400D681A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,16 +145,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B60B18522769C67600D681A1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02A7DFF6278BD071007C0EF0 /* CareTaker3UITests */ = {
+			isa = PBXGroup;
+			children = (
+				02A7DFF7278BD071007C0EF0 /* CareTaker3UITests.swift */,
+				02A7DFF9278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift */,
+			);
+			path = CareTaker3UITests;
+			sourceTree = "<group>";
+		};
 		02C08C172787C0630072B99C /* old */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,7 +184,7 @@
 				022A3C72277AA4CD007FCE57 /* GoogleService-Info.plist */,
 				02BEA303277BE9DD0090386C /* Private.plist */,
 				B60B184E2769C67600D681A1 /* CareTaker3Tests */,
-				B60B18582769C67600D681A1 /* CareTaker3UITests */,
+				02A7DFF6278BD071007C0EF0 /* CareTaker3UITests */,
 				B60B18362769C67400D681A1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -183,7 +194,7 @@
 			children = (
 				B60B18352769C67400D681A1 /* CareTaker3.app */,
 				B60B184B2769C67600D681A1 /* CareTaker3Tests.xctest */,
-				B60B18552769C67600D681A1 /* CareTaker3UITests.xctest */,
+				02A7DFF5278BD071007C0EF0 /* CareTaker3UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,19 +214,11 @@
 		B60B184E2769C67600D681A1 /* CareTaker3Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B60B184F2769C67600D681A1 /* CareTaker3Tests.swift */,
+				B60B184F2769C67600D681A1 /* FirebaseContentRepositoryTests.swift */,
 				02444C91277BED5600EF5A72 /* YahooPoiClientTests.swift */,
+				02D758A1278BBE38008DB3F6 /* DateTimeUtilsTest.swift */,
 			);
 			path = CareTaker3Tests;
-			sourceTree = "<group>";
-		};
-		B60B18582769C67600D681A1 /* CareTaker3UITests */ = {
-			isa = PBXGroup;
-			children = (
-				B60B18592769C67600D681A1 /* CareTaker3UITests.swift */,
-				B60B185B2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift */,
-			);
-			path = CareTaker3UITests;
 			sourceTree = "<group>";
 		};
 		FE63AE84276C6B350054F9C1 /* Application */ = {
@@ -263,6 +266,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		02A7DFF4278BD071007C0EF0 /* CareTaker3UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A7DFFF278BD071007C0EF0 /* Build configuration list for PBXNativeTarget "CareTaker3UITests" */;
+			buildPhases = (
+				02A7DFF1278BD071007C0EF0 /* Sources */,
+				02A7DFF2278BD071007C0EF0 /* Frameworks */,
+				02A7DFF3278BD071007C0EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02A7DFFC278BD071007C0EF0 /* PBXTargetDependency */,
+			);
+			name = CareTaker3UITests;
+			productName = CareTaker3UITests;
+			productReference = 02A7DFF5278BD071007C0EF0 /* CareTaker3UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B60B18342769C67400D681A1 /* CareTaker3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B60B185F2769C67600D681A1 /* Build configuration list for PBXNativeTarget "CareTaker3" */;
@@ -305,24 +326,6 @@
 			productReference = B60B184B2769C67600D681A1 /* CareTaker3Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B60B18542769C67600D681A1 /* CareTaker3UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B60B18652769C67600D681A1 /* Build configuration list for PBXNativeTarget "CareTaker3UITests" */;
-			buildPhases = (
-				B60B18512769C67600D681A1 /* Sources */,
-				B60B18522769C67600D681A1 /* Frameworks */,
-				B60B18532769C67600D681A1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B60B18572769C67600D681A1 /* PBXTargetDependency */,
-			);
-			name = CareTaker3UITests;
-			productName = careTaker2UITests;
-			productReference = B60B18552769C67600D681A1 /* CareTaker3UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -330,17 +333,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					02A7DFF4278BD071007C0EF0 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = B60B18342769C67400D681A1;
+					};
 					B60B18342769C67400D681A1 = {
 						CreatedOnToolsVersion = 13.2;
 					};
 					B60B184A2769C67600D681A1 = {
-						CreatedOnToolsVersion = 13.2;
-						TestTargetID = B60B18342769C67400D681A1;
-					};
-					B60B18542769C67600D681A1 = {
 						CreatedOnToolsVersion = 13.2;
 						TestTargetID = B60B18342769C67400D681A1;
 					};
@@ -366,12 +369,19 @@
 			targets = (
 				B60B18342769C67400D681A1 /* CareTaker3 */,
 				B60B184A2769C67600D681A1 /* CareTaker3Tests */,
-				B60B18542769C67600D681A1 /* CareTaker3UITests */,
+				02A7DFF4278BD071007C0EF0 /* CareTaker3UITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		02A7DFF3278BD071007C0EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B60B18332769C67400D681A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,16 +402,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B60B18532769C67600D681A1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		02A7DFF1278BD071007C0EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A7DFF8278BD071007C0EF0 /* CareTaker3UITests.swift in Sources */,
+				02A7DFFA278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B60B18312769C67400D681A1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,31 +454,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				02444C92277BED5600EF5A72 /* YahooPoiClientTests.swift in Sources */,
-				B60B18502769C67600D681A1 /* CareTaker3Tests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B60B18512769C67600D681A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B60B185C2769C67600D681A1 /* CareTaker3UITestsLaunchTests.swift in Sources */,
-				B60B185A2769C67600D681A1 /* CareTaker3UITests.swift in Sources */,
+				B60B18502769C67600D681A1 /* FirebaseContentRepositoryTests.swift in Sources */,
+				02D758A2278BBE38008DB3F6 /* DateTimeUtilsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		02A7DFFC278BD071007C0EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B60B18342769C67400D681A1 /* CareTaker3 */;
+			targetProxy = 02A7DFFB278BD071007C0EF0 /* PBXContainerItemProxy */;
+		};
 		B60B184D2769C67600D681A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B60B18342769C67400D681A1 /* CareTaker3 */;
 			targetProxy = B60B184C2769C67600D681A1 /* PBXContainerItemProxy */;
-		};
-		B60B18572769C67600D681A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B60B18342769C67400D681A1 /* CareTaker3 */;
-			targetProxy = B60B18562769C67600D681A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -482,6 +486,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		02A7DFFD278BD071007C0EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42235ECE62;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomarika.CareTaker3UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CareTaker3;
+			};
+			name = Debug;
+		};
+		02A7DFFE278BD071007C0EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42235ECE62;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomarika.CareTaker3UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CareTaker3;
+			};
+			name = Release;
+		};
 		B60B185D2769C67600D681A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -607,7 +655,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -639,7 +687,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -702,45 +750,18 @@
 			};
 			name = Release;
 		};
-		B60B18662769C67600D681A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M6HUWMF54V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = careTaker2;
-			};
-			name = Debug;
-		};
-		B60B18672769C67600D681A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M6HUWMF54V;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "st-bernard.careTaker2UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = careTaker2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		02A7DFFF278BD071007C0EF0 /* Build configuration list for PBXNativeTarget "CareTaker3UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A7DFFD278BD071007C0EF0 /* Debug */,
+				02A7DFFE278BD071007C0EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B60B18302769C67400D681A1 /* Build configuration list for PBXProject "CareTaker3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -764,15 +785,6 @@
 			buildConfigurations = (
 				B60B18632769C67600D681A1 /* Debug */,
 				B60B18642769C67600D681A1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B60B18652769C67600D681A1 /* Build configuration list for PBXNativeTarget "CareTaker3UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B60B18662769C67600D681A1 /* Debug */,
-				B60B18672769C67600D681A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

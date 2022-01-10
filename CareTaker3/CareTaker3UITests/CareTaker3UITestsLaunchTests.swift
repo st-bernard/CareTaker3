@@ -1,13 +1,13 @@
 //
-//  careTaker2UITestsLaunchTests.swift
-//  careTaker2UITests
+//  CareTaker3UITestsLaunchTests.swift
+//  CareTaker3UITests
 //
-//  Created by Yuki Iwama on 2021/12/15.
+//  Created by Manabu Tonosaki on 2022/01/10. 1
 //
 
 import XCTest
 
-class careTaker2UITestsLaunchTests: XCTestCase {
+class CareTaker3UITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
