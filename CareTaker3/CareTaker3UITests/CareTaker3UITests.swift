@@ -140,6 +140,15 @@ class CareTaker3UITests: XCTestCase {
         caretaker3Button.tap()
         screenShot("コンロが削除されている")
     }
+    
+    func test_SenarioNo4() {
+        
+        let app = XCUIApplication()
+        app.navigationBars["CareTaker3"].buttons["Item"].tap()
+        let element = app.children(matching: .window).element(boundBy: 1).children(matching: .other).element
+        app.press(forDuration: 3)
+        screenShot("チュートリアル再生中")
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
