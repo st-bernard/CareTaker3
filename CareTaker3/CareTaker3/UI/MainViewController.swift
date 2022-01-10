@@ -123,5 +123,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height:16)
     }
+    
+    
+    @IBAction func demoButton(_ sender: Any) {
+        
+        let demoTime = Calendar.current.date(byAdding: .second, value: 10, to: Date())!
+        var nextDueDateTime = DateComponents()
+        nextDueDateTime.year = DateUtils.getDateTimePart(demoTime, part: .year4)
+        nextDueDateTime.month = DateUtils.getDateTimePart(demoTime, part: .month)
+        nextDueDateTime.day = DateUtils.getDateTimePart(demoTime, part: .day)
+        nextDueDateTime.hour = DateUtils.getDateTimePart(demoTime, part: .hour24)
+        nextDueDateTime.minute = DateUtils.getDateTimePart(demoTime, part: .minute)
+        nextDueDateTime.second = DateUtils.getDateTimePart(demoTime, part: .second)
+        PushNotification.pushLocal(id: UUID().uuidString, title: "CareTakerからのお知らせ", body: "「ひげ」の期限です。", at: nextDueDateTime)
+    }
 }
 

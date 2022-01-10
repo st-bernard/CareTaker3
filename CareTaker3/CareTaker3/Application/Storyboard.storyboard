@@ -112,6 +112,12 @@
                                     <segue destination="Nbi-pQ-j8e" kind="show" identifier="segueMainToContents" id="cOY-4y-oRy"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Item" image="play.square" catalog="system" id="Wax-XJ-ADv">
+                                <color key="tintColor" white="0.14756337412587411" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="demoButton:" destination="ELe-xS-EEe" id="fLT-ny-q6S"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -469,6 +475,7 @@
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="noLocationMark" width="100" height="100"/>
+        <image name="play.square" catalog="system" width="128" height="114"/>
         <image name="questionmark.circle" catalog="system" width="128" height="121"/>
         <image name="speedometer" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
