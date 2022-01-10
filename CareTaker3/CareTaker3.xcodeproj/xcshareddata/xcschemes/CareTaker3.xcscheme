@@ -49,6 +49,9 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "CareTaker3UITests/testLaunchPerformance()">
+               </Test>
+               <Test
                   Identifier = "CareTaker3UITestsLaunchTests/testLaunch()">
                </Test>
             </SkippedTests>

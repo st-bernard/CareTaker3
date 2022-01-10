@@ -241,6 +241,10 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        daysSlider.isEnabled = true
+    }
+    
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = .systemBlue
