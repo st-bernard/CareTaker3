@@ -96,7 +96,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="questionmark.circle" catalog="system" id="UNk-dL-7A7">
                             <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="uEu-xS-cNR" kind="presentation" identifier="segueMainToTutorial" id="3Pt-lG-mgl"/>
+                                <segue destination="WK5-gv-qD2" kind="presentation" identifier="segueMainToTutorial" id="x0W-WX-gWB"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
@@ -246,20 +246,13 @@
             </objects>
             <point key="canvasLocation" x="-2096" y="223"/>
         </scene>
-        <!--Tutorial View Controller-->
-        <scene sceneID="KLi-8D-8oF">
+        <!--AV Player View Controller-->
+        <scene sceneID="wAq-t1-hHV">
             <objects>
-                <viewController id="uEu-xS-cNR" customClass="TutorialViewController" customModule="CareTaker3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FhS-2P-b4M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="iRK-Ec-RxQ"/>
-                        <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xmf-P8-JFH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="WK5-gv-qD2" customClass="MyTutorialViewController" customModule="CareTaker3" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmS-TO-3Oi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2789.8550724637685" y="527.67857142857144"/>
+            <point key="canvasLocation" x="1886" y="613"/>
         </scene>
         <!--Detail-->
         <scene sceneID="cux-es-81A">

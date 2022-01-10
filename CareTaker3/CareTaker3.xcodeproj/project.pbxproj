@@ -21,6 +21,7 @@
 		872FB99327755E55007F90B5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872FB99227755E55007F90B5 /* Storyboard.storyboard */; };
 		872FB99527758D67007F90B5 /* MyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99427758D67007F90B5 /* MyHeader.swift */; };
 		872FB99727758E98007F90B5 /* MyMeterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FB99627758E98007F90B5 /* MyMeterCell.swift */; };
+		874B96942788090C006480C4 /* MyTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874B96932788090C006480C4 /* MyTutorialViewController.swift */; };
 		8774B4912775909C0034B779 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8774B4902775909C0034B779 /* MainViewController.swift */; };
 		87B2E21427858249008F9001 /* Tono in Frameworks */ = {isa = PBXBuildFile; productRef = 87B2E21327858249008F9001 /* Tono */; };
 		B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B18382769C67400D681A1 /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 		872FB99227755E55007F90B5 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		872FB99427758D67007F90B5 /* MyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeader.swift; sourceTree = "<group>"; };
 		872FB99627758E98007F90B5 /* MyMeterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMeterCell.swift; sourceTree = "<group>"; };
+		874B96932788090C006480C4 /* MyTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTutorialViewController.swift; sourceTree = "<group>"; };
 		8774B4902775909C0034B779 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B60B18352769C67400D681A1 /* CareTaker3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareTaker3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60B18382769C67400D681A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				2AE11E8927852CF700170226 /* MyLocationViewController.swift */,
 				022A3C78277B471F007FCE57 /* ViewController+alert.swift */,
 				025277672786D13D00A3EFAC /* PushNotification.swift */,
+				874B96932788090C006480C4 /* MyTutorialViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				FE3FE28F277168A1006EA2F0 /* UIImageForGif.swift in Sources */,
 				B60B183B2769C67400D681A1 /* SceneDelegate.swift in Sources */,
 				2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */,
+				874B96942788090C006480C4 /* MyTutorialViewController.swift in Sources */,
 				B68A3720277044D7002D9E20 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,9 +604,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CareTaker3/CareTaker3.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -618,6 +623,7 @@
 				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dig.toypoodle.caretaker3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -630,9 +636,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CareTaker3/CareTaker3.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 42235ECE62;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CareTaker3/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -648,6 +655,7 @@
 				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dig.toypoodle.caretaker3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
