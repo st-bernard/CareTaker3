@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="toypoodle" translatesAutoresizingMaskIntoConstraints="NO" id="nxV-xk-Ku2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" fixedFrame="YES" image="toypoodle" translatesAutoresizingMaskIntoConstraints="NO" id="nxV-xk-Ku2">
                                 <rect key="frame" x="198" y="178" width="196" height="201"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -127,6 +127,10 @@
                         <viewLayoutGuide key="safeArea" id="Nae-mq-ofJ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="logoImage" destination="mMX-GE-8h0" id="h8t-Me-cte"/>
+                        <outlet property="poodleImage" destination="nxV-xk-Ku2" id="X39-VW-4Ja"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uun-R6-p5H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

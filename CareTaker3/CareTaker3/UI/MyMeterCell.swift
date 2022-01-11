@@ -51,7 +51,14 @@ class MyMeterCell : UICollectionViewCell {
         
         meter.title = model.name
         meter.labels = makeLabels(interval: model.interval)
+        meter.alpha = 0.0
         meter.setNeedsDisplay() // meter再描画要求（<--重要）
+        self.backgroundColor = UIColor(red: 0.09, green: 0.09, blue: 0.09, alpha: 1.0)
+        
+        UIView.animate(withDuration: Double.random(in: 0.2...1.5), delay: Double.random(in: 0.2...0.5), options: [.curveEaseIn],
+        animations: {
+            meter.alpha = 1.0
+        })
     }
     
     func makeLabels(interval: Int) -> [MyMeterView.LabelItem] {
