@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class LaunchScreenViewController : UIViewController, AVAudioPlayerDelegate {
+class AboutViewController : UIViewController, AVAudioPlayerDelegate {
     
     var audioPlayer: AVAudioPlayer!
     

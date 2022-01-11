@@ -18,7 +18,7 @@
 		02A7DFF8278BD071007C0EF0 /* CareTaker3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7DFF7278BD071007C0EF0 /* CareTaker3UITests.swift */; };
 		02A7DFFA278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7DFF9278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift */; };
 		02BEA304277BE9DD0090386C /* Private.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA303277BE9DD0090386C /* Private.plist */; };
-		02C0B8E5278D5AFB00D8A704 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0B8E4278D5AFB00D8A704 /* LaunchScreenViewController.swift */; };
+		02C0B8E5278D5AFB00D8A704 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C0B8E4278D5AFB00D8A704 /* AboutViewController.swift */; };
 		02D758A2278BBE38008DB3F6 /* DateTimeUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D758A1278BBE38008DB3F6 /* DateTimeUtilsTest.swift */; };
 		2AE11E8A27852CF700170226 /* MyLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8927852CF700170226 /* MyLocationViewController.swift */; };
 		2AE11E8C27852F1900170226 /* FirebaseContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */; };
@@ -86,7 +86,7 @@
 		02A7DFF7278BD071007C0EF0 /* CareTaker3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITests.swift; sourceTree = "<group>"; };
 		02A7DFF9278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		02BEA303277BE9DD0090386C /* Private.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Private.plist; sourceTree = "<group>"; };
-		02C0B8E4278D5AFB00D8A704 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		02C0B8E4278D5AFB00D8A704 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		02D758A1278BBE38008DB3F6 /* DateTimeUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeUtilsTest.swift; sourceTree = "<group>"; };
 		2AE11E8927852CF700170226 /* MyLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationViewController.swift; sourceTree = "<group>"; };
 		2AE11E8B27852F1900170226 /* FirebaseContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseContentRepository.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 				02C08C172787C0630072B99C /* old */,
 				872FB99427758D67007F90B5 /* MyHeader.swift */,
 				872FB99627758E98007F90B5 /* MyMeterCell.swift */,
-				02C0B8E4278D5AFB00D8A704 /* LaunchScreenViewController.swift */,
+				02C0B8E4278D5AFB00D8A704 /* AboutViewController.swift */,
 				8774B4902775909C0034B779 /* MainViewController.swift */,
 				022A3C74277AA545007FCE57 /* MyMeterView.swift */,
 				022A3C76277AE815007FCE57 /* MyDetailView.swift */,
@@ -435,7 +435,7 @@
 				B68A3728277163E0002D9E20 /* YattayoButton.swift in Sources */,
 				B60B183D2769C67400D681A1 /* CollectionViewController.swift in Sources */,
 				B60B18392769C67400D681A1 /* AppDelegate.swift in Sources */,
-				02C0B8E5278D5AFB00D8A704 /* LaunchScreenViewController.swift in Sources */,
+				02C0B8E5278D5AFB00D8A704 /* AboutViewController.swift in Sources */,
 				B60B18772769C9F000D681A1 /* ContentsViewController.swift in Sources */,
 				025277682786D13D00A3EFAC /* PushNotification.swift in Sources */,
 				B60B187B2769CA1100D681A1 /* ContentsViewParts.swift in Sources */,
