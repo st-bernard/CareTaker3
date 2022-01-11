@@ -59,58 +59,58 @@ class MyMeterCell : UICollectionViewCell {
             case let num where num % 7 == 0:
                 return [
                     MyMeterView.LabelItem(text: "\(interval/7*7)", angleDeg: 182, offset: .zero),
-                    MyMeterView.LabelItem(text: "\(interval/7*6)", angleDeg: 60+17.14*6, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/7*5)", angleDeg: 60+17.14*5, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/7*4)", angleDeg: 60+17.14*4, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/7*3)", angleDeg: 60+17.14*3, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/7*2)", angleDeg: 60+17.14*2, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/7*1)", angleDeg: 60+17.14*1, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60+17.14*0, offset: CGPoint(x: -1, y: 6))
+                    MyMeterView.LabelItem(text: "\(interval/7*6)", angleDeg: 60+17.14*6, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/7*5)", angleDeg: 60+17.14*5, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/7*4)", angleDeg: 60+17.14*4, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/7*3)", angleDeg: 60+17.14*3, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/7*2)", angleDeg: 60+17.14*2, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/7*1)", angleDeg: 60+17.14*1, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60+17.14*0, offset: CGPoint(x: 0, y: 0))
                 ]
             case let num where num % 6 == 0:
                 return [
                     MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: .zero),
-                    MyMeterView.LabelItem(text: "\(interval/6*5)", angleDeg: 60+20*5, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/6*4)", angleDeg: 60+20*4, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/6*3)", angleDeg: 60+20*3, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/6*2)", angleDeg: 60+20*2, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/6*1)", angleDeg: 60+20*1, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60+24*0, offset: CGPoint(x: -1, y: 6))
+                    MyMeterView.LabelItem(text: "\(interval/6*5)", angleDeg: 60+20*5, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/6*4)", angleDeg: 60+20*4, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/6*3)", angleDeg: 60+20*3, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/6*2)", angleDeg: 60+20*2, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/6*1)", angleDeg: 60+20*1, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60+24*0, offset: CGPoint(x: 0, y: 0))
                 ]
             case let num where num % 5 == 0:
                 return [
                     MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: .zero),
-                    MyMeterView.LabelItem(text: "\(interval/5*4)", angleDeg: 60+24*4, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/5*3)", angleDeg: 60+24*3, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/5*2)", angleDeg: 60+24*2, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/5*1)", angleDeg: 60+24*1, offset: CGPoint(x: 1, y: 3)),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60+24*0, offset: CGPoint(x: -1, y: 6))
+                    MyMeterView.LabelItem(text: "\(interval/5*4)", angleDeg: 60+24*4, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/5*3)", angleDeg: 60+24*3, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/5*2)", angleDeg: 60+24*2, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/5*1)", angleDeg: 60+24*1, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60+24*0, offset: CGPoint(x: 0, y: 0))
                 ]
             case let num where num % 4 == 0:
                 return [
                     MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: .zero),
-                    MyMeterView.LabelItem(text: "\(interval*3/4)", angleDeg: 150, offset: CGPoint(x: 0, y: 1)),
-                    MyMeterView.LabelItem(text: "\(interval/2)", angleDeg: 120, offset: CGPoint(x: -1, y: 2)),
-                    MyMeterView.LabelItem(text: "\(interval/4)", angleDeg: 90, offset: CGPoint(x: -2, y: 3)),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 4))
+                    MyMeterView.LabelItem(text: "\(interval*3/4)", angleDeg: 150, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/2)", angleDeg: 120, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/4)", angleDeg: 90, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: 0, y: 0))
                 ]
             case let num where num % 3 == 0:
                 return [
-                    MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: CGPoint(x: 0, y: 1)),
-                    MyMeterView.LabelItem(text: "\(interval*2/3)", angleDeg: 140, offset: CGPoint(x: 0, y: 3)),
-                    MyMeterView.LabelItem(text: "\(interval/3)", angleDeg: 100, offset: CGPoint(x: -2, y: 4)),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
+                    MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval*2/3)", angleDeg: 140, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "\(interval/3)", angleDeg: 100, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: 0, y: 0))
                 ]
             case let num where num % 2 == 0:
                 return [
                     MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: .zero),
-                    MyMeterView.LabelItem(text: "\(interval/2)", angleDeg: 120, offset: CGPoint(x: 1, y: 4)),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 5))
+                    MyMeterView.LabelItem(text: "\(interval/2)", angleDeg: 120, offset: CGPoint(x: 0, y: 0)),
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: 0, y: 0))
                 ]
             default:
                 return [
                     MyMeterView.LabelItem(text: "\(interval)", angleDeg: 182, offset: .zero),
-                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: -1, y: 6))
+                    MyMeterView.LabelItem(text: "0", angleDeg: 60, offset: CGPoint(x: 0, y: 0))
                 ]
         }
     }
