@@ -52,6 +52,9 @@
                   Identifier = "CareTaker3UITests/testLaunchPerformance()">
                </Test>
                <Test
+                  Identifier = "CareTaker3UITests/test_SenarioNo4()">
+               </Test>
+               <Test
                   Identifier = "CareTaker3UITestsLaunchTests/testLaunch()">
                </Test>
             </SkippedTests>
