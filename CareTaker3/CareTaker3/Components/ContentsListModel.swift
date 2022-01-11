@@ -22,11 +22,18 @@ class ContentsListModel {
     
     func configuration(progress: @escaping (ContentsListModelState) -> Void) {
 
-        guard let id = UserDefaults.standard.string(forKey: idKey) else {
-            self.generateNewUser(idKey: idKey, progress: progress)
-            return
+        let id = UserDefaults.standard.string(forKey: idKey)
+        if id == nil  {
+            generateNewUser(idKey: idKey) {
+                state in
+                if state == .finish {
+                    let newid = UserDefaults.standard.string(forKey: self.idKey)
+                    self.pullData(userId: newid!, progress: progress)
+                }
+            }
+        } else {
+            self.pullData(userId: id!, progress: progress)
         }
-        self.pullData(userId: id, progress: progress)
     }
     
     func generateNewUser(idKey: String, progress: @escaping (ContentsListModelState) -> Void) {
@@ -63,6 +70,7 @@ class ContentsListModel {
     
     func pullData(userId: String, progress: @escaping (ContentsListModelState) -> Void) {
         print("--- pull from firebase, user id=\(userId)")
+        contents.removeAll()
         progress(.loading)
         DBRef.child("users/\(userId)").getData() {
             error, snap in
