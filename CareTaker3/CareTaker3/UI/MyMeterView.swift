@@ -28,10 +28,18 @@ class MyMeterView : UIView {
         let R = (H - (H - O.y) * 2) * 1.05
         let Rx: CGFloat = R * 0.13
         let Rlabel = R * 0.62
-        
+        let zrad = angleDeg * Double.pi / 180.0
+
         // メーターの画像をセルとピッタリのサイズで描画
         UIImage(named: "Meter")?.draw(in: CGRect(origin: .zero, size: CGSize(width: W, height: H)))
+        
+        // メーターのぼかし画像
+        let alphaBlue = angleDeg > 60.0 ? 1.0 : angleDeg / 60.0
+        let alphaRed = angleDeg > 60.0 ? 0.0 : (60.0 - angleDeg) / 60.0
+        UIImage(named: "MeterOuterBlue")?.draw(in: CGRect(origin: .zero, size: CGSize(width: W, height: H)), blendMode: .normal, alpha: alphaBlue)
+        UIImage(named: "MeterOuterRed")?.draw(in: CGRect(origin: .zero, size: CGSize(width: W, height: H)), blendMode: .normal, alpha: alphaRed)
 
+        // メモリと針
         for deg in stride(from: 180.0, to: -2.0, by: -120.0 / Double(labels.count - 1)) {
 
             let zrad = deg * Double.pi / 180.0
@@ -74,7 +82,6 @@ class MyMeterView : UIView {
         do {
             let line = UIBezierPath();
             line.move(to: O);
-            let zrad = angleDeg * Double.pi / 180.0
             let r = R + (Rx * abs(cos(zrad)))
             line.addLine(to: CGPoint(x: cos(zrad) * r + O.x, y: -sin(zrad) * r + O.y));
             UIColor.red.setStroke()
