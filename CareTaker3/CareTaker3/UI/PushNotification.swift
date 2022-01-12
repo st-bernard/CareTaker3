@@ -12,6 +12,12 @@ class PushNotification {
     // self.modelにあるデータに対して、PUSH通知を登録する
     class func registerLocalPush(item: ContentModel) {
         
+        if item.id == nil {
+            print("PUSH ID ERROR-------")
+            pushLocal(id: "IDERROR", title: "CareTakerからのお知らせ", body: "アプリの起動が失敗しました。少ししてからやり直してください。", delaySeconds: 3.0)
+            return
+        }
+        
         // Demo用、PUSH通知時刻を30秒後に
         if item.name == "トイレットペーパーとか、品名を指定したものがDemoとして早く通知来る" {
             let demoTime = Calendar.current.date(byAdding: .second, value: 30, to: Date())!

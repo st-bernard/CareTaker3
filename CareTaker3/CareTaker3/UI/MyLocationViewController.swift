@@ -24,6 +24,8 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var locationTable: UITableView!
     @IBOutlet weak var dueLabel: UILabel!
     @IBOutlet weak var daysSlider: UISlider!
+    @IBOutlet weak var dayMaxLabel: UILabel!
+    
     
     override func viewDidLoad() {
         
@@ -32,6 +34,7 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         if dueSpanDays < 1 || dueSpanDays > 30 {
             dueSpanDays = 7
         }
+        dayMaxLabel.text = "\(Int(maxDueSpanDays)) days"
         
         // Sliderの初期値
         daysSlider.value = Float(dueSpanDays) / maxDueSpanDays
@@ -41,6 +44,9 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
         locationMap.delegate = self
         locationMap.showsUserLocation = true
         locationMap.userTrackingMode = .followWithHeading
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
 
         firebaseRepository.reloadFirebaseData{
             success,newModel in
@@ -49,13 +55,6 @@ class MyLocationViewController : UIViewController, UITableViewDelegate, UITableV
                 self.resetLocationList()
             }
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        guard locationList.count > 0 else {
-            return
-        }
-        resetLocationList()
     }
     
     // スライダーバーの値が変わったとき、表示を更新する

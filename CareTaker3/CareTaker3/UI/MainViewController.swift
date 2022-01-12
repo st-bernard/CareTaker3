@@ -16,18 +16,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var activeModel = Dictionary<Int, Array<ContentModel>>()
     var activeModelSortedKeys = Array<Int>()
     let firebaseRepository = FirebaseContentRepository()
+    let startTime = ProcessInfo.processInfo.systemUptime
+    
     override func viewDidLoad() {
 
         // Cell Size
         flowLayout.estimatedItemSize = CGSize(width: myCollectionView.frame.width / 2.2, height:myCollectionView.frame.width / 4)
-        
-        //        TODO: [1]
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        reloadFirebaseData()
+        
         let indexSet = NSMutableIndexSet()
         for i in 0..<myCollectionView.numberOfSections {
             indexSet.add(i)
@@ -53,19 +53,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    //    TODO: [2] セクションの数を教えてあげる
+    // [2] セクションの数を教えてあげる
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return activeModel.count
     }
     
-    //TODO: [3] 各セクションのデータの数を教えてあげる
+    // [3] 各セクションのデータの数を教えてあげる
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard activeModel.count != 0 else{ return 0 }
         let count = activeModel[activeModelSortedKeys[section]]?.count ?? -1
         return count
     }
     
-    //    TODO: [4] ヘッダーに、活きた値を注入する
+    // [4] ヘッダーに、活きた値を注入する
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let collectionViewHeader = myCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as? MyHeader else {
             fatalError()
@@ -79,7 +79,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-    //    TODO: [5] セルに、活きた値を注入する
+    // [5] セルに、活きた値を注入する
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MyMeterCell
@@ -87,6 +87,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         guard let newModel = newModel else {
             fatalError()
         }
+        cell.isFadein = (ProcessInfo.processInfo.systemUptime - startTime) < 5.0
         cell.setValue(model: newModel)
         return cell
     }
@@ -135,7 +136,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         nextDueDateTime.hour = DateUtils.getDateTimePart(demoTime, part: .hour24)
         nextDueDateTime.minute = DateUtils.getDateTimePart(demoTime, part: .minute)
         nextDueDateTime.second = DateUtils.getDateTimePart(demoTime, part: .second)
-        PushNotification.pushLocal(id: UUID().uuidString, title: "CareTakerからのお知らせ", body: "「ひげ」の期限です。", at: nextDueDateTime)
+        PushNotification.pushLocal(id: UUID().uuidString, title: "CareTakerからのお知らせ", body: "「トイレットペーパー」の期限です。", at: nextDueDateTime)
     }
 }
 
