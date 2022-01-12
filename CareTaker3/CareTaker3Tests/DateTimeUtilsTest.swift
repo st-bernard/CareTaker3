@@ -45,4 +45,13 @@ class DateTimeUtilsTest: XCTestCase {
         let ret = DateUtils.stringFromDate(date: d, format: "y-M-d H:m:s")
         XCTAssertEqual("2001-1-1 10:1:1", ret)  // NOTE: converted from UTC to JST automatically
     }
+    
+    func test_makeDoneDateText() {
+        let date = DateUtils.dateFromString(string: "2021年09月28日", format: "yyyy年MM月dd日")
+        XCTAssertEqual("2021年09月28日", DateUtils.makeDoneDateText(offsetDays: 0, from: date))
+        XCTAssertEqual("2021年09月29日", DateUtils.makeDoneDateText(offsetDays: 1, from: date))
+        XCTAssertEqual("2021年09月30日", DateUtils.makeDoneDateText(offsetDays: 2, from: date))
+        XCTAssertEqual("2021年10月01日", DateUtils.makeDoneDateText(offsetDays: 3, from: date))
+        XCTAssertEqual("2021年09月27日", DateUtils.makeDoneDateText(offsetDays: -1, from: date))
+    }
 }

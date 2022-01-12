@@ -82,6 +82,7 @@
 		025277652786C5E000A3EFAC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		025277672786D13D00A3EFAC /* PushNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotification.swift; sourceTree = "<group>"; };
 		025277692786D1E200A3EFAC /* CareTaker3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CareTaker3.entitlements; sourceTree = "<group>"; };
+		029750CF278E8F3F00FE5221 /* licenseset */ = {isa = PBXFileReference; lastKnownFileType = text; path = licenseset; sourceTree = "<group>"; };
 		02A7DFF5278BD071007C0EF0 /* CareTaker3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CareTaker3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A7DFF7278BD071007C0EF0 /* CareTaker3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITests.swift; sourceTree = "<group>"; };
 		02A7DFF9278BD071007C0EF0 /* CareTaker3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTaker3UITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 				B60B18412769C67500D681A1 /* Assets.xcassets */,
 				872FB99227755E55007F90B5 /* Storyboard.storyboard */,
 				B60B18432769C67500D681A1 /* LaunchScreen.storyboard */,
+				029750CF278E8F3F00FE5221 /* licenseset */,
 				B60B18462769C67500D681A1 /* Info.plist */,
 			);
 			path = Application;
@@ -723,7 +725,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M6HUWMF54V;
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
@@ -743,7 +745,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M6HUWMF54V;
+				DEVELOPMENT_TEAM = 42235ECE62;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;

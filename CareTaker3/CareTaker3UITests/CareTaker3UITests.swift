@@ -20,14 +20,24 @@ class CareTaker3UITests: XCTestCase {
         screenShot.name = message
         add(screenShot)
     }
+    
+    func test_SenarioNo0() throws {
 
-    func test_SenarioNo1() throws {
-        
         screenShot("起動前")
         let app = XCUIApplication()
         app.launch()
-        
+        waitToAppear(for: app.staticTexts["categoryName"].firstMatch)
         screenShot("1.起動直後")
+
+        app.navigationBars["CareTaker3"].buttons["About"].tap()
+        waitToAppear(for: app.staticTexts["appNameLabel"].firstMatch)
+        screenShot("Aboutページ")
+        app/*@START_MENU_TOKEN@*/.staticTexts["test"]/*[[".buttons[\"test\"].staticTexts[\"test\"]",".buttons[\"testDbResetButton\"].staticTexts[\"test\"]",".staticTexts[\"test\"]"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+    }
+
+    func test_SenarioNo1() throws {
+        
+        let app = XCUIApplication()
         let collectionViewsQuery = app.collectionViews
         collectionViewsQuery.children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
         waitToAppear(for: app.staticTexts["labelInterval"].firstMatch)
@@ -36,7 +46,7 @@ class CareTaker3UITests: XCTestCase {
         XCTAssertEqual("1", app.switches["switchHomeMap"].value as? String, "Mapモードであること")
         XCTAssertEqual("ＳｕｎｇｏｏｓｅＴＯＫＹＯ", app.staticTexts["labelLocationName"].label, "店名が前提通りであること")
 
-#if false
+#if true
         let calendarBadgeClockElement = app.scrollViews.otherElements.containing(.image, identifier:"calendar.badge.clock").element
         calendarBadgeClockElement.swipeUp()
         screenShot("2.1.スワイプUp")
@@ -80,12 +90,12 @@ class CareTaker3UITests: XCTestCase {
         dueintervalsliderSlider.adjust(toNormalizedSliderPosition: 0.2)   // 3day
         dueintervalsliderSlider/*@START_MENU_TOKEN@*/.press(forDuration: 1.6);/*[[".tap()",".press(forDuration: 1.6);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         screenShot("期限3日")
-        XCTAssertEqual("期限 \(3)日前のアクション一覧", app.staticTexts["locationDueLabel"].label, "店名が前提通りであること")
+        XCTAssertEqual("期限 \(4)日前のアクション一覧", app.staticTexts["locationDueLabel"].label, "店名が前提通りであること")
         //---
-        dueintervalsliderSlider.adjust(toNormalizedSliderPosition: 0.25)  // 5day
+        dueintervalsliderSlider.adjust(toNormalizedSliderPosition: 0.35)  // 5day
         dueintervalsliderSlider/*@START_MENU_TOKEN@*/.press(forDuration: 1.6);/*[[".tap()",".press(forDuration: 1.6);"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        screenShot("期限5日")
-        XCTAssertEqual("期限 \(5)日前のアクション一覧", app.staticTexts["locationDueLabel"].label, "店名が前提通りであること")
+        screenShot("期限7日")
+        XCTAssertEqual("期限 \(7)日前のアクション一覧", app.staticTexts["locationDueLabel"].label, "店名が前提通りであること")
         
         //---
         let tablesQuery = app.tables

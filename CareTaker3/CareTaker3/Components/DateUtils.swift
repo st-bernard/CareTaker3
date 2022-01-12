@@ -36,4 +36,12 @@ class DateUtils {
         let partString = dateFormatter.string(from: date)
         return Int(partString)!
     }
+    
+    // 2021年12月01日 形式の文字列を返す
+    class func makeDoneDateText(offsetDays: Int, from: Date = Date()) -> String {
+        let modifiedDate = Calendar.current.date(byAdding: .day, value: offsetDays, to: from)!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy年MM月dd日"
+        return formatter.string(from: modifiedDate)
+    }
 }
