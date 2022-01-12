@@ -254,14 +254,14 @@
 				02C08C172787C0630072B99C /* old */,
 				872FB99427758D67007F90B5 /* MyHeader.swift */,
 				872FB99627758E98007F90B5 /* MyMeterCell.swift */,
-				02C0B8E4278D5AFB00D8A704 /* AboutViewController.swift */,
-				8774B4902775909C0034B779 /* MainViewController.swift */,
 				022A3C74277AA545007FCE57 /* MyMeterView.swift */,
 				022A3C76277AE815007FCE57 /* MyDetailView.swift */,
+				02C0B8E4278D5AFB00D8A704 /* AboutViewController.swift */,
+				8774B4902775909C0034B779 /* MainViewController.swift */,
 				2AE11E8927852CF700170226 /* MyLocationViewController.swift */,
-				022A3C78277B471F007FCE57 /* ViewController+alert.swift */,
-				025277672786D13D00A3EFAC /* PushNotification.swift */,
 				874B96932788090C006480C4 /* MyTutorialViewController.swift */,
+				025277672786D13D00A3EFAC /* PushNotification.swift */,
+				022A3C78277B471F007FCE57 /* ViewController+alert.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";

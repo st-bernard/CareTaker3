@@ -16,6 +16,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var activeModel = Dictionary<Int, Array<ContentModel>>()
     var activeModelSortedKeys = Array<Int>()
     let firebaseRepository = FirebaseContentRepository()
+    let startTime = ProcessInfo.processInfo.systemUptime
+    
     override func viewDidLoad() {
 
         // Cell Size
@@ -85,6 +87,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         guard let newModel = newModel else {
             fatalError()
         }
+        cell.isFadein = (ProcessInfo.processInfo.systemUptime - startTime) < 5.0
         cell.setValue(model: newModel)
         return cell
     }

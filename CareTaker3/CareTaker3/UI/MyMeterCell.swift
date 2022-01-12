@@ -10,6 +10,7 @@ import UIKit
 class MyMeterCell : UICollectionViewCell {
     
     var displayModel: ContentModel? = nil
+    var isFadein: Bool = false
     
     func checkLocationInputted(model: ContentModel) -> Bool {
         if PoiClientYahoo.makeKeyword(sectionName: model.category, itemName: model.name) == nil {
@@ -37,7 +38,6 @@ class MyMeterCell : UICollectionViewCell {
         if let noLocMark = contentView.viewWithTag(99102) {
             noLocMark.isHidden = checkLocationInputted(model: model)
         }
-
         
         displayModel = model
         meter.lastDate = model.lastDate
@@ -51,14 +51,16 @@ class MyMeterCell : UICollectionViewCell {
         
         meter.title = model.name
         meter.labels = makeLabels(interval: model.interval)
-        meter.alpha = 0.0
         meter.setNeedsDisplay() // meter再描画要求（<--重要）
         self.backgroundColor = UIColor(red: 0.09, green: 0.09, blue: 0.09, alpha: 1.0)
         
-        UIView.animate(withDuration: Double.random(in: 0.2...1.5), delay: Double.random(in: 0.2...0.5), options: [.curveEaseIn],
-        animations: {
-            meter.alpha = 1.0
-        })
+        if isFadein {
+            meter.alpha = 0.0
+            UIView.animate(withDuration: Double.random(in: 0.2...1.5), delay: Double.random(in: 0.2...0.5), options: [.curveEaseIn],
+            animations: {
+                meter.alpha = 1.0
+            })
+        }
     }
     
     func makeLabels(interval: Int) -> [MyMeterView.LabelItem] {
