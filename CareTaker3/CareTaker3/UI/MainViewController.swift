@@ -26,8 +26,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         myCollectionView.dataSource = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    private func reload() {
         let indexSet = NSMutableIndexSet()
         for i in 0..<myCollectionView.numberOfSections {
             indexSet.add(i)
@@ -51,6 +50,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 PushNotification.registerLocalPush(model: self.model)
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
+        reload()
     }
     
     // [2] セクションの数を教えてあげる
@@ -105,6 +109,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.content = selectedModel
             } else {
                 debugPrint("セグエ発火したけど、selectedModelが設定されていなかったので無視しました")
+            }
+        }
+
+        if segue.identifier == "segueMainToAbout", let vc = segue.destination as? AboutViewController {
+            vc.model = model
+            vc.testTapped = {
+                self.reload()
             }
         }
     }
