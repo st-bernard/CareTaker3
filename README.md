@@ -47,10 +47,15 @@
         2.　各項目の情報の更新を行う
         
         
-    
-<img width="150" alt="Screen Shot 2021-12-21 at 18 37 15" src="https://user-images.githubusercontent.com/90611732/146907154-c88dfb6a-0acc-44ba-9cac-80fec28e4059.png">
+<img width="150" alt="Main" src="https://user-images.githubusercontent.com/90664464/149436914-63a5c391-6529-48fd-9601-9b46f7eea415.png">
+<img width="150" alt="Setting" src="https://user-images.githubusercontent.com/90664464/149437050-bbd832d9-d24a-4d5d-b899-aa0fec62dbdc.png">
 
-<img width="150" alt="Screen Shot 2021-12-21 at 18 41 39" src="https://user-images.githubusercontent.com/90611732/146907788-1f17d705-ef8e-4b7f-b19b-e9d0c639fc40.png">
+<img width="150" alt="Location" src="https://user-images.githubusercontent.com/90664464/149436801-5c298645-6cf2-4e6a-963b-f2b81eb2a2b5.png">
+<img width="150" alt="Toilet" src="https://user-images.githubusercontent.com/90664464/149437314-500fbdc4-b04a-4407-8163-3d72a9a8ec60.png">
+
+
+
+
 
     ・ユーザー目線
         1.　多様な拡張機能の追加
@@ -65,6 +70,5 @@
         2.　チェックの有無で、項目の追加/削除が可能
 
 
-<img width="150" alt="Screen Shot 2021-12-21 at 21 43 47" src="https://user-images.githubusercontent.com/90611732/146931990-de1dc5a7-7d3e-4118-9d88-58672373420b.png">
 
     
